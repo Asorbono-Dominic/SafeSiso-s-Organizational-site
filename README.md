@@ -1,0 +1,169 @@
+# SafeSiso — Organizational Website
+
+The public website for **SafeSiso**, an AI-powered WhatsApp service giving adolescent girls in Northern Ghana confidential, shame-free sexual and reproductive health information, with automated risk detection and referral into the **SafeHer** network of verified safe spaces.
+
+The website's job is deliberately narrow: build public trust in the service, make it trivial to start a WhatsApp conversation, show funders credible evidence of impact, and give SafeHer partner organizations a working portal — **without ever handling a single girl's conversation data on the public web.**
+
+Prepared for the SafeSiso project team, PPAG, and UNFPA Ghana.
+
+---
+
+## Quick start
+
+```bash
+npm install
+cp .env.example .env.local   # fill in what you have; blanks are fine for Phase 0–5
+npm run dev
+```
+
+Then open **http://localhost:3000** — you'll be redirected to `/en`. French is at `/fr`.
+
+### Scripts
+
+| Command                | What it does                                        |
+| ---------------------- | --------------------------------------------------- |
+| `npm run dev`          | Local dev server on port 3000                       |
+| `npm run build`        | Production build                                    |
+| `npm run start`        | Serve the production build                          |
+| `npm run lint`         | ESLint (`next/core-web-vitals` + `next/typescript`) |
+| `npm run typecheck`    | `tsc --noEmit`                                      |
+| `npm run format`       | Prettier — write                                    |
+| `npm run format:check` | Prettier — verify only (this is what CI runs)       |
+
+---
+
+## Stack
+
+| Concern             | Choice                                                                                               |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| Framework           | Next.js 16 (App Router) + TypeScript                                                                 |
+| Styling             | Tailwind CSS v3                                                                                      |
+| i18n                | `next-intl` — `en` (default) and `fr` only, for now                                                  |
+| CMS                 | Sanity.io — **wired in Phase 7**; until then content is local files                                  |
+| Public data         | Next.js Route Handlers as a server-side proxy — the browser never calls the FastAPI backend directly |
+| Partner portal auth | NextAuth.js with an httpOnly, secure cookie session — **never** a client-stored JWT                  |
+| Analytics           | Plausible (cookie-less) — **added in Phase 8**                                                       |
+| Hosting             | Vercel. `safesiso.org`, portal on `portal.safesiso.org`                                              |
+
+Two deviations from the brief's defaults, both deliberate:
+
+- **Next.js 16, not 14/15.** Next 15.5 ships transitive `postcss` and `sharp` versions carrying three high-severity advisories, and the only clean upstream fix is Next 16. `npm audit` is currently at **0 vulnerabilities**. Next 16 satisfies the brief's "14+" and is fully supported by `next-intl` v4.
+- **Tailwind v3, not v4.** Tailwind v4 emits `@property`, `color-mix()`, and cascade layers, which require Chrome 111+ / Safari 16.4+. The primary audience is low-end Android in rural and peri-urban Northern Ghana, so v3's broader browser support wins. It also gives us the `tailwind.config.ts` token file the spec describes.
+
+---
+
+## Project layout
+
+```
+app/
+  [locale]/          # every public route lives under a locale segment
+    layout.tsx       # root layout: <html lang>, fonts, skip link, i18n provider
+    page.tsx         # homepage
+    not-found.tsx
+  globals.css        # Tailwind entry + base/reduced-motion/focus styles
+  api/               # Route Handlers — the backend proxy layer (Phase 3+)
+components/          # shared UI
+content/
+  messages/          # en.json / fr.json — UI copy until Sanity lands (Phase 7)
+i18n/
+  routing.ts         # locale list + default
+  navigation.ts      # locale-aware Link / redirect / usePathname
+  request.ts         # message loading — the one file Phase 7 rewrites
+lib/                 # data-fetching abstractions (one module per data need)
+middleware.ts        # locale negotiation and redirects
+```
+
+**Import `Link` from `@/i18n/navigation`, never from `next/link`.** The former keeps the active locale prefix on internal links; the latter silently drops it.
+
+---
+
+## Design system
+
+Tokens live in [`tailwind.config.ts`](tailwind.config.ts), from Spec Section 7.
+
+| Token              | Value     | Use                                                      |
+| ------------------ | --------- | -------------------------------------------------------- |
+| Teal (primary)     | `#0D5C75` | Headers, navigation, primary text accents, portal chrome |
+| Orange (secondary) | `#F37022` | Highlights, secondary buttons, icons                     |
+| WhatsApp green     | `#25D366` | **Reserved exclusively for the "Start Chat" CTA**        |
+| Background         | `#FBF8F3` | Warm off-white — softer, less clinical than stark white  |
+
+Three rules that are easy to break by accident:
+
+1. **WhatsApp green is never decorative.** It marks exactly one action — starting a private chat. If it appears anywhere else it stops meaning anything.
+2. **`orange-500` fails WCAG AA as text.** It measures ~2.9:1 on white. Use it for icons, rules, and large display type. For orange _text_ on a light background use **`orange-700`** (~5.3:1).
+3. `teal` and `orange` **replace** Tailwind's stock palettes of those names, so `text-teal-600` can only ever mean brand teal.
+
+---
+
+## Localization
+
+`en` (default) and `fr` only. Do not add locales until the SafeSiso/PPAG team confirms target local languages for the Northern, Upper East, and Upper West regions.
+
+French copy is currently **machine-assisted and unreviewed**. Every affected file carries the marker:
+
+```
+<!-- TRANSLATION: needs native review -->
+```
+
+Find outstanding ones with:
+
+```bash
+grep -rn "TRANSLATION: needs native review" content/
+```
+
+These are routed for native-speaker review in Phase 7 and must all be cleared before launch.
+
+---
+
+## Delivery phases
+
+Phases ship one at a time; each is built, checked, committed, and pushed before the next begins.
+
+| Phase | Scope                                                                              | Status  |
+| ----- | ---------------------------------------------------------------------------------- | ------- |
+| 0     | Repo, scaffolding, i18n routing, tooling                                           | ✅ done |
+| 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | next    |
+| 2     | SafeHer Network page + Get Involved form                                           |         |
+| 3     | Impact dashboard against a mocked data layer                                       |         |
+| 4     | Media & Press                                                                      |         |
+| 5     | SafeHer partner portal with mocked auth                                            |         |
+| 6     | Real backend integration — **gated on backend readiness**                          |         |
+| 7     | Sanity CMS wiring + French translation sign-off                                    |         |
+| 8     | Performance, accessibility, launch QA                                              |         |
+
+---
+
+## Outstanding values needed from the client
+
+Nothing here is invented. Where a real value doesn't exist yet, the code carries a visible `[PENDING — ...]` placeholder rather than a plausible-looking fake.
+
+| Value                                                                       | Blocks                     |
+| --------------------------------------------------------------------------- | -------------------------- |
+| Real WhatsApp Business number for the `wa.me` CTA                           | Phase 1 content, launch    |
+| Verified, **currently staffed** crisis/emergency contact                    | Safety & Your Privacy page |
+| Data Protection Commission registration number                              | Footer + Privacy Policy    |
+| Backend readiness + endpoint/auth details                                   | **Gates Phase 6**          |
+| Target local languages + translation ownership                              | Phase 7                    |
+| Sign-off on French translations                                             | Phase 7                    |
+| Whether SafeHer partner locations show by district/region or more precisely | Phase 2                    |
+
+> The crisis contact in particular must **not** be published until PPAG/UNFPA confirm the line is currently staffed. Publishing an unanswered emergency number to this audience is worse than publishing none.
+
+---
+
+## Privacy boundary
+
+The public website collects no identifying information. Because the audience includes minors, the site deliberately avoids any mechanism that invites a girl to submit personal details — no newsletter signup, no feedback widget, no contact form aimed at end users. The Get Involved form (Phase 2) is for **partner organizations and funders only**, and is labelled as such.
+
+Analytics, when added in Phase 8, are cookie-less. No Google Analytics, no third-party tracking scripts.
+
+---
+
+## Reference documents
+
+- `SafeSiso_Website_Spec.docx` — design and content rationale, page-by-page specs, design system
+- SafeSiso concept note — mission, background, three-layer model, beneficiaries
+- The build directive — phase order and definitions of done
+
+Copy and design values come from those documents. Don't reinvent them here.

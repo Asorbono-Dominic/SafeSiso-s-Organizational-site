@@ -1,0 +1,13 @@
+# Normalize to LF in the repository so Linux CI and Windows dev machines agree.
+* text=auto eol=lf
+
+# Binary assets — never touch these.
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
