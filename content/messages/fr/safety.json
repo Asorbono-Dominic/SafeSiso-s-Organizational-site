@@ -1,0 +1,102 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "safety": {
+    "meta": {
+      "title": "Sécurité et confidentialité",
+      "description": "Ce que SafeSiso peut et ne peut pas faire, ce qui se passe s'il détecte que tu pourrais être en danger, et comment ta vie privée est protégée. Écrit simplement, sans rien cacher."
+    },
+    "hero": {
+      "eyebrow": "Sécurité et confidentialité",
+      "title": "Ce que SafeSiso peut faire, et ce qu'il ne peut pas faire",
+      "intro": "C'est la page que nous aimerions le plus que tu lises. Elle explique les limites de SafeSiso, pour que rien ne puisse te prendre au dépourvu."
+    },
+    "emergency": {
+      "heading": "Si tu es en danger immédiat, maintenant",
+      "body": "SafeSiso n'est pas un service d'urgence et ne peut envoyer personne auprès de toi. Si l'on te fait du mal, ou si tu as peur que cela arrive, mets-toi en sécurité et contacte au plus vite un adulte de confiance ou les services d'urgence.",
+      "pendingIntro": "Un contact d'urgence local vérifié sera publié ici.",
+      "pendingReason": "Nous n'en avons pas encore publié, car nous n'afficherons aucun numéro tant que la PPAG et l'UNFPA n'auront pas confirmé qu'il est effectivement doté d'un personnel qui répond. Un numéro qui sonne dans le vide pour une fille en danger est pire que pas de numéro du tout."
+    },
+    "canDo": {
+      "heading": "Ce que SafeSiso peut faire",
+      "items": [
+        "Répondre à tes questions sur ton corps, tes règles, tes relations, le consentement, la contraception et la grossesse, en mots simples et sans jugement.",
+        "Expliquer à quoi ressemblent les abus et l'exploitation, y compris lorsqu'ils viennent de quelqu'un que tu connais ou en qui tu as confiance.",
+        "Repérer dans ta conversation des signes indiquant que tu pourrais être en danger, et t'en parler avec délicatesse.",
+        "Te proposer une mise en relation avec un espace sûr vérifié près de chez toi, ayant confirmé pouvoir accueillir quelqu'un maintenant.",
+        "Être disponible à toute heure, y compris la nuit."
+      ]
+    },
+    "cannotDo": {
+      "heading": "Ce que SafeSiso ne peut pas faire",
+      "items": [
+        "Il ne peut pas t'examiner, poser un diagnostic ni prescrire quoi que ce soit. Ce n'est ni un médecin ni une infirmière.",
+        "Il ne peut pas fournir un suivi psychologique ou une thérapie. Ce n'est pas un conseiller.",
+        "Il ne peut pas venir jusqu'à toi, appeler la police à ta place, ni intervenir en cas d'urgence.",
+        "Il ne peut pas garantir qu'une réponse correspond exactement à ta situation. Lorsqu'il te faut un professionnel, il te le dira.",
+        "Il ne peut pas te protéger de quelqu'un qui a accès à ton téléphone. Voir plus bas."
+      ]
+    },
+    "redFlag": {
+      "heading": "Ce qui se passe si SafeSiso pense que tu pourrais être en danger",
+      "intro": "SafeSiso prête attention à bien plus qu'aux mots que tu emploies. Il évalue ce que tu as dit dans son contexte, ce que tu sembles ressentir, le fait qu'une inquiétude revienne, et le fait que la situation semble s'aggraver.",
+      "steps": [
+        {
+          "title": "Il te le dit",
+          "body": "Si SafeSiso s'inquiète, il te le dit directement. Il n'agit pas discrètement en arrière-plan."
+        },
+        {
+          "title": "Il demande, il ne décide pas à ta place",
+          "body": "On te propose une mise en relation avec un espace sûr. Tu peux refuser, et tu peux continuer à discuter. Refuser ne met pas fin à la conversation et ne change rien à la façon dont tu es traitée."
+        },
+        {
+          "title": "Seul le nécessaire est transmis",
+          "body": "Si tu acceptes, un partenaire SafeHer est informé que quelqu'un a besoin de soutien. Ta conversation ne lui est pas transmise, ni ton identité — puisque SafeSiso ne l'a jamais recueillie."
+        },
+        {
+          "title": "Personne de ton entourage n'est contacté",
+          "body": "SafeSiso ne contacte ni tes parents, ni ton école, ni ton église, ni personne dans ta communauté. Ni pour les prévenir, ni pour prendre de tes nouvelles."
+        }
+      ]
+    },
+    "privacy": {
+      "heading": "Comment ta vie privée est protégée",
+      "intro": "La meilleure protection n'est pas la promesse de bien garder tes informations. C'est de ne jamais les demander.",
+      "points": [
+        {
+          "title": "Rien qui t'identifie n'est collecté",
+          "body": "Pas de nom, pas d'âge, pas d'école, pas de localisation, pas de compte. Il n'existe aucun profil de toi susceptible de fuiter, d'être réclamé en justice ou d'être perdu."
+        },
+        {
+          "title": "Rien de ce que tu dis n'apparaît sur ce site",
+          "body": "Le contenu des conversations n'est jamais rendu public. Les chiffres publiés sur ce site sont anonymisés et agrégés — des comptages, jamais du contenu."
+        },
+        {
+          "title": "Les partenaires reçoivent une orientation, pas une transcription",
+          "body": "Un partenaire SafeHer est informé qu'un soutien est nécessaire. L'historique de ta conversation ne lui est pas communiqué."
+        },
+        {
+          "title": "Ce site ne te piste pas",
+          "body": "Le site public n'utilise aucun traceur publicitaire ni script de profilage tiers. Les statistiques éventuellement utilisées fonctionnent sans cookies et ne peuvent identifier aucun visiteur."
+        }
+      ]
+    },
+    "phoneSafety": {
+      "heading": "La seule chose dont SafeSiso ne peut pas te protéger",
+      "body": "SafeSiso peut garder ta conversation privée vis-à-vis de nous et de tout le monde. Il ne peut pas la garder privée vis-à-vis de quelqu'un qui prend ton téléphone et ouvre WhatsApp.",
+      "advice": [
+        "Si quelqu'un d'autre a accès à ton téléphone, tu peux supprimer la conversation SafeSiso une fois terminée. La supprimer de ton côté ne t'empêche pas d'écrire à nouveau plus tard.",
+        "Si la conversation ne peut pas se faire en sécurité sur ton téléphone, celui d'une amie convient tout aussi bien — SafeSiso ne sait pas et ne cherche pas à savoir à qui appartient l'appareil."
+      ]
+    },
+    "dataProtection": {
+      "heading": "Tes droits selon la loi ghanéenne",
+      "body": "SafeSiso relève de la loi ghanéenne sur la protection des données de 2012 (Act 843). Les informations de santé y sont considérées comme des données personnelles sensibles, ce qui explique précisément pourquoi SafeSiso est conçu pour ne recueillir aucune information identifiante auprès d'une mineure.",
+      "registrationLabel": "Enregistrement auprès de la Commission de protection des données :",
+      "policyLink": "Lire la politique de confidentialité complète"
+    },
+    "closing": {
+      "heading": "Tu veux quand même poser une question ?",
+      "body": "Connaître les limites ne veut pas dire qu'il ne faut pas demander. Cela veut dire que tu sais exactement ce que tu obtiens."
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "howItWorks": {
+    "meta": {
+      "title": "How SafeSiso Works",
+      "description": "A plain-language walkthrough of what happens when a girl messages SafeSiso: how the chat works, how SafeSiso notices when someone needs more than information, and how a referral to a verified SafeHer safe space happens."
+    },
+    "hero": {
+      "eyebrow": "How SafeSiso works",
+      "title": "What actually happens when you send a message",
+      "intro": "This page explains SafeSiso from beginning to end, without technical language. It is written for two people at once: a girl who wants to know what she is walking into, and a funder or partner who wants to know exactly how the system behaves."
+    },
+    "steps": [
+      {
+        "number": "1",
+        "title": "You send a message",
+        "body": "You open WhatsApp and message SafeSiso like you would message a friend. There is no sign-up, no form and no account. Nobody asks for your name, your age, your school or where you live.",
+        "detail": "Write however is comfortable. Short messages are fine. Mixed languages are fine. Spelling mistakes are fine. SafeSiso was deliberately built to understand simple, informal writing, because requiring correct grammar would shut out the girls who most need it."
+      },
+      {
+        "number": "2",
+        "title": "SafeSiso answers in plain language",
+        "body": "You get a clear, calm, accurate answer about your body, periods, relationships, consent, contraception, pregnancy or abuse — with no lecture and no judgment attached.",
+        "detail": "The information SafeSiso gives is not improvised. A contracted sexual and reproductive health expert reviews and approves the content before it is ever used in a real conversation. Where a question needs a professional rather than an explanation, SafeSiso says so instead of guessing."
+      },
+      {
+        "number": "3",
+        "title": "SafeSiso listens for signs that you need more than information",
+        "body": "Alongside answering, SafeSiso is watching for indications that you may be in danger, being hurt, or at risk of a pregnancy you did not choose. This is what we call red-flag detection.",
+        "detail": "Most systems that try to do this simply search for alarming words, which is unreliable in both directions: it misses a girl who describes serious harm gently, and it panics at a girl who is only asking a question. SafeSiso weighs four things together instead."
+      },
+      {
+        "number": "4",
+        "title": "If you need help, you are offered a safe space that is open",
+        "body": "When the signs are strong enough, SafeSiso offers to connect you to a SafeHer partner — a verified local organization or clinic that supports girls in your situation.",
+        "detail": "You are offered it, not signed up for it. SafeHer partners keep their current availability up to date, and the matching engine only ever suggests a partner that has said it can receive someone right now. Being sent to a door that turns out to be closed is its own kind of harm, and the system is built specifically to prevent it."
+      }
+    ],
+    "redFlag": {
+      "heading": "The four things SafeSiso weighs",
+      "intro": "Each of these is scored, and the four scores are combined into a single measure of how confident SafeSiso is that a girl needs more than an answer. A referral is only offered when that combined confidence is high enough — which is why it is far less likely to raise a false alarm, or to miss something quiet and serious, than a system looking for keywords.",
+      "layers": [
+        {
+          "title": "What you said, in context",
+          "body": "Not just the words, but what they mean given everything else in the conversation. \"He said he'd take care of me\" means something very different depending on what came before it."
+        },
+        {
+          "title": "How you seem to be feeling",
+          "body": "Whether the conversation carries fear, shame, confusion or distress — signals that often show up long before anyone says anything explicit."
+        },
+        {
+          "title": "Whether this has come up before",
+          "body": "A worry mentioned once is different from the same worry circled back to repeatedly. Patterns across the conversation carry weight."
+        },
+        {
+          "title": "Whether things are getting worse",
+          "body": "Whether the situation being described seems to be escalating rather than staying steady. Escalation is treated as urgent."
+        }
+      ],
+      "honesty": "You will not be caught by surprise. If SafeSiso thinks you may need more support, it tells you and asks — it does not act behind your back, and it does not contact your family, your school or anyone in your community on its own."
+    },
+    "limits": {
+      "heading": "What SafeSiso will not do",
+      "items": [
+        "It will not ask for your name, your location, or anything else that identifies you.",
+        "It will not tell your parents, your teachers, your church or your community that you messaged.",
+        "It will not judge you, punish you, or lecture you about anything you say.",
+        "It will not pretend to be a doctor, a nurse or a counsellor.",
+        "It will not replace the emergency services if you are in immediate danger."
+      ],
+      "cta": "Read the full safety and privacy explanation"
+    },
+    "finalCta": {
+      "heading": "Ready when you are",
+      "body": "You can ask one question and stop. There is no commitment to anything."
+    }
+  }
+}

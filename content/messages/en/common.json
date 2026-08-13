@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "siteName": "SafeSiso",
+    "defaultTitle": "SafeSiso — Confidential SRH support for girls in Northern Ghana",
+    "defaultDescription": "SafeSiso is a confidential, AI-powered WhatsApp service giving adolescent girls in Northern Ghana shame-free sexual and reproductive health information, and referral to verified SafeHer safe spaces. No registration, no real name, no location."
+  },
+  "common": {
+    "skipToContent": "Skip to main content",
+    "languageLabel": "Language",
+    "english": "English",
+    "french": "Français",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "partnerLogin": "SafeHer Partner Login",
+    "startChat": "Start a Private Chat on WhatsApp",
+    "startChatShort": "Start a Private Chat",
+    "chatPrefill": "Hi",
+    "chatUnavailable": "WhatsApp chat not yet available",
+    "chatUnavailableHelp": "The SafeSiso WhatsApp number has not been connected yet. This button will work as soon as it is.",
+    "learnMore": "Learn more",
+    "readMore": "Read more"
+  },
+  "nav": {
+    "home": "Home",
+    "howItWorks": "How It Works",
+    "about": "About",
+    "safety": "Safety & Privacy",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "footer": {
+    "tagline": "Confidential, shame-free sexual and reproductive health information for adolescent girls in Northern Ghana.",
+    "promise": "No registration, no real name, no location disclosure, ever.",
+    "navHeading": "Explore",
+    "legalHeading": "Legal",
+    "backingHeading": "Who is behind SafeSiso",
+    "backing": "SafeSiso is a pilot funded through the AI for Her Future Innovation Hackathon Seed Fund, supported by UNFPA Ghana and the Government of Canada, and delivered in partnership with the Planned Parenthood Association of Ghana (PPAG).",
+    "dpcLabel": "Registered with Ghana's Data Protection Commission:",
+    "safetyNoticeHeading": "SafeSiso is not an emergency service",
+    "safetyNotice": "SafeSiso gives information and can connect you to a safe space near you. It cannot replace a doctor, a counsellor, or the police. If you are in immediate danger, get help from a trusted adult or the emergency services right away.",
+    "safetyNoticeLink": "Read what SafeSiso can and cannot do",
+    "copyright": "All rights reserved."
+  },
+  "pending": {
+    "marker": "PENDING",
+    "srPrefix": "Value not yet available:",
+    "note": "This will be published once it has been confirmed. Nothing is shown here in the meantime, because a placeholder that looks real would be worse than an obvious gap."
+  },
+  "notFound": {
+    "title": "We couldn't find that page",
+    "body": "The page you were looking for doesn't exist or has moved. Nothing you did was wrong.",
+    "backHome": "Go back to the homepage"
+  },
+  "portalPlaceholder": {
+    "eyebrow": "SafeHer partner portal",
+    "title": "The partner portal is not open yet",
+    "body": "This is where verified SafeHer partner organizations will sign in to manage their availability and see referrals sent to them. It opens when partner onboarding begins.",
+    "forPartners": "If your organization wants to join the SafeHer network, please get in touch — the partner enrolment page is coming shortly.",
+    "backHome": "Return to the homepage"
+  }
+}

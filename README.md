@@ -20,15 +20,18 @@ Then open **http://localhost:3000** — you'll be redirected to `/en`. French is
 
 ### Scripts
 
-| Command                | What it does                                        |
-| ---------------------- | --------------------------------------------------- |
-| `npm run dev`          | Local dev server on port 3000                       |
-| `npm run build`        | Production build                                    |
-| `npm run start`        | Serve the production build                          |
-| `npm run lint`         | ESLint (`next/core-web-vitals` + `next/typescript`) |
-| `npm run typecheck`    | `tsc --noEmit`                                      |
-| `npm run format`       | Prettier — write                                    |
-| `npm run format:check` | Prettier — verify only (this is what CI runs)       |
+| Command                  | What it does                                        |
+| ------------------------ | --------------------------------------------------- |
+| `npm run dev`            | Local dev server on port 3000                       |
+| `npm run build`          | Production build                                    |
+| `npm run start`          | Serve the production build                          |
+| `npm run lint`           | ESLint (`next/core-web-vitals` + `next/typescript`) |
+| `npm run typecheck`      | `tsc --noEmit`                                      |
+| `npm run format`         | Prettier — write                                    |
+| `npm run format:check`   | Prettier — verify only (this is what CI runs)       |
+| `npm run check:messages` | Verifies every locale catalogue has the same keys   |
+
+`check:messages` exists because a key present in `en` but missing from `fr` does **not** fail the build — next-intl renders the raw key path to the visitor instead. On a site where the copy is the product, that has to fail in CI.
 
 ---
 
@@ -62,15 +65,24 @@ app/
     not-found.tsx
   globals.css        # Tailwind entry + base/reduced-motion/focus styles
   api/               # Route Handlers — the backend proxy layer (Phase 3+)
-components/          # shared UI
+components/
+  brand/             # logo / wordmark
+  layout/            # header, footer, persistent mobile CTA bar
+  ui/                # design-system pieces (CTA, grids, callouts, FAQ, ...)
 content/
-  messages/          # en.json / fr.json — UI copy until Sanity lands (Phase 7)
+  messages/
+    en/ fr/          # one JSON file per page — UI copy until Sanity (Phase 7)
 i18n/
   routing.ts         # locale list + default
   navigation.ts      # locale-aware Link / redirect / usePathname
   request.ts         # message loading — the one file Phase 7 rewrites
-lib/                 # data-fetching abstractions (one module per data need)
-middleware.ts        # locale negotiation and redirects
+lib/
+  site-config.ts     # routes, nav, and the PENDING_VALUES registry
+  whatsapp.ts        # the only place the WhatsApp number is resolved
+  page-metadata.ts   # per-page title/description/canonical
+scripts/
+  check-messages.mjs # locale catalogue drift check (runs in CI)
+proxy.ts             # locale negotiation and redirects (Next 16's middleware)
 ```
 
 **Import `Link` from `@/i18n/navigation`, never from `next/link`.** The former keeps the active locale prefix on internal links; the latter silently drops it.
@@ -123,8 +135,8 @@ Phases ship one at a time; each is built, checked, committed, and pushed before 
 | Phase | Scope                                                                              | Status  |
 | ----- | ---------------------------------------------------------------------------------- | ------- |
 | 0     | Repo, scaffolding, i18n routing, tooling                                           | ✅ done |
-| 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | next    |
-| 2     | SafeHer Network page + Get Involved form                                           |         |
+| 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | ✅ done |
+| 2     | SafeHer Network page + Get Involved form                                           | next    |
 | 3     | Impact dashboard against a mocked data layer                                       |         |
 | 4     | Media & Press                                                                      |         |
 | 5     | SafeHer partner portal with mocked auth                                            |         |
@@ -138,17 +150,24 @@ Phases ship one at a time; each is built, checked, committed, and pushed before 
 
 Nothing here is invented. Where a real value doesn't exist yet, the code carries a visible `[PENDING — ...]` placeholder rather than a plausible-looking fake.
 
-| Value                                                                       | Blocks                     |
-| --------------------------------------------------------------------------- | -------------------------- |
-| Real WhatsApp Business number for the `wa.me` CTA                           | Phase 1 content, launch    |
-| Verified, **currently staffed** crisis/emergency contact                    | Safety & Your Privacy page |
-| Data Protection Commission registration number                              | Footer + Privacy Policy    |
-| Backend readiness + endpoint/auth details                                   | **Gates Phase 6**          |
-| Target local languages + translation ownership                              | Phase 7                    |
-| Sign-off on French translations                                             | Phase 7                    |
-| Whether SafeHer partner locations show by district/region or more precisely | Phase 2                    |
+All of these are supplied through environment variables — no code change is needed to fill any of them in. They are declared in one place, `PENDING_VALUES` in [`lib/site-config.ts`](lib/site-config.ts), so the Phase 8 launch check is a single call to `getUnresolvedPendingValues()` rather than a manual sweep.
 
-> The crisis contact in particular must **not** be published until PPAG/UNFPA confirm the line is currently staffed. Publishing an unanswered emergency number to this audience is worse than publishing none.
+| Value                                                                       | Env var                                      | Blocks                                                                                 |
+| --------------------------------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **Dedicated Twilio WhatsApp Business number**                               | `NEXT_PUBLIC_WHATSAPP_NUMBER`                | **Public launch** — see below                                                          |
+| Verified, **currently staffed** crisis/emergency contact                    | `NEXT_PUBLIC_CRISIS_CONTACT`                 | Safety & Your Privacy page                                                             |
+| Data Protection Commission registration number                              | `NEXT_PUBLIC_DPC_REGISTRATION_NUMBER`        | Footer + Privacy Policy                                                                |
+| General and press contact addresses                                         | `NEXT_PUBLIC_CONTACT_EMAIL` / `_PRESS_EMAIL` | Contact page                                                                           |
+| PPAG/UNFPA sign-off on the Privacy Policy and Terms                         | `NEXT_PUBLIC_LEGAL_SIGN_OFF`                 | Draft notice on both legal pages                                                       |
+| Official SafeSiso logo asset from the concept note                          | —                                            | Replaces the text wordmark in [`components/brand/logo.tsx`](components/brand/logo.tsx) |
+| Backend readiness + endpoint/auth details                                   | —                                            | **Gates Phase 6**                                                                      |
+| Target local languages + translation ownership                              | —                                            | Phase 7                                                                                |
+| Sign-off on French translations                                             | —                                            | Phase 7                                                                                |
+| Whether SafeHer partner locations show by district/region or more precisely | —                                            | Phase 2                                                                                |
+
+> **The crisis contact must not be published** until PPAG/UNFPA confirm the line is currently staffed. Publishing an unanswered emergency number to this audience is worse than publishing none.
+
+> **The WhatsApp number is currently an interim personal line**, standing in until the dedicated Twilio WhatsApp Business number exists. While it is in place, anyone tapping "Start a Private Chat" reaches a person directly — they see that person's name and profile, and that person sees their phone number. That contradicts the anonymity the site promises, so **the site must not go public until the dedicated number replaces it.** Swapping it is an env change plus a redeploy; the parser accepts `0257514846`, `+233 25 751 4846` or `233257514846` interchangeably.
 
 ---
 

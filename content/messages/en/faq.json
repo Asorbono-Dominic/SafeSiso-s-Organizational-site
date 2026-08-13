@@ -1,0 +1,90 @@
+{
+  "faq": {
+    "meta": {
+      "title": "Frequently Asked Questions",
+      "description": "Straight answers about whether SafeSiso is really confidential, what it costs, who is behind it, and what happens to what you say."
+    },
+    "hero": {
+      "eyebrow": "Frequently asked questions",
+      "title": "The questions people actually ask",
+      "intro": "Some of these are asked by girls. Some are asked by parents, teachers and community leaders. Both sets are answered here, honestly."
+    },
+    "sections": [
+      {
+        "heading": "For girls",
+        "items": [
+          {
+            "question": "Is it really confidential?",
+            "answer": "Yes. SafeSiso never asks for your name, your age, your school or where you live, so there is nothing about you to reveal. Nobody in your family, school or community is contacted. The one thing to be aware of is that SafeSiso cannot hide the conversation from someone who picks up your phone — if that is a risk, delete the chat after you finish, or use a friend's phone."
+          },
+          {
+            "question": "Does it cost anything?",
+            "answer": "SafeSiso is completely free. You only pay for the small amount of mobile data WhatsApp uses to send and receive messages, which is very little."
+          },
+          {
+            "question": "Do I have to give my name?",
+            "answer": "No. Not at the start, not later, not ever. If you volunteer your name, you do not have to — SafeSiso does not need it and does not ask for it."
+          },
+          {
+            "question": "Am I talking to a real person?",
+            "answer": "You are talking to an AI assistant, not a person. We tell you that plainly rather than letting you assume otherwise. The information it gives has been reviewed and approved by a qualified sexual and reproductive health expert before it is used."
+          },
+          {
+            "question": "What if I write badly or mix languages?",
+            "answer": "That is completely fine and it will not affect the answer you get. SafeSiso was deliberately built to understand short, informal, misspelled and mixed-language messages, because insisting on correct grammar would exclude the girls who most need help."
+          },
+          {
+            "question": "What happens if I tell SafeSiso something serious?",
+            "answer": "If SafeSiso becomes concerned that you may be in danger, it will tell you so and ask whether you would like to be connected to a safe space near you. You can say no. Nothing is done behind your back, and nobody in your life is contacted."
+          },
+          {
+            "question": "Can I ask about something that already happened to me?",
+            "answer": "Yes. SafeSiso is for girls who are worried about something that might happen, girls who are in the middle of something, and girls dealing with something that happened a long time ago. There is no wrong time to ask."
+          },
+          {
+            "question": "What if I just want to ask one question and stop?",
+            "answer": "Then ask one question and stop. There is no account, no follow-up and no commitment. You can come back in six months or never."
+          }
+        ]
+      },
+      {
+        "heading": "For parents, teachers and community leaders",
+        "items": [
+          {
+            "question": "Who is behind SafeSiso?",
+            "answer": "SafeSiso is a pilot funded through the AI for Her Future Innovation Hackathon Seed Fund, supported by UNFPA Ghana and the Government of Canada, and delivered in partnership with the Planned Parenthood Association of Ghana (PPAG). It originated as the winning innovation at the AI4HerFuture Hackathon organised by UNFPA Ghana and the Africa Health Innovation Centre."
+          },
+          {
+            "question": "Is the health information accurate?",
+            "answer": "A contracted sexual and reproductive health expert reviews and approves the chatbot's content before deployment. Where a question needs a clinician rather than an explanation, SafeSiso says so rather than guessing."
+          },
+          {
+            "question": "Is it age-appropriate?",
+            "answer": "SafeSiso is designed for girls aged 10 to 18, and its content is reviewed with that age range in mind. It gives factual, age-appropriate health information in calm, plain language."
+          },
+          {
+            "question": "Will I be told if my daughter uses it?",
+            "answer": "No. SafeSiso is confidential by design, and that confidentiality is what makes it work. A service that reports back to adults is a service girls will not use — including the girls in the most danger, who have the strongest reason to stay silent."
+          },
+          {
+            "question": "What data is stored, and where?",
+            "answer": "SafeSiso does not collect names, locations or any identifying details. Anonymized conversation data supports safety features and produces aggregated programme statistics for UNFPA Ghana and PPAG. SafeSiso operates under Ghana's Data Protection Act, 2012 (Act 843). Full detail is in the Privacy Policy."
+          },
+          {
+            "question": "What if a girl is in real danger?",
+            "answer": "SafeSiso is not an emergency service and does not present itself as one. It can detect risk signals and offer a connection to a verified local safe space that has confirmed availability, but it cannot dispatch help. In an emergency, a trusted adult or the emergency services remain the right route."
+          },
+          {
+            "question": "Can boys use it?",
+            "answer": "SafeSiso is designed and funded specifically for adolescent girls in Northern Ghana, and its content is written for them. It does not verify who is messaging, because verification would mean collecting identity — the one thing the service is built never to do."
+          }
+        ]
+      }
+    ],
+    "closing": {
+      "heading": "Something we haven't answered?",
+      "body": "If you are a partner organization, journalist or funder with a question this page does not cover, get in touch.",
+      "cta": "Contact the SafeSiso team"
+    }
+  }
+}

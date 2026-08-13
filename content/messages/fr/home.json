@@ -1,0 +1,119 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "home": {
+    "meta": {
+      "title": "Des réponses privées sur ton corps, sur WhatsApp",
+      "description": "SafeSiso est un service WhatsApp gratuit et confidentiel pour les adolescentes du nord du Ghana. Pose toutes tes questions sur ton corps, tes relations et ta santé. Aucune inscription, aucun vrai nom, aucune localisation."
+    },
+    "hero": {
+      "trustHeadline": "Entièrement privé. Sans jugement. Sans avoir à donner ton nom.",
+      "supporting": "SafeSiso répond à tes questions sur ton corps, tes relations et ta santé — sur WhatsApp, de jour comme de nuit.",
+      "mission": "Nous existons pour que chaque fille du nord du Ghana puisse obtenir une réponse honnête aux questions qu'elle n'ose pas poser à voix haute — et, si elle a besoin de plus qu'une réponse, pour lui indiquer un endroit sûr, près de chez elle, prêt à l'aider.",
+      "conversationLabel": "Un exemple de ce à quoi ressemble une conversation avec SafeSiso",
+      "conversationDisclaimer": "Une illustration, pas une vraie conversation. Les échanges réels ne sont jamais montrés à personne.",
+      "conversation": [
+        {
+          "from": "girl",
+          "text": "bonjour je veux demander qqch mais jai peur"
+        },
+        {
+          "from": "safesiso",
+          "text": "Tu es en sécurité ici. Tu n'as pas à me dire ton nom, et personne d'autre ne peut voir cette conversation. Pose-moi la question que tu veux."
+        },
+        {
+          "from": "girl",
+          "text": "mes règles ont 2 semaines de retard ça veut dire quoi"
+        },
+        {
+          "from": "safesiso",
+          "text": "Merci de me faire confiance. Un retard de règles peut avoir plusieurs causes — le stress, une maladie, un changement de poids, ou une grossesse. Est-ce que je peux te poser quelques questions pour t'aider comme il faut ?"
+        }
+      ]
+    },
+    "anonymity": {
+      "heading": "Tu n'as jamais à dire qui tu es",
+      "body": "SafeSiso a été conçu pour que la question de ton identité ne se pose jamais. Il n'y a rien à créer et rien à prouver.",
+      "points": [
+        {
+          "title": "Aucune inscription",
+          "body": "Il n'y a ni formulaire, ni compte, ni mot de passe. Tu envoies simplement un message."
+        },
+        {
+          "title": "Aucun vrai nom",
+          "body": "On ne te demande jamais ton nom, et tu n'as jamais à en donner un."
+        },
+        {
+          "title": "Aucune localisation",
+          "body": "On ne te demande jamais où tu habites. Si un espace sûr t'est proposé, c'est toi qui décides d'y aller ou non."
+        }
+      ],
+      "note": "SafeSiso est gratuit. Tu paies seulement le peu de données mobiles utilisées par WhatsApp.",
+      "writeHowYouLike": "Écris comme tu veux. Les messages courts, les langues mélangées et les fautes d'orthographe ne posent aucun problème — SafeSiso est fait pour les comprendre."
+    },
+    "process": {
+      "heading": "Comment fonctionne SafeSiso",
+      "intro": "Trois choses se passent discrètement en arrière-plan, pour que poser une question soit la seule chose que tu aies à faire.",
+      "steps": [
+        {
+          "title": "Une conversation confidentielle propulsée par l'IA",
+          "body": "Pose toutes tes questions sur ton corps, tes règles, tes relations, le consentement, la grossesse ou les abus. Tu reçois une réponse claire et calme, en mots simples — à n'importe quelle heure."
+        },
+        {
+          "title": "Détection automatique des signaux d'alerte",
+          "body": "SafeSiso prête attention aux signes indiquant que tu pourrais être en danger ou en détresse, et pas seulement aux mots que tu emploies. Il est conçu pour repérer quand une fille a besoin de plus que des informations."
+        },
+        {
+          "title": "Orientation SafeHer en temps réel",
+          "body": "Si tu as besoin de plus d'aide, SafeSiso te met en relation avec un espace sûr vérifié près de chez toi, qui a confirmé pouvoir t'accueillir maintenant."
+        }
+      ],
+      "cta": "Voir exactement ce qui se passe, étape par étape"
+    },
+    "trust": {
+      "heading": "Pourquoi tu peux faire confiance à SafeSiso",
+      "cards": [
+        {
+          "title": "Vérifié par une experte en santé",
+          "body": "Une experte en santé sexuelle et reproductive sous contrat relit et approuve les informations données par SafeSiso avant qu'elles ne parviennent à une fille."
+        },
+        {
+          "title": "Jamais envoyée devant une porte fermée",
+          "body": "Les partenaires SafeHer tiennent leur disponibilité à jour : tu n'es orientée que vers un espace sûr capable de t'accueillir réellement."
+        },
+        {
+          "title": "Anonyme par conception",
+          "body": "L'anonymat n'est pas une option que l'on peut désactiver. Les informations permettant de t'identifier ne sont tout simplement jamais collectées."
+        },
+        {
+          "title": "Présent la nuit",
+          "body": "SafeSiso répond vingt-quatre heures sur vingt-quatre, y compris aux heures où il n'y a aucun adulte à qui tu peux demander sans risque."
+        }
+      ]
+    },
+    "impact": {
+      "heading": "Les objectifs de ce projet pilote",
+      "intro": "SafeSiso n'a pas encore été lancé : il n'y a donc aucun résultat à présenter. Plutôt que d'afficher des chiffres qui auraient l'air réels sans l'être, voici ce que le projet pilote s'est engagé à atteindre.",
+      "targetLabel": "Objectif",
+      "targets": [
+        {
+          "value": "500",
+          "label": "filles touchées durant le premier mois après le lancement"
+        },
+        {
+          "value": "10 000",
+          "label": "filles touchées à travers le nord du Ghana d'ici la fin de 2026"
+        },
+        {
+          "value": "10+",
+          "label": "espaces sûrs partenaires vérifiés dans les trois régions du nord"
+        }
+      ],
+      "note": "Des chiffres réels remplaceront ces objectifs sur la page Impact dès que le projet pilote sera en marche. Tout ce qui y sera publié est anonymisé et agrégé — aucun contenu de conversation, ni aucun détail permettant d'identifier une fille, n'y figurera jamais."
+    },
+    "finalCta": {
+      "heading": "Tu peux poser n'importe quelle question à SafeSiso",
+      "body": "Aucun nom. Aucun jugement. Aucune trace de qui tu es.",
+      "reassurance": "Si tu n'es pas encore prête, c'est tout à fait normal. SafeSiso sera là quand tu le seras."
+    }
+  }
+}

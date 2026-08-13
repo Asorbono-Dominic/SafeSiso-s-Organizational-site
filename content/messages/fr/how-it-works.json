@@ -1,0 +1,78 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "howItWorks": {
+    "meta": {
+      "title": "Comment fonctionne SafeSiso",
+      "description": "Une explication en mots simples de ce qui se passe lorsqu'une fille écrit à SafeSiso : comment se déroule la conversation, comment SafeSiso repère celles qui ont besoin de plus que des informations, et comment se fait l'orientation vers un espace sûr vérifié du réseau SafeHer."
+    },
+    "hero": {
+      "eyebrow": "Comment ça marche",
+      "title": "Ce qui se passe réellement quand tu envoies un message",
+      "intro": "Cette page explique SafeSiso du début à la fin, sans langage technique. Elle s'adresse à deux personnes à la fois : une fille qui veut savoir dans quoi elle s'engage, et un bailleur ou un partenaire qui veut savoir précisément comment le système se comporte."
+    },
+    "steps": [
+      {
+        "number": "1",
+        "title": "Tu envoies un message",
+        "body": "Tu ouvres WhatsApp et tu écris à SafeSiso comme tu écrirais à une amie. Il n'y a ni inscription, ni formulaire, ni compte. Personne ne te demande ton nom, ton âge, ton école ni où tu habites.",
+        "detail": "Écris comme tu es à l'aise. Les messages courts, ce n'est pas un problème. Mélanger les langues, ce n'est pas un problème. Les fautes d'orthographe non plus. SafeSiso a été conçu exprès pour comprendre une écriture simple et informelle, car exiger une grammaire correcte reviendrait à exclure les filles qui en ont le plus besoin."
+      },
+      {
+        "number": "2",
+        "title": "SafeSiso répond en mots simples",
+        "body": "Tu reçois une réponse claire, calme et exacte sur ton corps, tes règles, tes relations, le consentement, la contraception, la grossesse ou les abus — sans sermon et sans jugement.",
+        "detail": "Les informations données par SafeSiso ne sont pas improvisées. Une experte en santé sexuelle et reproductive sous contrat relit et approuve le contenu avant qu'il ne soit utilisé dans une vraie conversation. Lorsqu'une question nécessite un professionnel plutôt qu'une explication, SafeSiso le dit au lieu de deviner."
+      },
+      {
+        "number": "3",
+        "title": "SafeSiso repère les signes que tu as besoin de plus que des informations",
+        "body": "En même temps qu'il répond, SafeSiso reste attentif aux indices montrant que tu pourrais être en danger, subir des violences, ou risquer une grossesse que tu n'as pas choisie. C'est ce que nous appelons la détection des signaux d'alerte.",
+        "detail": "La plupart des systèmes qui tentent cela se contentent de chercher des mots alarmants, ce qui échoue dans les deux sens : ils passent à côté d'une fille qui décrit un grave danger avec des mots doux, et ils s'affolent devant une fille qui pose simplement une question. SafeSiso évalue plutôt quatre éléments ensemble."
+      },
+      {
+        "number": "4",
+        "title": "Si tu as besoin d'aide, on te propose un espace sûr qui est ouvert",
+        "body": "Lorsque les signes sont suffisamment forts, SafeSiso te propose une mise en relation avec un partenaire SafeHer — une organisation locale ou une clinique vérifiée qui accompagne les filles dans ta situation.",
+        "detail": "On te le propose, on ne t'y inscrit pas. Les partenaires SafeHer tiennent leur disponibilité à jour, et le moteur de mise en relation ne propose qu'un partenaire ayant confirmé pouvoir accueillir quelqu'un maintenant. Être envoyée devant une porte qui se révèle fermée est en soi une forme de préjudice, et le système est conçu précisément pour l'éviter."
+      }
+    ],
+    "redFlag": {
+      "heading": "Les quatre éléments que SafeSiso évalue",
+      "intro": "Chacun de ces éléments reçoit une note, et les quatre notes sont combinées en une seule mesure du degré de certitude de SafeSiso quant au fait qu'une fille a besoin de plus qu'une réponse. Une orientation n'est proposée que lorsque cette certitude combinée est suffisamment élevée — c'est pourquoi le système déclenche beaucoup moins de fausses alertes, et laisse beaucoup moins passer une situation grave exprimée discrètement, qu'un système fondé sur des mots-clés.",
+      "layers": [
+        {
+          "title": "Ce que tu as dit, dans son contexte",
+          "body": "Pas seulement les mots, mais leur sens compte tenu de tout le reste de la conversation. « Il a dit qu'il s'occuperait de moi » ne veut pas du tout dire la même chose selon ce qui précède."
+        },
+        {
+          "title": "Ce que tu sembles ressentir",
+          "body": "Le fait que la conversation porte de la peur, de la honte, de la confusion ou de la détresse — des signaux qui apparaissent souvent bien avant que quoi que ce soit d'explicite ne soit dit."
+        },
+        {
+          "title": "Si cela est déjà revenu",
+          "body": "Une inquiétude mentionnée une fois n'est pas la même chose qu'une inquiétude sur laquelle on revient sans cesse. Les récurrences dans la conversation ont du poids."
+        },
+        {
+          "title": "Si la situation s'aggrave",
+          "body": "Le fait que la situation décrite semble s'aggraver plutôt que rester stable. Une aggravation est traitée comme urgente."
+        }
+      ],
+      "honesty": "Tu ne seras pas prise au dépourvu. Si SafeSiso pense que tu as peut-être besoin de plus de soutien, il te le dit et te demande ton avis — il n'agit pas dans ton dos, et il ne contacte de lui-même ni ta famille, ni ton école, ni personne dans ta communauté."
+    },
+    "limits": {
+      "heading": "Ce que SafeSiso ne fera pas",
+      "items": [
+        "Il ne te demandera pas ton nom, ta localisation, ni quoi que ce soit d'autre permettant de t'identifier.",
+        "Il ne dira pas à tes parents, à tes enseignants, à ton église ou à ta communauté que tu as écrit.",
+        "Il ne te jugera pas, ne te punira pas et ne te fera pas la morale, quoi que tu dises.",
+        "Il ne prétendra pas être un médecin, une infirmière ou un conseiller.",
+        "Il ne remplacera pas les services d'urgence si tu es en danger immédiat."
+      ],
+      "cta": "Lire l'explication complète sur la sécurité et la confidentialité"
+    },
+    "finalCta": {
+      "heading": "Prêt quand tu le seras",
+      "body": "Tu peux poser une seule question et t'arrêter là. Tu ne t'engages à rien."
+    }
+  }
+}

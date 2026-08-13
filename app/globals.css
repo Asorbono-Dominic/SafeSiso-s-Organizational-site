@@ -10,6 +10,9 @@
 
   body {
     @apply bg-cream-100 text-teal-900 antialiased;
+    /* Clears the persistent mobile WhatsApp CTA bar so it never covers
+       content. Removed at `lg`, where the bar is hidden. */
+    @apply pb-20 lg:pb-0;
   }
 
   /* Visible focus ring for keyboard users — required for WCAG 2.1 AA (2.4.7). */

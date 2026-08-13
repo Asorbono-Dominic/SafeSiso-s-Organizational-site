@@ -1,0 +1,39 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "Comment joindre l'équipe SafeSiso. Pour les organisations partenaires, les bailleurs, les chercheurs et les journalistes."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Nous écrire",
+      "intro": "Cette page s'adresse aux organisations, aux bailleurs, aux chercheurs et aux journalistes."
+    },
+    "forGirls": {
+      "heading": "Si tu es ici pour obtenir de l'aide, ce n'est pas la bonne page",
+      "body": "N'envoie pas tes questions, ton nom ni aucun détail personnel aux adresses figurant sur cette page — ce sont de simples boîtes e-mail et elles ne sont pas privées.",
+      "cta": "Écrire à SafeSiso en privé sur WhatsApp"
+    },
+    "channels": [
+      {
+        "key": "general",
+        "heading": "Demandes générales et partenariats",
+        "body": "Pour les organisations souhaitant rejoindre le réseau SafeHer, les bailleurs, et toute personne ayant une question générale sur le programme."
+      },
+      {
+        "key": "press",
+        "heading": "Presse et médias",
+        "body": "Pour les journalistes, y compris les demandes concernant le kit logo, la couverture du lancement et les entretiens."
+      }
+    ],
+    "backing": {
+      "heading": "Partenaires du programme",
+      "body": "SafeSiso est mis en œuvre en partenariat avec la Planned Parenthood Association of Ghana (PPAG), et financé par le Fonds d'amorçage du hackathon AI for Her Future Innovation avec le soutien de l'UNFPA Ghana et du gouvernement du Canada."
+    },
+    "privacyNote": {
+      "heading": "À propos de ce que vous nous envoyez",
+      "body": "Merci de ne pas nous transmettre par e-mail d'informations concernant une fille en particulier. Si vous accompagnez une personne qui a besoin d'aide, encouragez-la à écrire directement à SafeSiso, ou contactez une organisation partenaire SafeHer de sa région."
+    }
+  }
+}

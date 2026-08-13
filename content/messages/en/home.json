@@ -1,0 +1,118 @@
+{
+  "home": {
+    "meta": {
+      "title": "Private answers about your body, on WhatsApp",
+      "description": "SafeSiso is a free, confidential WhatsApp service for adolescent girls in Northern Ghana. Ask anything about your body, your relationships and your health. No registration, no real name, no location."
+    },
+    "hero": {
+      "trustHeadline": "Completely private. No judgment. No name needed.",
+      "supporting": "SafeSiso answers your questions about your body, your relationships and your health — on WhatsApp, day or night.",
+      "mission": "We are here so that every girl in Northern Ghana can get an honest answer to the questions she is afraid to ask out loud — and, if she needs more than an answer, a safe place nearby that is ready to help.",
+      "conversationLabel": "An example of what a SafeSiso conversation looks like",
+      "conversationDisclaimer": "An illustration, not a real conversation. Real chats are never shown to anyone.",
+      "conversation": [
+        {
+          "from": "girl",
+          "text": "hi i want to ask something but im scared"
+        },
+        {
+          "from": "safesiso",
+          "text": "You're safe here. You don't have to tell me your name, and nobody else can see this chat. Ask me anything."
+        },
+        {
+          "from": "girl",
+          "text": "my period is 2 weeks late what does it mean"
+        },
+        {
+          "from": "safesiso",
+          "text": "Thank you for trusting me with that. A late period can happen for a few reasons — stress, illness, a change in weight, or pregnancy. Can I ask you a couple of questions so I can help you properly?"
+        }
+      ]
+    },
+    "anonymity": {
+      "heading": "You never have to say who you are",
+      "body": "SafeSiso was built so that the question of who you are never comes up. There is nothing to sign up for and nothing to prove.",
+      "points": [
+        {
+          "title": "No registration",
+          "body": "There is no form, no account and no password. You just send a message."
+        },
+        {
+          "title": "No real name",
+          "body": "You are never asked for your name, and you never have to give one."
+        },
+        {
+          "title": "No location",
+          "body": "You are never asked where you live. If you are offered a safe space, you choose whether to go."
+        }
+      ],
+      "note": "SafeSiso is free to use. You only pay for the small amount of mobile data WhatsApp uses.",
+      "writeHowYouLike": "Write however you like. Short messages, mixed languages and spelling mistakes are all fine — SafeSiso is built to understand them."
+    },
+    "process": {
+      "heading": "How SafeSiso works",
+      "intro": "Three things happen quietly in the background, so that asking a question is the only thing you have to do.",
+      "steps": [
+        {
+          "title": "Confidential AI-powered SRH chat",
+          "body": "Ask anything about your body, periods, relationships, consent, pregnancy or abuse. You get a clear, calm answer in plain language — any hour of the day."
+        },
+        {
+          "title": "Automated red-flag detection",
+          "body": "SafeSiso pays attention to signs that you may be in danger or distress, not just to the words you use. It is designed to notice when a girl needs more than information."
+        },
+        {
+          "title": "Real-time SafeHer referral",
+          "body": "If you need more help, SafeSiso connects you to a verified safe space near you that has said it can take you right now."
+        }
+      ],
+      "cta": "See exactly what happens, step by step"
+    },
+    "trust": {
+      "heading": "Why you can trust SafeSiso",
+      "cards": [
+        {
+          "title": "Checked by a health expert",
+          "body": "A contracted sexual and reproductive health expert reviews and approves the information SafeSiso gives before it ever reaches a girl."
+        },
+        {
+          "title": "Never sent to a closed door",
+          "body": "SafeHer partners keep their availability up to date, so you are only ever referred to a safe space that can actually receive you."
+        },
+        {
+          "title": "Anonymous by design",
+          "body": "Anonymity is not a setting that can be switched off. Identifying information is never collected in the first place."
+        },
+        {
+          "title": "There at night",
+          "body": "SafeSiso answers twenty-four hours a day, including the hours when there is no adult you can safely ask."
+        }
+      ]
+    },
+    "impact": {
+      "heading": "What this pilot is aiming for",
+      "intro": "SafeSiso has not launched yet, so there are no results to report. Rather than show numbers that look real but are not, here is what the pilot has committed to achieve.",
+      "targetLabel": "Target",
+      "targets": [
+        {
+          "value": "500",
+          "label": "girls reached in the first month after launch"
+        },
+        {
+          "value": "10,000",
+          "label": "girls reached across Northern Ghana by the end of 2026"
+        },
+        {
+          "value": "10+",
+          "label": "verified SafeHer safe space partners across the three northern regions"
+        }
+      ],
+      "note": "Live figures will replace these targets on the Impact page once the pilot is running. Everything published there is anonymized and aggregated — no conversation content, and no detail that could identify a girl, will ever appear."
+    },
+    "finalCta": {
+      "heading": "You can ask SafeSiso anything",
+      "body": "No name. No judgment. No record of who you are.",
+      "reassurance": "If you are not ready yet, that is completely fine. SafeSiso will be here whenever you are."
+    }
+  }
+}

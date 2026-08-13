@@ -30,5 +30,10 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      # A key present in en but missing from fr renders the raw key path to a
+      # visitor rather than failing the build, so it has to be caught here.
+      - name: Check message catalogues are in sync
+        run: npm run check:messages
+
       - name: Build
         run: npm run build

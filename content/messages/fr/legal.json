@@ -1,0 +1,155 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "legal": {
+    "draftNotice": {
+      "heading": "Projet — non encore approuvé",
+      "body": "Ce document n'a pas encore été relu et approuvé par la PPAG et l'UNFPA. Il est publié à l'état de projet afin de pouvoir être examiné, et ne doit pas être considéré comme définitif."
+    },
+    "lastUpdatedLabel": "Dernière mise à jour"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Politique de confidentialité",
+      "description": "Ce que le site SafeSiso collecte, ce que le chatbot SafeSiso collecte, comment ces données sont anonymisées, et vos droits au titre de la loi ghanéenne sur la protection des données de 2012 (Act 843)."
+    },
+    "hero": {
+      "eyebrow": "Mentions légales",
+      "title": "Politique de confidentialité",
+      "intro": "SafeSiso s'adresse à des adolescentes, dont des mineures, sur des sujets qui pourraient les mettre en danger s'ils étaient révélés. Cette politique est rédigée pour être comprise, et non pour nous protéger."
+    },
+    "sections": [
+      {
+        "heading": "En résumé",
+        "body": [
+          "SafeSiso ne demande à aucune fille son nom, son âge, sa localisation, ni quoi que ce soit d'autre permettant de l'identifier — ni sur ce site, ni dans le chatbot.",
+          "Il n'y a aucun compte à créer et aucun profil conservé à son sujet. La protection est structurelle : une information qui n'est jamais collectée ne peut être ni divulguée, ni réclamée, ni perdue."
+        ]
+      },
+      {
+        "heading": "Ce que ce site collecte",
+        "body": [
+          "Le site public ne vous demande pas de vous identifier et ne comporte ni connexion, ni inscription à une lettre d'information, ni formulaire de retour destiné aux visiteurs.",
+          "Aucun mécanisme sur ce site n'invite délibérément une fille à transmettre des informations personnelles, car le public inclut des mineures et cette limite doit valoir sur le site autant que dans le chatbot.",
+          "Le site n'utilise aucun traceur publicitaire ni script de profilage tiers. Lorsque des statistiques de fréquentation sont utilisées, elles fonctionnent sans cookies, sont agrégées, et ne permettent ni d'identifier un visiteur ni de relier ses visites entre différents sites."
+        ]
+      },
+      {
+        "heading": "Ce que le chatbot collecte",
+        "body": [
+          "Lorsqu'une fille écrit à SafeSiso sur WhatsApp, la conversation est traitée afin de répondre à sa question et de détecter des signes indiquant qu'elle pourrait être en danger.",
+          "SafeSiso ne demande à aucun moment son nom, son âge, son école, son adresse ou sa localisation.",
+          "Les données de conversation sont anonymisées et servent uniquement à deux fins : faire fonctionner le service lui-même, et produire des statistiques agrégées — nombre de conversations, d'orientations et de personnes touchées — pour le reporting du programme auprès de l'UNFPA Ghana et de la PPAG.",
+          "Le contenu des conversations n'est jamais publié. Rien de ce qui figure sur ce site, sur la page Impact ou dans un rapport public ne contient de contenu de conversation ni de détail permettant d'identifier une fille."
+        ]
+      },
+      {
+        "heading": "Ce que WhatsApp lui-même peut voir",
+        "body": [
+          "SafeSiso passe par WhatsApp, exploité par un tiers et régi par ses propres conditions de confidentialité. Écrire à un compte WhatsApp professionnel implique que ce compte voit le numéro de téléphone d'où provient le message.",
+          "Nous l'indiquons clairement plutôt que de laisser croire à un niveau d'anonymat que ce canal ne peut pas offrir. SafeSiso n'utilise pas ce numéro pour identifier une fille, ne le relie pas à sa conversation au-delà de ce qui est nécessaire au service, et ne le communique jamais à un partenaire SafeHer ni à quiconque.",
+          "SafeSiso ne peut pas non plus protéger une conversation de quelqu'un ayant un accès physique au téléphone de la fille. Des conseils à ce sujet figurent sur la page Sécurité et confidentialité."
+        ]
+      },
+      {
+        "heading": "Ce que reçoivent les partenaires SafeHer",
+        "body": [
+          "Lorsqu'une fille accepte une orientation, le partenaire SafeHer concerné est informé qu'une personne a besoin de soutien et ne reçoit que ce qui lui est nécessaire pour se tenir prêt à l'accueillir.",
+          "Les partenaires ne reçoivent ni l'historique de la conversation, ni une identité — puisque aucune n'a été collectée."
+        ]
+      },
+      {
+        "heading": "Comment sont traitées les données propres aux organisations partenaires",
+        "body": [
+          "Les organisations partenaires SafeHer disposent de comptes sur le portail partenaire, ce qui implique bien des informations identifiantes : un nom d'organisation, une personne de contact et une adresse e-mail professionnelle.",
+          "Il s'agit de coordonnées organisationnelles fournies par des adultes consentants agissant pour leur organisation, conservées afin de faire fonctionner le réseau d'orientation — acheminer correctement les orientations et enregistrer les disponibilités. Elles ne sont pas partagées au-delà du programme SafeSiso et de son reporting auprès de l'UNFPA Ghana et de la PPAG."
+        ]
+      },
+      {
+        "heading": "Base légale et vos droits",
+        "body": [
+          "SafeSiso relève de la loi ghanéenne sur la protection des données de 2012 (Act 843). Les informations de santé y constituent des données personnelles sensibles.",
+          "L'Act 843 est moins explicite que certains autres régimes sur l'âge à partir duquel une mineure peut consentir elle-même. La conception de SafeSiso répond à cette question en la supprimant : en ne collectant jamais de données identifiantes auprès d'une mineure, il n'existe aucune donnée personnelle identifiable dont le consentement serait en cause.",
+          "Lorsque vous nous avez fourni des informations identifiantes — par exemple en tant que contact d'un partenaire SafeHer — vous avez le droit de demander quelles données sont conservées à votre sujet, de les faire rectifier, et d'en demander la suppression."
+        ]
+      },
+      {
+        "heading": "Enregistrement auprès de la Commission de protection des données",
+        "body": [
+          "SafeSiso s'enregistre comme responsable de traitement auprès de la Commission ghanéenne de protection des données. Cet enregistrement est renouvelé tous les deux ans."
+        ]
+      },
+      {
+        "heading": "Modifications de cette politique",
+        "body": [
+          "Si cette politique évolue d'une manière qui modifie ce qui est collecté ou l'usage qui en est fait, le changement sera reflété ici avec la date de son entrée en vigueur."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "meta": {
+      "title": "Conditions d'utilisation",
+      "description": "Les conditions applicables au site et au service WhatsApp SafeSiso, y compris ses limites en tant que source d'information santé et son statut de service non urgent."
+    },
+    "hero": {
+      "eyebrow": "Mentions légales",
+      "title": "Conditions d'utilisation",
+      "intro": "Ces conditions s'appliquent au site SafeSiso et au service WhatsApp SafeSiso."
+    },
+    "sections": [
+      {
+        "heading": "SafeSiso est gratuit",
+        "body": [
+          "L'utilisation du site et du service WhatsApp SafeSiso est gratuite. Les frais de données mobiles habituels de votre opérateur s'appliquent toujours aux messages WhatsApp."
+        ]
+      },
+      {
+        "heading": "SafeSiso ne constitue pas un avis médical",
+        "body": [
+          "SafeSiso fournit des informations générales en santé sexuelle et reproductive. Ce n'est ni un médecin, ni une infirmière, ni un conseiller, et il ne procède à aucun examen, diagnostic, prescription ou traitement.",
+          "Les informations fournies par SafeSiso ne remplacent pas une prise en charge médicale professionnelle et ne doivent pas constituer le seul fondement d'une décision concernant votre santé. Lorsqu'une question relève d'un clinicien, SafeSiso le signalera."
+        ]
+      },
+      {
+        "heading": "SafeSiso n'est pas un service d'urgence",
+        "body": [
+          "SafeSiso ne peut ni envoyer de secours, ni contacter la police, ni intervenir en cas d'urgence. Il peut proposer une mise en relation avec un espace sûr vérifié ayant confirmé sa disponibilité.",
+          "En cas de danger immédiat, contactez sans délai les services d'urgence ou un adulte de confiance."
+        ]
+      },
+      {
+        "heading": "Vous parlez à une intelligence artificielle",
+        "body": [
+          "Les réponses sont générées par un assistant basé sur l'intelligence artificielle, et non rédigées en temps réel par une personne. Son contenu est relu et approuvé par une experte en santé sexuelle et reproductive sous contrat avant déploiement.",
+          "Comme tout système d'IA, les réponses peuvent occasionnellement être incomplètes ou erronées. SafeSiso est conçu pour reconnaître son incertitude et vous orienter vers un professionnel plutôt que de deviner, mais aucun système de ce type n'est parfait."
+        ]
+      },
+      {
+        "heading": "À qui s'adresse SafeSiso",
+        "body": [
+          "SafeSiso est conçu pour les adolescentes de 10 à 18 ans du nord du Ghana. Il ne vérifie ni l'identité ni l'âge des personnes qui lui écrivent, car cette vérification exigerait de collecter les informations identifiantes que le service est conçu pour ne jamais recueillir."
+        ]
+      },
+      {
+        "heading": "Usage acceptable",
+        "body": [
+          "N'utilisez pas SafeSiso pour usurper l'identité d'autrui, pour tenter d'obtenir des informations sur une autre personne, ou pour perturber le fonctionnement du service.",
+          "N'utilisez pas le portail partenaire SafeHer sans y être autorisé par une organisation partenaire vérifiée."
+        ]
+      },
+      {
+        "heading": "Disponibilité",
+        "body": [
+          "SafeSiso vise une disponibilité continue, mais il repose sur des infrastructures tierces, dont WhatsApp, et ne peut être garanti ininterrompu ni exempt d'erreurs.",
+          "SafeSiso est un programme pilote. Les fonctionnalités décrites sur ce site peuvent évoluer au fil de son développement."
+        ]
+      },
+      {
+        "heading": "Droit applicable",
+        "body": [
+          "Ces conditions sont régies par le droit de la République du Ghana, y compris la loi sur la protection des données de 2012 (Act 843)."
+        ]
+      }
+    ]
+  }
+}

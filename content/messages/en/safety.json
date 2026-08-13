@@ -1,0 +1,101 @@
+{
+  "safety": {
+    "meta": {
+      "title": "Safety & Your Privacy",
+      "description": "What SafeSiso can and cannot do, what happens if it detects that you may be at risk, and exactly how your privacy is protected. Written plainly, with nothing hidden."
+    },
+    "hero": {
+      "eyebrow": "Safety & your privacy",
+      "title": "What SafeSiso can do, and what it cannot",
+      "intro": "This is the page we would most want you to read. It explains the limits of what SafeSiso is, so that nothing about it can take you by surprise."
+    },
+    "emergency": {
+      "heading": "If you are in immediate danger right now",
+      "body": "SafeSiso is not an emergency service and cannot send anyone to you. If you are being hurt, or you are afraid you are about to be, get to somewhere safe and reach an adult you trust or the emergency services as quickly as you can.",
+      "pendingIntro": "A verified local emergency contact will be published here.",
+      "pendingReason": "We have not published one yet, because we will not print a number until PPAG and UNFPA have confirmed it is currently staffed and answering. A number that rings out to a girl in danger is worse than no number at all."
+    },
+    "canDo": {
+      "heading": "What SafeSiso can do",
+      "items": [
+        "Answer questions about your body, periods, relationships, consent, contraception and pregnancy, in plain language and without judgment.",
+        "Explain what abuse and exploitation look like, including when they come from someone you know or trust.",
+        "Notice signs in your conversation that you may be at risk, and gently ask about them.",
+        "Offer to connect you to a verified safe space near you that has confirmed it can receive someone right now.",
+        "Be available at any hour, including at night."
+      ]
+    },
+    "cannotDo": {
+      "heading": "What SafeSiso cannot do",
+      "items": [
+        "It cannot examine you, diagnose you, or prescribe anything. It is not a doctor or a nurse.",
+        "It cannot provide counselling or therapy. It is not a counsellor.",
+        "It cannot come to you, call the police for you, or intervene in an emergency.",
+        "It cannot promise that an answer fits your exact situation. Where you need a professional, it will tell you so.",
+        "It cannot protect you from someone who has access to your phone. See below."
+      ]
+    },
+    "redFlag": {
+      "heading": "What happens if SafeSiso thinks you may be at risk",
+      "intro": "SafeSiso pays attention to more than the words you use. It weighs what you said in context, how you seem to be feeling, whether a worry keeps returning, and whether things appear to be getting worse.",
+      "steps": [
+        {
+          "title": "It tells you",
+          "body": "If SafeSiso becomes concerned, it says so directly. It does not act quietly in the background."
+        },
+        {
+          "title": "It asks, it does not decide for you",
+          "body": "You are offered a connection to a safe space. You can say no, and you can keep chatting. Saying no does not end the conversation or change how you are treated."
+        },
+        {
+          "title": "Only what is needed is shared",
+          "body": "If you accept, a SafeHer partner is notified that someone needs support. Your conversation is not handed over to them, and neither is your identity — because SafeSiso never collected it."
+        },
+        {
+          "title": "Nobody in your life is contacted",
+          "body": "SafeSiso does not contact your parents, your school, your church, or anyone in your community. Not to warn them, and not to check on you."
+        }
+      ]
+    },
+    "privacy": {
+      "heading": "How your privacy is protected",
+      "intro": "The strongest privacy protection is not a promise to guard your information carefully. It is never asking for it.",
+      "points": [
+        {
+          "title": "Nothing identifying is collected",
+          "body": "No name, no age, no school, no location, no account. There is no profile of you to leak, subpoena or lose."
+        },
+        {
+          "title": "Nothing you say appears on this website",
+          "body": "Conversation content never surfaces publicly. Any figures published on this site are anonymized and aggregated — counts, never content."
+        },
+        {
+          "title": "Safe space partners see a referral, not a transcript",
+          "body": "A SafeHer partner is told that support is needed. They are not given your chat history."
+        },
+        {
+          "title": "This website does not track you",
+          "body": "The public site uses no advertising trackers and no third-party profiling scripts. Any analytics used are cookie-less and cannot identify an individual visitor."
+        }
+      ]
+    },
+    "phoneSafety": {
+      "heading": "One thing SafeSiso cannot protect you from",
+      "body": "SafeSiso can keep your conversation private from us and from everyone else. It cannot keep it private from someone who picks up your phone and opens WhatsApp.",
+      "advice": [
+        "If someone else has access to your phone, you can delete the SafeSiso conversation after you finish. Deleting it on your side does not stop you from messaging again later.",
+        "If it is not safe to have the conversation on your phone at all, a friend's phone works just as well — SafeSiso does not know or care whose phone it is."
+      ]
+    },
+    "dataProtection": {
+      "heading": "Your rights under Ghanaian law",
+      "body": "SafeSiso operates under Ghana's Data Protection Act, 2012 (Act 843). Health information counts as special personal data under that Act, which is precisely why SafeSiso is designed not to collect identifying information from a minor in the first place.",
+      "registrationLabel": "Data Protection Commission registration:",
+      "policyLink": "Read the full Privacy Policy"
+    },
+    "closing": {
+      "heading": "Still want to ask something?",
+      "body": "Knowing the limits does not mean you should not ask. It means you know exactly what you are getting."
+    }
+  }
+}

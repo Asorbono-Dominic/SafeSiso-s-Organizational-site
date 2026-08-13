@@ -1,0 +1,91 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "faq": {
+    "meta": {
+      "title": "Questions fréquentes",
+      "description": "Des réponses directes sur la confidentialité réelle de SafeSiso, son coût, qui est derrière le service, et ce qu'il advient de ce que tu dis."
+    },
+    "hero": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Les questions que les gens posent vraiment",
+      "intro": "Certaines sont posées par des filles. D'autres par des parents, des enseignants et des responsables communautaires. Les deux séries reçoivent ici une réponse honnête."
+    },
+    "sections": [
+      {
+        "heading": "Pour les filles",
+        "items": [
+          {
+            "question": "Est-ce vraiment confidentiel ?",
+            "answer": "Oui. SafeSiso ne demande jamais ton nom, ton âge, ton école ni où tu habites : il n'y a donc rien à révéler à ton sujet. Personne dans ta famille, ton école ou ta communauté n'est contacté. La seule chose à savoir, c'est que SafeSiso ne peut pas cacher la conversation à quelqu'un qui prend ton téléphone — si c'est un risque, supprime la conversation après, ou utilise le téléphone d'une amie."
+          },
+          {
+            "question": "Est-ce que ça coûte quelque chose ?",
+            "answer": "SafeSiso est entièrement gratuit. Tu paies seulement le peu de données mobiles que WhatsApp utilise pour envoyer et recevoir des messages, ce qui est très faible."
+          },
+          {
+            "question": "Dois-je donner mon nom ?",
+            "answer": "Non. Ni au début, ni plus tard, ni jamais. Même si tu le donnes spontanément, tu n'y es pas obligée — SafeSiso n'en a pas besoin et ne le demande pas."
+          },
+          {
+            "question": "Est-ce que je parle à une vraie personne ?",
+            "answer": "Tu parles à un assistant basé sur l'intelligence artificielle, pas à une personne. Nous te le disons clairement plutôt que de te laisser croire le contraire. Les informations qu'il donne ont été relues et approuvées par une experte qualifiée en santé sexuelle et reproductive."
+          },
+          {
+            "question": "Et si j'écris mal ou si je mélange les langues ?",
+            "answer": "Ce n'est pas un problème et cela ne changera rien à la réponse que tu recevras. SafeSiso a été conçu exprès pour comprendre les messages courts, informels, mal orthographiés et en plusieurs langues, car exiger une grammaire correcte exclurait les filles qui ont le plus besoin d'aide."
+          },
+          {
+            "question": "Que se passe-t-il si je dis quelque chose de grave à SafeSiso ?",
+            "answer": "Si SafeSiso craint que tu sois en danger, il te le dira et te demandera si tu souhaites être mise en relation avec un espace sûr près de chez toi. Tu peux refuser. Rien n'est fait dans ton dos, et personne de ton entourage n'est contacté."
+          },
+          {
+            "question": "Puis-je parler de quelque chose qui m'est déjà arrivé ?",
+            "answer": "Oui. SafeSiso s'adresse aux filles qui craignent que quelque chose arrive, à celles qui sont en plein dedans, et à celles qui vivent avec quelque chose survenu il y a longtemps. Il n'y a pas de mauvais moment pour demander."
+          },
+          {
+            "question": "Et si je veux poser une seule question et m'arrêter là ?",
+            "answer": "Alors pose une seule question et arrête-toi là. Il n'y a ni compte, ni relance, ni engagement. Tu peux revenir dans six mois, ou jamais."
+          }
+        ]
+      },
+      {
+        "heading": "Pour les parents, les enseignants et les responsables communautaires",
+        "items": [
+          {
+            "question": "Qui est derrière SafeSiso ?",
+            "answer": "SafeSiso est un projet pilote financé par le Fonds d'amorçage du hackathon AI for Her Future Innovation, avec le soutien de l'UNFPA Ghana et du gouvernement du Canada, et mis en œuvre en partenariat avec la Planned Parenthood Association of Ghana (PPAG). Il est né comme l'innovation lauréate du hackathon AI4HerFuture organisé par l'UNFPA Ghana et l'Africa Health Innovation Centre."
+          },
+          {
+            "question": "Les informations de santé sont-elles exactes ?",
+            "answer": "Une experte en santé sexuelle et reproductive sous contrat relit et approuve le contenu du chatbot avant son déploiement. Lorsqu'une question relève d'un clinicien plutôt que d'une explication, SafeSiso le dit au lieu de deviner."
+          },
+          {
+            "question": "Le contenu est-il adapté à l'âge ?",
+            "answer": "SafeSiso est conçu pour les filles de 10 à 18 ans, et son contenu est relu en tenant compte de cette tranche d'âge. Il fournit des informations de santé factuelles et adaptées à l'âge, dans un langage calme et simple."
+          },
+          {
+            "question": "Serai-je informé si ma fille l'utilise ?",
+            "answer": "Non. SafeSiso est confidentiel par conception, et c'est cette confidentialité qui le rend efficace. Un service qui rend des comptes aux adultes est un service que les filles n'utiliseront pas — à commencer par celles qui sont le plus en danger, et qui ont les meilleures raisons de se taire."
+          },
+          {
+            "question": "Quelles données sont conservées, et où ?",
+            "answer": "SafeSiso ne recueille ni noms, ni localisations, ni aucun détail identifiant. Des données de conversation anonymisées alimentent les fonctions de sécurité et produisent des statistiques agrégées destinées à l'UNFPA Ghana et à la PPAG. SafeSiso relève de la loi ghanéenne sur la protection des données de 2012 (Act 843). Le détail complet figure dans la politique de confidentialité."
+          },
+          {
+            "question": "Et si une fille est réellement en danger ?",
+            "answer": "SafeSiso n'est pas un service d'urgence et ne se présente pas comme tel. Il peut détecter des signaux de risque et proposer une mise en relation avec un espace sûr vérifié ayant confirmé sa disponibilité, mais il ne peut pas envoyer de secours. En cas d'urgence, un adulte de confiance ou les services d'urgence restent la bonne voie."
+          },
+          {
+            "question": "Les garçons peuvent-ils l'utiliser ?",
+            "answer": "SafeSiso est conçu et financé spécifiquement pour les adolescentes du nord du Ghana, et son contenu est écrit pour elles. Il ne vérifie pas qui lui écrit, car cette vérification supposerait de recueillir une identité — précisément ce que le service est conçu pour ne jamais faire."
+          }
+        ]
+      }
+    ],
+    "closing": {
+      "heading": "Une question sans réponse ici ?",
+      "body": "Si vous êtes une organisation partenaire, un journaliste ou un bailleur et que votre question n'est pas traitée sur cette page, écrivez-nous.",
+      "cta": "Contacter l'équipe SafeSiso"
+    }
+  }
+}

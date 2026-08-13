@@ -1,0 +1,38 @@
+{
+  "contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "How to reach the SafeSiso team. For partner organizations, funders, researchers and journalists."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Get in touch",
+      "intro": "This page is for organizations, funders, researchers and journalists."
+    },
+    "forGirls": {
+      "heading": "If you are here for help, this is not the page you need",
+      "body": "Do not send your questions, your name or any personal details to the addresses on this page — they are ordinary email inboxes and they are not private.",
+      "cta": "Message SafeSiso privately on WhatsApp instead"
+    },
+    "channels": [
+      {
+        "key": "general",
+        "heading": "General and partnership enquiries",
+        "body": "For organizations interested in joining the SafeHer network, funders, and anyone with a general question about the programme."
+      },
+      {
+        "key": "press",
+        "heading": "Press and media",
+        "body": "For journalists, including requests for the logo kit, launch coverage and interviews."
+      }
+    ],
+    "backing": {
+      "heading": "Programme partners",
+      "body": "SafeSiso is delivered in partnership with the Planned Parenthood Association of Ghana (PPAG), and funded through the AI for Her Future Innovation Hackathon Seed Fund with support from UNFPA Ghana and the Government of Canada."
+    },
+    "privacyNote": {
+      "heading": "A note on what you send us",
+      "body": "Please do not send us details about an individual girl by email. If you are supporting someone who needs help, encourage her to message SafeSiso directly, or contact a SafeHer partner organization in her area."
+    }
+  }
+}

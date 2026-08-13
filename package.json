@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "check:messages": "node scripts/check-messages.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

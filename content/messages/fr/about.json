@@ -1,0 +1,106 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "about": {
+    "meta": {
+      "title": "À propos de SafeSiso",
+      "description": "SafeSiso est né comme l'idée lauréate du hackathon AI4HerFuture organisé par l'UNFPA Ghana et l'Africa Health Innovation Centre. C'est aujourd'hui un projet pilote financé qui s'attaque aux grossesses adolescentes et à l'exploitation sexuelle dans le nord du Ghana."
+    },
+    "hero": {
+      "eyebrow": "À propos de SafeSiso",
+      "title": "Une réponse à une crise que le silence entretient",
+      "intro": "SafeSiso existe à cause d'une lacune précise : il n'existait aucun canal sûr, exempt de stigmatisation et disponible en permanence, par lequel une adolescente du nord du Ghana pouvait poser des questions sur son corps, ses relations, le consentement ou sa santé reproductive — sans craindre le jugement, la punition ou l'exposition."
+    },
+    "origin": {
+      "heading": "D'où vient SafeSiso",
+      "body": [
+        "SafeSiso a été l'innovation lauréate du hackathon AI4HerFuture, organisé par l'UNFPA Ghana et l'Africa Health Innovation Centre (AHIC).",
+        "À l'époque du hackathon, ce n'était qu'une idée, fondée sur une conviction simple : une fille qui dispose de la bonne information au bon moment est mieux protégée contre la grossesse adolescente et l'exploitation.",
+        "Le projet est aujourd'hui financé par le Fonds d'amorçage du hackathon AI for Her Future Innovation, avec le soutien de l'UNFPA Ghana et du gouvernement du Canada. Environ quatre-vingt-quinze pour cent du fonds d'amorçage sert directement à transformer l'idée en un pilote opérationnel — le chatbot WhatsApp, le réseau d'orientation SafeHer, le tableau de bord administratif et le programme de sensibilisation communautaire."
+      ]
+    },
+    "problem": {
+      "heading": "Le problème auquel SafeSiso répond",
+      "intro": "La vulnérabilité des adolescentes face à la grossesse précoce et à l'exploitation sexuelle est l'un des défis de santé publique les plus persistants du Ghana, et il pèse de façon disproportionnée sur les filles du nord du pays.",
+      "statistic": {
+        "value": "≈15 %",
+        "label": "des filles de 15 à 19 ans au Ghana ont déjà commencé à avoir des enfants",
+        "source": "Données nationales du Ghana Health Service. Le nord du Ghana enregistre systématiquement des taux supérieurs à la moyenne nationale."
+      },
+      "body": [
+        "Les causes s'additionnent plutôt qu'elles ne s'isolent : des normes culturelles profondément ancrées, les pratiques de mariage précoce, un accès limité à l'éducation et d'importantes lacunes dans les services de santé adaptés aux adolescentes.",
+        "Dans ce contexte, la grossesse adolescente n'est pas seulement un problème de santé. C'est la conséquence d'une pauvreté informationnelle. Beaucoup de filles des zones rurales et périurbaines du nord du Ghana n'ont aucune source d'information fiable, privée et accessible sur leur corps, leurs droits, ou la manière de reconnaître et de signaler des abus.",
+        "La stigmatisation culturelle entourant les menstruations, la sexualité et la santé reproductive empêche les filles de poser des questions à la maison, à l'école ou dans un établissement de santé. Résultat : elles prennent des décisions déterminantes pour leur vie sans aucun repère fiable.",
+        "Dans le même temps, les cliniques sont éloignées, en sous-effectif, et souvent perçues par les jeunes filles comme peu accueillantes ou moralisatrices. L'éducation à la santé en milieu scolaire est irrégulière et fréquemment insuffisante."
+      ]
+    },
+    "whyWhatsApp": {
+      "heading": "Pourquoi WhatsApp",
+      "intro": "WhatsApp n'a pas été choisi par commodité. Il a été choisi parce que c'est le seul canal qui lève tous les obstacles à la fois.",
+      "reasons": [
+        {
+          "title": "Les filles l'utilisent déjà",
+          "body": "WhatsApp est la messagerie dominante au Ghana, y compris chez les jeunes des zones rurales et périurbaines du nord. Des filles qui n'utilisent aucune autre plateforme numérique le connaissent déjà."
+        },
+        {
+          "title": "Son coût d'usage est minime",
+          "body": "La messagerie WhatsApp consomme très peu de données mobiles, ce qui la maintient à la portée des petits forfaits abordables que ce public achète réellement."
+        },
+        {
+          "title": "Il fonctionne sur des téléphones basiques",
+          "body": "Il fonctionne sur les smartphones Android d'entrée de gamme largement répandus dans le nord du Ghana. Aucun appareil haut de gamme ni connexion haut débit stable n'est nécessaire."
+        },
+        {
+          "title": "Il donne déjà un sentiment d'intimité",
+          "body": "Une conversation WhatsApp paraît personnelle et fermée, ce qui n'est pas le cas d'une visite en clinique ou d'une démarche auprès d'un adulte. Cela abaisse la barrière psychologique à poser une question."
+        },
+        {
+          "title": "Il est là à deux heures du matin",
+          "body": "Contrairement à un agent de santé ou à un conseiller, WhatsApp est disponible à toute heure — y compris la nuit, lorsque beaucoup de filles se sentent le plus vulnérables, et le plus disposées à demander de l'aide."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "Ce qui distingue SafeSiso",
+      "intro": "SafeSiso se situe au croisement de l'intelligence artificielle, de l'éducation à la santé des adolescentes et de l'orientation communautaire. Contrairement à une campagne d'affichage ou à une action de sensibilisation ponctuelle, il fonctionne en continu.",
+      "points": [
+        {
+          "title": "Une détection du risque qui comprend le contexte",
+          "body": "Un modèle de notation de confiance à quatre couches, fondé sur la théorie de l'utilité multi-attributs, va au-delà du repérage de mots-clés : il évalue ensemble le contexte de la conversation, le ressenti, les récurrences et l'aggravation — produisant un score de risque assez précis pour déclencher une orientation de façon responsable."
+        },
+        {
+          "title": "Une liste d'orientation réellement à jour",
+          "body": "La liste SafeHer est un répertoire vérifié d'espaces sûrs qui reflète la disponibilité réelle : une fille n'est jamais envoyée là où on ne peut pas l'accueillir."
+        },
+        {
+          "title": "Un anonymat intégré, non ajouté après coup",
+          "body": "Une anonymisation complète dès la conception permet à une fille de chercher de l'aide sans craindre que son identité soit révélée."
+        },
+        {
+          "title": "Des données exploitables par les bailleurs et les chercheurs",
+          "body": "Un tableau de bord administratif produit des données de programme anonymisées et agrégées — la base de preuves nécessaire pour démontrer l'impact et éclairer les recherches et programmes futurs."
+        }
+      ]
+    },
+    "who": {
+      "heading": "À qui s'adresse SafeSiso",
+      "intro": "SafeSiso s'adresse directement aux adolescentes de 10 à 18 ans des communautés rurales et périurbaines du nord du Ghana, avec une attention initiale portée aux régions du Nord, du Haut-Orient et du Haut-Occident.",
+      "groups": [
+        "Les filles scolarisées ayant un accès limité à des informations fiables sur la santé",
+        "Les filles déscolarisées et celles ayant abandonné l'école, davantage exposées à l'exploitation et à la grossesse précoce",
+        "Les filles ayant déjà vécu une grossesse adolescente et ayant besoin d'un accompagnement et d'informations continues",
+        "Les filles vivant dans des communautés où les normes culturelles interdisent de parler ouvertement des menstruations, de la sexualité et des relations",
+        "Les filles victimes d'abus sexuels ou exposées à ce risque, sans aucun recours accessible pour signaler ou se faire aider"
+      ],
+      "inclusion": "La conception est délibérément inclusive. Parce que SafeSiso ne requiert qu'un smartphone basique et WhatsApp, il n'exclut aucune fille en raison de son niveau d'alphabétisation, de sa situation géographique, d'un handicap ou de sa situation économique — et le chatbot est conçu pour comprendre un langage simple plutôt que d'exiger une écriture formelle et grammaticalement correcte."
+    },
+    "partners": {
+      "heading": "Qui est derrière SafeSiso",
+      "body": "SafeSiso est financé par le Fonds d'amorçage du hackathon AI for Her Future Innovation, avec le soutien de l'UNFPA Ghana et du gouvernement du Canada. Le projet est mis en œuvre en partenariat avec la Planned Parenthood Association of Ghana (PPAG), et il est né lors du hackathon AI4HerFuture organisé par l'UNFPA Ghana et l'Africa Health Innovation Centre.",
+      "accountability": "Le suivi du programme est transmis chaque mois à l'UNFPA Ghana et à la PPAG, et rend compte des activités au regard des objectifs. La responsabilité financière est assurée par les systèmes de gestion financière établis de la PPAG, conformément aux normes de reporting de l'UNFPA."
+    },
+    "closing": {
+      "heading": "La question derrière chaque décision",
+      "body": "Chaque choix de conception dans SafeSiso — le ton du chatbot, l'architecture de l'anonymat, le moteur de mise en relation — a été fait en gardant une seule question à l'esprit : de quoi une fille du nord rural du Ghana a-t-elle réellement besoin pour se sentir assez en sécurité pour demander de l'aide ?"
+    }
+  }
+}

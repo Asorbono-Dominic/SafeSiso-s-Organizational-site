@@ -1,0 +1,64 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER DECISION TO CONFIRM: girl-facing copy (home, how-it-works, safety, the 'for girls' FAQ) uses informal 'tu'; institutional copy (about, contact, legal, the 'for adults' FAQ) uses formal 'vous'. Route for review in Phase 7 before removing this key.",
+  "metadata": {
+    "siteName": "SafeSiso",
+    "defaultTitle": "SafeSiso — Un soutien confidentiel en santé sexuelle et reproductive pour les filles du nord du Ghana",
+    "defaultDescription": "SafeSiso est un service WhatsApp confidentiel, propulsé par l'IA, qui offre aux adolescentes du nord du Ghana des informations en santé sexuelle et reproductive sans jugement, ainsi qu'une orientation vers les espaces sûrs vérifiés du réseau SafeHer. Aucune inscription, aucun vrai nom, aucune localisation."
+  },
+  "common": {
+    "skipToContent": "Aller au contenu principal",
+    "languageLabel": "Langue",
+    "english": "English",
+    "french": "Français",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "partnerLogin": "Connexion partenaire SafeHer",
+    "startChat": "Démarrer une conversation privée sur WhatsApp",
+    "startChatShort": "Conversation privée",
+    "chatPrefill": "Bonjour",
+    "chatUnavailable": "La conversation WhatsApp n'est pas encore disponible",
+    "chatUnavailableHelp": "Le numéro WhatsApp de SafeSiso n'a pas encore été connecté. Ce bouton fonctionnera dès que ce sera le cas.",
+    "learnMore": "En savoir plus",
+    "readMore": "Lire la suite"
+  },
+  "nav": {
+    "home": "Accueil",
+    "howItWorks": "Comment ça marche",
+    "about": "À propos",
+    "safety": "Sécurité et confidentialité",
+    "faq": "Questions fréquentes",
+    "contact": "Contact",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  },
+  "footer": {
+    "tagline": "Des informations confidentielles et sans jugement en santé sexuelle et reproductive pour les adolescentes du nord du Ghana.",
+    "promise": "Aucune inscription, aucun vrai nom, aucune divulgation de localisation, jamais.",
+    "navHeading": "Explorer",
+    "legalHeading": "Mentions légales",
+    "backingHeading": "Qui est derrière SafeSiso",
+    "backing": "SafeSiso est un projet pilote financé par le Fonds d'amorçage du hackathon AI for Her Future Innovation, avec le soutien de l'UNFPA Ghana et du gouvernement du Canada, et mis en œuvre en partenariat avec la Planned Parenthood Association of Ghana (PPAG).",
+    "dpcLabel": "Enregistré auprès de la Commission ghanéenne de protection des données :",
+    "safetyNoticeHeading": "SafeSiso n'est pas un service d'urgence",
+    "safetyNotice": "SafeSiso donne des informations et peut te mettre en relation avec un espace sûr près de chez toi. Il ne remplace ni un médecin, ni un conseiller, ni la police. Si tu es en danger immédiat, demande de l'aide sans attendre à un adulte de confiance ou aux services d'urgence.",
+    "safetyNoticeLink": "Lire ce que SafeSiso peut et ne peut pas faire",
+    "copyright": "Tous droits réservés."
+  },
+  "pending": {
+    "marker": "EN ATTENTE",
+    "srPrefix": "Valeur pas encore disponible :",
+    "note": "Cette information sera publiée une fois confirmée. Rien n'est affiché entre-temps, car un espace réservé qui aurait l'air authentique serait pire qu'une lacune visible."
+  },
+  "notFound": {
+    "title": "Nous n'avons pas trouvé cette page",
+    "body": "La page que tu cherchais n'existe pas ou a été déplacée. Tu n'as rien fait de mal.",
+    "backHome": "Retourner à la page d'accueil"
+  },
+  "portalPlaceholder": {
+    "eyebrow": "Portail partenaire SafeHer",
+    "title": "Le portail partenaire n'est pas encore ouvert",
+    "body": "C'est ici que les organisations partenaires vérifiées du réseau SafeHer se connecteront pour gérer leur disponibilité et consulter les orientations qui leur sont adressées. Il ouvrira au début de l'intégration des partenaires.",
+    "forPartners": "Si votre organisation souhaite rejoindre le réseau SafeHer, veuillez nous contacter — la page d'adhésion des partenaires arrive prochainement.",
+    "backHome": "Retourner à la page d'accueil"
+  }
+}

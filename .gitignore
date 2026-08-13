@@ -38,6 +38,12 @@ yarn-error.log*
 # local editor / assistant settings
 .claude/settings.local.json
 
+# Source/reference documents (concept note, spec). These are internal programme
+# documents and this repository is public, so they are kept out of it
+# deliberately. Remove this rule if the team decides otherwise.
+/*.pdf
+/*.docx
+
 # vercel
 .vercel
 

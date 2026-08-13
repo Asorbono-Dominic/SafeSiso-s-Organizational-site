@@ -1,0 +1,105 @@
+{
+  "about": {
+    "meta": {
+      "title": "About SafeSiso",
+      "description": "SafeSiso began as the winning idea at the AI4HerFuture Hackathon organised by UNFPA Ghana and the Africa Health Innovation Centre. It is now a funded pilot addressing teenage pregnancy and sexual exploitation in Northern Ghana."
+    },
+    "hero": {
+      "eyebrow": "About SafeSiso",
+      "title": "A response to a crisis that silence has kept going",
+      "intro": "SafeSiso exists because of a specific gap: there was no safe, stigma-free, always-available channel through which an adolescent girl in Northern Ghana could ask about her body, her relationships, consent, or her reproductive health — without fear of judgment, punishment, or exposure."
+    },
+    "origin": {
+      "heading": "Where SafeSiso came from",
+      "body": [
+        "SafeSiso was the winning innovation at the AI4HerFuture Hackathon, organised by UNFPA Ghana and the Africa Health Innovation Centre (AHIC).",
+        "At the time of the hackathon it was purely an idea, built on a simple belief: a girl who has the right information at the right time is better protected from teenage pregnancy and exploitation.",
+        "It is now funded through the AI for Her Future Innovation Hackathon Seed Fund, supported by UNFPA Ghana and the Government of Canada. Roughly ninety-five percent of the seed fund goes directly into turning the idea into a working pilot — the WhatsApp chatbot, the SafeHer referral network, the administrative dashboard, and community outreach."
+      ]
+    },
+    "problem": {
+      "heading": "The problem SafeSiso is built for",
+      "intro": "Adolescent vulnerability to teenage pregnancy and sexual exploitation is one of Ghana's most persistent public health challenges, and the burden falls disproportionately on girls in the north.",
+      "statistic": {
+        "value": "≈15%",
+        "label": "of girls aged 15 to 19 in Ghana have begun childbearing",
+        "source": "National data from the Ghana Health Service. Northern Ghana consistently records rates above the national average."
+      },
+      "body": [
+        "The reasons are compounding rather than singular: deep-rooted cultural norms, early marriage practices, limited access to education, and significant gaps in adolescent-friendly health services.",
+        "Teenage pregnancy in this context is not simply a health outcome. It is a consequence of information poverty. Many girls in rural and peri-urban Northern Ghana have no trusted, private, accessible source of information about their bodies, their rights, or how to recognise and respond to abuse.",
+        "Cultural stigma around menstruation, sexuality and reproductive health silences girls from asking at home, at school, or in a health facility. The result is that girls make life-defining decisions without reliable guidance.",
+        "At the same time, clinics are geographically distant, understaffed, and often experienced by young girls as unwelcoming or judgmental. School-based health education is inconsistent and frequently inadequate."
+      ]
+    },
+    "whyWhatsApp": {
+      "heading": "Why WhatsApp",
+      "intro": "WhatsApp was not chosen for convenience. It was chosen because it is the only channel that clears every barrier at once.",
+      "reasons": [
+        {
+          "title": "Girls already use it",
+          "body": "WhatsApp is the dominant messaging platform in Ghana, including among young people in rural and peri-urban areas of the north. Girls who use no other digital platform already know it."
+        },
+        {
+          "title": "It costs almost nothing to run",
+          "body": "WhatsApp messaging uses very little mobile data, which keeps it within reach of the small, affordable data bundles this audience actually buys."
+        },
+        {
+          "title": "It works on basic phones",
+          "body": "It runs on the basic Android smartphones that are widely available across Northern Ghana. No high-end device and no stable broadband is required."
+        },
+        {
+          "title": "It already feels private",
+          "body": "A WhatsApp conversation feels personal and closed in a way that walking into a clinic or approaching an adult does not. That lowers the psychological barrier to asking."
+        },
+        {
+          "title": "It is there at 2am",
+          "body": "Unlike a health worker or a counsellor, WhatsApp is available at any hour — including the night hours when many girls feel most vulnerable, and most willing to reach out."
+        }
+      ]
+    },
+    "approach": {
+      "heading": "What makes SafeSiso different",
+      "intro": "SafeSiso sits at the meeting point of artificial intelligence, adolescent health education, and community-based referral. Unlike a poster campaign or a periodic outreach event, it operates continuously.",
+      "points": [
+        {
+          "title": "Risk detection that understands context",
+          "body": "A four-layer confidence scoring model, grounded in Multi-Attribute Utility Theory, goes beyond keyword spotting to weigh conversation context, sentiment, patterns and escalation together — producing a risk score precise enough to trigger a referral responsibly."
+        },
+        {
+          "title": "A referral list that is actually live",
+          "body": "The SafeHer List is a verified directory of safe spaces that responds to real availability, so a girl is never sent somewhere that cannot receive her."
+        },
+        {
+          "title": "Anonymity built in, not bolted on",
+          "body": "Full anonymization by design means a girl can seek help without any fear that her identity will be exposed."
+        },
+        {
+          "title": "Evidence that funders and researchers can use",
+          "body": "An administrative dashboard generates anonymized, aggregated programme data — the evidence base needed to demonstrate impact and to inform future research and programming."
+        }
+      ]
+    },
+    "who": {
+      "heading": "Who SafeSiso is for",
+      "intro": "SafeSiso directly serves adolescent girls aged 10 to 18 in rural and peri-urban communities across Northern Ghana, with initial focus on the Northern, Upper East and Upper West regions.",
+      "groups": [
+        "Girls in school with limited access to accurate health information",
+        "Out-of-school girls and school dropouts at heightened risk of exploitation and teenage pregnancy",
+        "Girls who have already experienced teenage pregnancy and need continued support and information",
+        "Girls in communities where cultural norms restrict open discussion of menstruation, sexuality and relationships",
+        "Girls experiencing or at risk of sexual abuse with no accessible reporting or support pathway"
+      ],
+      "inclusion": "The design is deliberately inclusive. Because SafeSiso needs only a basic smartphone and WhatsApp, it does not exclude a girl on the basis of literacy level, geography, disability status or economic background — and the chatbot is built to understand simple language rather than requiring formal, grammatically correct writing."
+    },
+    "partners": {
+      "heading": "Who is behind SafeSiso",
+      "body": "SafeSiso is funded through the AI for Her Future Innovation Hackathon Seed Fund, supported by UNFPA Ghana and the Government of Canada. It is delivered in partnership with the Planned Parenthood Association of Ghana (PPAG), and originated at the AI4HerFuture Hackathon organised by UNFPA Ghana and the Africa Health Innovation Centre.",
+      "accountability": "Programme reporting goes to UNFPA Ghana and PPAG monthly, covering activity against targets. Financial accountability runs through PPAG's established financial management systems, in line with UNFPA's reporting standards."
+    },
+    "closing": {
+      "heading": "The question behind every decision",
+      "body": "Every design decision in SafeSiso — the tone of the chatbot, the anonymity architecture, the matching engine — was made with one question in mind: what does a girl in rural Northern Ghana actually need in order to feel safe enough to ask for help?"
+    }
+  }
+}
