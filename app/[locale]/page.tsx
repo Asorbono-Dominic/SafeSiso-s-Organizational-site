@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getFormatter,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FeatureGrid, type FeatureItem } from "@/components/ui/feature-grid";
 import { Icon } from "@/components/ui/icons";
@@ -11,9 +15,18 @@ import { ProcessGrid } from "@/components/ui/process-grid";
 import { Section } from "@/components/ui/section";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { getMetrics } from "@/lib/metrics";
+import { METRIC_KEYS } from "@/lib/metrics-types";
 import { ROUTES } from "@/lib/site-config";
 
 type Props = { params: Promise<{ locale: string }> };
+
+/**
+ * Matches the Impact page, so the teaser and the dashboard never disagree.
+ * Must be a literal — Next statically analyses segment config exports and
+ * rejects an imported constant. Keep in step with METRICS_REVALIDATE_SECONDS.
+ */
+export const revalidate = 300;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -25,6 +38,9 @@ export default async function HomePage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
+  const tImpact = await getTranslations("impact");
+  const format = await getFormatter();
+  const snapshot = await getMetrics();
 
   const conversation = t.raw("hero.conversation") as ConversationTurn[];
   const anonymityPoints = t.raw("anonymity.points") as FeatureItem[];
@@ -119,30 +135,68 @@ export default async function HomePage({ params }: Props) {
 
       {/* Impact teaser. Per Spec 6.3 no figures are invented before launch —
           these are the pilot's stated targets, labelled as targets. */}
+      {/* Reads the same source as the Impact page, so this teaser flips from
+          stated targets to real figures on its own the day the pilot goes
+          live — nobody has to remember to edit the homepage. */}
       <Section
-        heading={t("impact.heading")}
-        intro={t("impact.intro")}
+        heading={
+          snapshot.status === "live"
+            ? t("impact.liveHeading")
+            : t("impact.heading")
+        }
+        intro={snapshot.status === "live" ? undefined : t("impact.intro")}
         tone="muted"
       >
-        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {targets.map((target) => (
-            <li
-              key={target.label}
-              className="rounded-xl border border-cream-300 bg-white p-6 text-center"
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest text-orange-700">
-                {t("impact.targetLabel")}
-              </p>
-              <p className="mt-2 text-4xl font-bold text-teal-500">
-                {target.value}
-              </p>
-              <p className="mt-2 leading-relaxed text-teal-800">
-                {target.label}
-              </p>
-            </li>
-          ))}
-        </ul>
+        {snapshot.status === "live" ? (
+          <ul className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+            {METRIC_KEYS.map((key) => {
+              const value = snapshot.metrics[key];
+              if (value === null) return null;
+              return (
+                <li
+                  key={key}
+                  className="rounded-xl border border-cream-300 bg-white p-6 text-center"
+                >
+                  <p className="text-4xl font-bold text-teal-500">
+                    {format.number(value)}
+                  </p>
+                  <p className="mt-2 leading-relaxed text-teal-800">
+                    {tImpact(`metrics.${key}.label`)}
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <ul className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+            {targets.map((target) => (
+              <li
+                key={target.label}
+                className="rounded-xl border border-cream-300 bg-white p-6 text-center"
+              >
+                <p className="text-xs font-semibold uppercase tracking-widest text-orange-700">
+                  {t("impact.targetLabel")}
+                </p>
+                <p className="mt-2 text-4xl font-bold text-teal-500">
+                  {target.value}
+                </p>
+                <p className="mt-2 leading-relaxed text-teal-800">
+                  {target.label}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+
         <p className="mt-8 max-w-prose text-teal-700">{t("impact.note")}</p>
+        <p className="mt-6">
+          <Link
+            href={ROUTES.impact}
+            className="font-semibold text-teal-600 underline underline-offset-4 hover:text-teal-500"
+          >
+            {t("impact.cta")}
+          </Link>
+        </p>
       </Section>
 
       <section className="bg-teal-500">

@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { MobileCtaBar } from "@/components/layout/mobile-cta-bar";
@@ -79,6 +83,25 @@ export default async function LocaleLayout({
 
   const t = await getTranslations({ locale, namespace: "common" });
 
+  /**
+   * Ship ONLY the namespaces client components actually read.
+   *
+   * `NextIntlClientProvider` with no `messages` prop serialises the entire
+   * catalogue — every page's copy — into every page's payload. That is tens of
+   * kilobytes of prose a visitor reading one page never needs, which matters a
+   * great deal on the small data bundles this audience buys.
+   *
+   * The only client components in the shared chrome are SiteHeader and
+   * LocaleToggle, and between them they read `common` and `nav`. Anything else
+   * that needs client-side messages wraps itself in its own provider — see the
+   * enquiry form on the Get Involved page.
+   */
+  const messages = await getMessages();
+  const clientMessages = {
+    common: messages.common,
+    nav: messages.nav,
+  };
+
   return (
     <html lang={locale} className={inter.variable}>
       <body className="flex min-h-screen flex-col font-sans">
@@ -86,7 +109,7 @@ export default async function LocaleLayout({
           {t("skipToContent")}
         </a>
 
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={clientMessages}>
           <SiteHeader />
           <div className="flex-1">{children}</div>
           <SiteFooter />

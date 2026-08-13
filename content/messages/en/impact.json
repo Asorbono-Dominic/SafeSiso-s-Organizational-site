@@ -1,0 +1,86 @@
+{
+  "impact": {
+    "meta": {
+      "title": "Impact",
+      "description": "Live, anonymized figures on SafeSiso's reach across Northern Ghana — girls reached, conversations handled, and verified safe space partners active."
+    },
+    "hero": {
+      "eyebrow": "Impact",
+      "title": "What SafeSiso has actually done",
+      "intro": "Figures on this page come straight from the running service. They are aggregated counts and nothing else — no conversation content, and no detail that could identify a girl, ever appears here."
+    },
+    "preLaunch": {
+      "heading": "The pilot has not launched yet",
+      "bodyWithDate": "Figures will appear on this page from {date}, once SafeSiso is live and girls are using it.",
+      "bodyWithoutDate": "Figures will appear on this page once SafeSiso is live and girls are using it.",
+      "reason": "There are no numbers here because there is nothing to count yet. We would rather show you an empty page than a placeholder figure that looks real — particularly on the page a funder reads.",
+      "targetsHeading": "What the pilot has committed to",
+      "targetLabel": "Target",
+      "targets": [
+        {
+          "value": "500",
+          "label": "girls reached in the first month after launch"
+        },
+        {
+          "value": "10,000",
+          "label": "girls reached across Northern Ghana by the end of 2026"
+        },
+        {
+          "value": "10+",
+          "label": "verified safe space partners across the three northern regions"
+        }
+      ],
+      "targetsNote": "These are commitments, not results. They will be replaced by live figures above once the pilot is running."
+    },
+    "unavailable": {
+      "heading": "Figures are temporarily unavailable",
+      "body": "We could not read the latest numbers just now. Rather than show you figures that might be out of date or wrong, this page is showing nothing. Please check back shortly."
+    },
+    "live": {
+      "heading": "Reach so far",
+      "updatedLabel": "Last updated",
+      "notAvailableLabel": "Not yet available"
+    },
+    "metrics": {
+      "girlsReached": {
+        "label": "Girls reached",
+        "help": "Distinct girls who have had at least one conversation with SafeSiso."
+      },
+      "conversationsManaged": {
+        "label": "Conversations handled",
+        "help": "Total conversations SafeSiso has held, day and night."
+      },
+      "activePartners": {
+        "label": "Verified safe space partners",
+        "help": "SafeHer partner organizations verified, onboarded and currently active."
+      }
+    },
+    "privacy": {
+      "heading": "How these figures are produced",
+      "points": [
+        {
+          "title": "Counts, never content",
+          "body": "Every figure here is an aggregate count. No message a girl has ever sent appears on this page, in any form."
+        },
+        {
+          "title": "Anonymized at the source",
+          "body": "The numbers are produced from data that never contained a name, an age, a school or a location, because SafeSiso does not collect those."
+        },
+        {
+          "title": "Nothing re-identifiable",
+          "body": "Figures are reported at programme and regional level only. Nothing published here can be traced back to an individual girl or an individual conversation."
+        },
+        {
+          "title": "The same figures go to our funders",
+          "body": "These are the same aggregated statistics reported monthly to UNFPA Ghana and PPAG. There is no separate, rosier set of numbers."
+        }
+      ],
+      "policyLink": "Read the full Privacy Policy"
+    },
+    "closing": {
+      "heading": "Behind every number",
+      "body": "Each of these counts is a girl who had a question and nowhere safe to ask it.",
+      "cta": "Read how SafeSiso works"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "impact": {
+    "meta": {
+      "title": "Impact",
+      "description": "Chiffres anonymisés et actualisés sur la portée de SafeSiso dans le nord du Ghana — filles touchées, conversations traitées et partenaires d'espaces sûrs vérifiés actifs."
+    },
+    "hero": {
+      "eyebrow": "Impact",
+      "title": "Ce que SafeSiso a réellement accompli",
+      "intro": "Les chiffres de cette page proviennent directement du service en fonctionnement. Ce sont des totaux agrégés, rien d'autre — aucun contenu de conversation, ni aucun détail permettant d'identifier une fille, n'y figure jamais."
+    },
+    "preLaunch": {
+      "heading": "Le projet pilote n'a pas encore été lancé",
+      "bodyWithDate": "Les chiffres apparaîtront sur cette page à partir du {date}, une fois SafeSiso en service et utilisé par des filles.",
+      "bodyWithoutDate": "Les chiffres apparaîtront sur cette page une fois SafeSiso en service et utilisé par des filles.",
+      "reason": "Il n'y a aucun chiffre ici parce qu'il n'y a encore rien à compter. Nous préférons vous montrer une page vide plutôt qu'un chiffre fictif qui aurait l'air authentique — a fortiori sur la page que lit un bailleur.",
+      "targetsHeading": "Ce à quoi le projet pilote s'est engagé",
+      "targetLabel": "Objectif",
+      "targets": [
+        {
+          "value": "500",
+          "label": "filles touchées durant le premier mois après le lancement"
+        },
+        {
+          "value": "10 000",
+          "label": "filles touchées à travers le nord du Ghana d'ici la fin de 2026"
+        },
+        {
+          "value": "10+",
+          "label": "espaces sûrs partenaires vérifiés dans les trois régions du nord"
+        }
+      ],
+      "targetsNote": "Ce sont des engagements, pas des résultats. Ils seront remplacés ci-dessus par des chiffres réels dès que le projet pilote sera en marche."
+    },
+    "unavailable": {
+      "heading": "Les chiffres sont temporairement indisponibles",
+      "body": "Nous n'avons pas pu lire les derniers chiffres à l'instant. Plutôt que d'afficher des données peut-être obsolètes ou erronées, cette page n'affiche rien. Merci de revenir dans un moment."
+    },
+    "live": {
+      "heading": "Portée à ce jour",
+      "updatedLabel": "Dernière mise à jour",
+      "notAvailableLabel": "Pas encore disponible"
+    },
+    "metrics": {
+      "girlsReached": {
+        "label": "Filles touchées",
+        "help": "Nombre de filles distinctes ayant eu au moins une conversation avec SafeSiso."
+      },
+      "conversationsManaged": {
+        "label": "Conversations traitées",
+        "help": "Nombre total de conversations menées par SafeSiso, de jour comme de nuit."
+      },
+      "activePartners": {
+        "label": "Espaces sûrs partenaires vérifiés",
+        "help": "Organisations partenaires SafeHer vérifiées, intégrées et actuellement actives."
+      }
+    },
+    "privacy": {
+      "heading": "Comment ces chiffres sont produits",
+      "points": [
+        {
+          "title": "Des totaux, jamais du contenu",
+          "body": "Chaque chiffre présenté ici est un total agrégé. Aucun message envoyé par une fille n'apparaît sur cette page, sous quelque forme que ce soit."
+        },
+        {
+          "title": "Anonymisés à la source",
+          "body": "Ces chiffres proviennent de données qui n'ont jamais contenu de nom, d'âge, d'école ni de localisation, puisque SafeSiso ne les recueille pas."
+        },
+        {
+          "title": "Rien de ré-identifiable",
+          "body": "Les chiffres sont publiés au niveau du programme et des régions uniquement. Rien ici ne peut être rattaché à une fille ou à une conversation en particulier."
+        },
+        {
+          "title": "Les mêmes chiffres vont à nos bailleurs",
+          "body": "Ce sont les statistiques agrégées transmises chaque mois à l'UNFPA Ghana et à la PPAG. Il n'existe pas de seconde série de chiffres plus flatteuse."
+        }
+      ],
+      "policyLink": "Lire la politique de confidentialité complète"
+    },
+    "closing": {
+      "heading": "Derrière chaque chiffre",
+      "body": "Chacun de ces totaux représente une fille qui avait une question et aucun endroit sûr où la poser.",
+      "cta": "Découvrir comment fonctionne SafeSiso"
+    }
+  }
+}

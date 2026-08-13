@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { Callout } from "@/components/ui/callout";
 import { EnquiryForm } from "@/components/ui/enquiry-form";
 import { FeatureGrid, type FeatureItem } from "@/components/ui/feature-grid";
@@ -22,6 +27,17 @@ export default async function GetInvolvedPage({ params }: Props) {
 
   const t = await getTranslations("getInvolved");
   const ways = t.raw("ways.items") as FeatureItem[];
+
+  /**
+   * The form is the only client component that needs page copy, so it gets its
+   * own provider carrying just the namespaces it reads. The shared layout
+   * deliberately ships only `common` and `nav`.
+   */
+  const messages = await getMessages();
+  const formMessages = {
+    getInvolved: { form: (messages.getInvolved as { form: unknown }).form },
+    regions: messages.regions,
+  };
 
   return (
     <main id="main-content">
@@ -52,7 +68,9 @@ export default async function GetInvolvedPage({ params }: Props) {
 
       <Section heading={t("form.heading")} intro={t("form.intro")}>
         <div className="max-w-3xl">
-          <EnquiryForm />
+          <NextIntlClientProvider messages={formMessages}>
+            <EnquiryForm />
+          </NextIntlClientProvider>
         </div>
       </Section>
 

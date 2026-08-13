@@ -79,6 +79,9 @@ i18n/
 lib/
   site-config.ts     # routes, nav, and the PENDING_VALUES registry
   whatsapp.ts        # the only place the WhatsApp number is resolved
+  metrics.ts         # impact figures — the Phase 6 swap point (server-only)
+  metrics-types.ts   # the agreed public metrics contract
+  partner-enquiry.ts # enquiry delivery — the other Phase 6 swap point
   page-metadata.ts   # per-page title/description/canonical
 scripts/
   check-messages.mjs # locale catalogue drift check (runs in CI)
@@ -86,6 +89,22 @@ proxy.ts             # locale negotiation and redirects (Next 16's middleware)
 ```
 
 **Import `Link` from `@/i18n/navigation`, never from `next/link`.** The former keeps the active locale prefix on internal links; the latter silently drops it.
+
+**Keep `NextIntlClientProvider` scoped.** With no `messages` prop it serialises the _entire_ catalogue into every page — roughly 50 KB of other pages' prose per page. The shared layout ships only `common` and `nav`; a client component needing more wraps itself in its own provider (see the enquiry form on Get Involved).
+
+### Impact metrics
+
+Figures come from [`lib/metrics.ts`](lib/metrics.ts), which reads `content/fixtures/metrics.json` until `SAFESISO_API_BASE_URL` is set. The contract is documented in [`lib/metrics-types.ts`](lib/metrics-types.ts).
+
+Three states, and the distinction matters:
+
+- `pre_launch` — the honest empty state. **This is what is live today.**
+- `live` — real figures.
+- `unavailable` — the source could not be read. Shows nothing rather than stale or zeroed numbers, because this page faces funders.
+
+`null` for a metric means "no figure yet", which is **not** the same as `0`. A pre-launch pilot has not reached zero girls; it has no figure.
+
+Editing the fixture alone updates both the Impact page and the homepage teaser — no code change anywhere. That is the property Phase 6 depends on, and it is worth re-testing if you touch this area.
 
 ---
 
@@ -137,8 +156,8 @@ Phases ship one at a time; each is built, checked, committed, and pushed before 
 | 0     | Repo, scaffolding, i18n routing, tooling                                           | ✅ done |
 | 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | ✅ done |
 | 2     | SafeHer Network page + Get Involved form                                           | ✅ done |
-| 3     | Impact dashboard against a mocked data layer                                       | next    |
-| 4     | Media & Press                                                                      |         |
+| 3     | Impact dashboard against a mocked data layer                                       | ✅ done |
+| 4     | Media & Press                                                                      | next    |
 | 5     | SafeHer partner portal with mocked auth                                            |         |
 | 6     | Real backend integration — **gated on backend readiness**                          |         |
 | 7     | Sanity CMS wiring + French translation sign-off                                    |         |

@@ -31,6 +31,7 @@ export const ROUTES = {
   howItWorks: "/how-it-works",
   about: "/about",
   safety: "/safety",
+  impact: "/impact",
   safeher: "/safeher",
   getInvolved: "/get-involved",
   faq: "/faq",
@@ -52,8 +53,14 @@ export const PRIMARY_NAV = [
   { key: "about", href: ROUTES.about },
   { key: "safety", href: ROUTES.safety },
   { key: "safeher", href: ROUTES.safeher },
+  { key: "impact", href: ROUTES.impact },
   { key: "faq", href: ROUTES.faq },
+] as const;
+
+/** Header has no room for these; the footer is the complete index. */
+const SECONDARY_NAV = [
   { key: "contact", href: ROUTES.contact },
+  { key: "getInvolved", href: ROUTES.getInvolved },
 ] as const;
 
 /**
@@ -61,10 +68,7 @@ export const PRIMARY_NAV = [
  * "Get Involved" is a header button rather than a nav link, so it would
  * otherwise be missing from the site's only complete list of pages.
  */
-export const FOOTER_NAV = [
-  ...PRIMARY_NAV,
-  { key: "getInvolved", href: ROUTES.getInvolved },
-] as const;
+export const FOOTER_NAV = [...PRIMARY_NAV, ...SECONDARY_NAV] as const;
 
 export const FOOTER_LEGAL_NAV = [
   { key: "privacy", href: ROUTES.privacy },

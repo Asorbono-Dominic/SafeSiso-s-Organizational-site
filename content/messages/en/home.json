@@ -107,7 +107,9 @@
           "label": "verified SafeHer safe space partners across the three northern regions"
         }
       ],
-      "note": "Live figures will replace these targets on the Impact page once the pilot is running. Everything published there is anonymized and aggregated — no conversation content, and no detail that could identify a girl, will ever appear."
+      "note": "Live figures will replace these targets on the Impact page once the pilot is running. Everything published there is anonymized and aggregated — no conversation content, and no detail that could identify a girl, will ever appear.",
+      "liveHeading": "Reach so far",
+      "cta": "See the full impact dashboard"
     },
     "finalCta": {
       "heading": "You can ask SafeSiso anything",

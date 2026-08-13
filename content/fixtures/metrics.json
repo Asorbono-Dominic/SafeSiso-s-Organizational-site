@@ -1,0 +1,11 @@
+{
+  "_comment": "Mock metrics payload. Shaped EXACTLY like the response the FastAPI aggregation endpoint is expected to return (see lib/metrics-types.ts), so Phase 6 is a swap rather than a rewrite. Editing this file alone changes both the Impact page and the homepage teaser — verified. `status` selects the state: pre_launch shows the honest empty state and ignores the metric values entirely; live shows the figures; anything unrecognised falls back to the unavailable state. `null` means 'no figure yet', which is NOT the same as 0.",
+  "status": "pre_launch",
+  "generatedAt": null,
+  "launchDate": null,
+  "metrics": {
+    "girlsReached": null,
+    "conversationsManaged": null,
+    "activePartners": null
+  }
+}

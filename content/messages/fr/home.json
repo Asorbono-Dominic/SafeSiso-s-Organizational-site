@@ -108,7 +108,9 @@
           "label": "espaces sûrs partenaires vérifiés dans les trois régions du nord"
         }
       ],
-      "note": "Des chiffres réels remplaceront ces objectifs sur la page Impact dès que le projet pilote sera en marche. Tout ce qui y sera publié est anonymisé et agrégé — aucun contenu de conversation, ni aucun détail permettant d'identifier une fille, n'y figurera jamais."
+      "note": "Des chiffres réels remplaceront ces objectifs sur la page Impact dès que le projet pilote sera en marche. Tout ce qui y sera publié est anonymisé et agrégé — aucun contenu de conversation, ni aucun détail permettant d'identifier une fille, n'y figurera jamais.",
+      "liveHeading": "Portée à ce jour",
+      "cta": "Voir le tableau de bord complet"
     },
     "finalCta": {
       "heading": "Tu peux poser n'importe quelle question à SafeSiso",
