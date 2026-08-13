@@ -57,9 +57,9 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
-          <div className="hidden sm:block">
-            <LocaleToggle />
-          </div>
+          {/* Compact enough to stay in the bar at every width, so it no longer
+              needs a duplicate inside the mobile panel. */}
+          <LocaleToggle />
 
           <Link
             href={ROUTES.portal}
@@ -131,10 +131,6 @@ export function SiteHeader() {
                 </Link>
               </li>
             </ul>
-
-            <div className="mt-3 border-t border-cream-300 pt-3 sm:hidden">
-              <LocaleToggle />
-            </div>
           </nav>
         </div>
       ) : null}

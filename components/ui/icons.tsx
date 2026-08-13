@@ -27,7 +27,9 @@ export type IconName =
   | "clock"
   | "eye"
   | "lock"
-  | "heart";
+  | "heart"
+  | "globe"
+  | "chevronDown";
 
 function Chat(props: SVGProps<SVGSVGElement>) {
   return (
@@ -97,10 +99,30 @@ function Heart(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+function Globe(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3.5 9h17M3.5 15h17" />
+      <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+    </svg>
+  );
+}
+
+function ChevronDown(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <path d="m6 9.5 6 6 6-6" />
+    </svg>
+  );
+}
+
 const ICONS: Record<
   IconName,
   (props: SVGProps<SVGSVGElement>) => ReactElement
 > = {
+  globe: Globe,
+  chevronDown: ChevronDown,
   chat: Chat,
   shield: Shield,
   handshake: Handshake,
