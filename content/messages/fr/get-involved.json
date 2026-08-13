@@ -1,0 +1,78 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "getInvolved": {
+    "meta": {
+      "title": "Participer",
+      "description": "Pour les organisations souhaitant rejoindre le réseau SafeHer, les bailleurs, les bénévoles et les chercheurs. Contactez l'équipe SafeSiso."
+    },
+    "hero": {
+      "eyebrow": "Participer",
+      "title": "Travailler avec SafeSiso",
+      "intro": "SafeSiso est un projet pilote, et il ne fonctionne que si le réseau qui l'entoure fonctionne aussi. Voici comment les organisations, les bailleurs et les bénévoles peuvent en faire partie."
+    },
+    "forGirls": {
+      "heading": "Si tu es une fille qui cherche de l'aide, ce n'est pas la bonne page",
+      "body": "N'inscris pas ton nom, ton âge, l'endroit où tu vis, ni ce qui t'est arrivé dans le formulaire ci-dessous. C'est un simple formulaire de contact destiné aux organisations, et il n'est pas privé.",
+      "cta": "Écrire à SafeSiso en privé sur WhatsApp"
+    },
+    "ways": {
+      "heading": "Différentes façons de travailler avec nous",
+      "items": [
+        {
+          "title": "Rejoindre le réseau SafeHer",
+          "body": "Pour les cliniques, ONG et organisations communautaires des régions du Nord, du Haut-Orient et du Haut-Occident qui accompagnent déjà des adolescentes et peuvent accueillir une fille qui leur est orientée."
+        },
+        {
+          "title": "Financer le projet",
+          "body": "Le projet pilote est financé jusqu'au lancement. Un cofinancement permet d'étendre la portée au-delà des régions pilotes et de passer du pilote à un service durable."
+        },
+        {
+          "title": "Faire du bénévolat ou apporter une expertise",
+          "body": "En particulier une expertise en santé sexuelle et reproductive, en protection des adolescentes, en traduction vers les langues locales, et en mobilisation communautaire dans les trois régions du nord."
+        },
+        {
+          "title": "Recherche et évaluation",
+          "body": "SafeSiso produit des données anonymisées et agrégées sur les besoins d'information des adolescentes en santé sexuelle et reproductive dans le nord du Ghana. Nous sommes ouverts à des partenariats de recherche fondés sur cette base de données."
+        }
+      ]
+    },
+    "form": {
+      "heading": "Nous contacter",
+      "intro": "Dites-nous qui vous êtes et ce que vous avez en tête. Un membre de l'équipe SafeSiso vous répondra.",
+      "organizationLabel": "Organisation",
+      "nameLabel": "Votre nom",
+      "emailLabel": "Adresse e-mail professionnelle",
+      "enquiryTypeLabel": "De quoi s'agit-il ?",
+      "enquiryTypes": {
+        "partner": "Rejoindre le réseau SafeHer",
+        "funder": "Financement ou cofinancement",
+        "volunteer": "Bénévolat ou expertise",
+        "press": "Presse ou médias",
+        "other": "Autre chose"
+      },
+      "regionLabel": "Région où vous intervenez",
+      "regionUnspecified": "Choisir une région (facultatif)",
+      "regionOther": "Ailleurs / plusieurs régions",
+      "messageLabel": "Votre message",
+      "messageHelp": "Ce que fait votre organisation, les communautés que vous couvrez, et ce que vous souhaiteriez explorer avec nous.",
+      "honeypotLabel": "Laissez ce champ vide",
+      "privacyNote": "Nous utilisons ce que vous envoyez uniquement pour répondre à votre demande. Merci de ne pas inclure d'informations sur une fille en particulier — si vous accompagnez une personne qui a besoin d'aide, encouragez-la à écrire directement à SafeSiso.",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi en cours…",
+      "successHeading": "Merci — votre demande a bien été reçue",
+      "successBody": "Un membre de l'équipe SafeSiso vous recontactera. Si votre demande est urgente, écrivez-nous également via la page de contact.",
+      "invalidMessage": "Certaines informations manquent ou doivent être vérifiées. Merci de revoir les champs signalés ci-dessous.",
+      "failedMessage": "Une erreur est survenue lors de l'envoi et votre demande ne nous est pas parvenue. Merci de réessayer, ou d'utiliser la page de contact.",
+      "errors": {
+        "required": "Ce champ est obligatoire.",
+        "invalidEmail": "Merci de saisir une adresse e-mail valide.",
+        "tooLong": "Ce texte dépasse la longueur acceptée. Merci de le raccourcir.",
+        "invalidOption": "Merci de choisir l'une des options proposées."
+      }
+    },
+    "backing": {
+      "heading": "Avec qui vous travailleriez",
+      "body": "SafeSiso est mis en œuvre en partenariat avec la Planned Parenthood Association of Ghana (PPAG), et financé par le Fonds d'amorçage du hackathon AI for Her Future Innovation avec le soutien de l'UNFPA Ghana et du gouvernement du Canada."
+    }
+  }
+}

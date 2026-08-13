@@ -15,6 +15,8 @@ const MESSAGE_FILES = [
   "how-it-works",
   "about",
   "safety",
+  "safeher",
+  "get-involved",
   "faq",
   "contact",
   "legal",

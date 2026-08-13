@@ -136,8 +136,8 @@ Phases ship one at a time; each is built, checked, committed, and pushed before 
 | ----- | ---------------------------------------------------------------------------------- | ------- |
 | 0     | Repo, scaffolding, i18n routing, tooling                                           | ✅ done |
 | 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | ✅ done |
-| 2     | SafeHer Network page + Get Involved form                                           | next    |
-| 3     | Impact dashboard against a mocked data layer                                       |         |
+| 2     | SafeHer Network page + Get Involved form                                           | ✅ done |
+| 3     | Impact dashboard against a mocked data layer                                       | next    |
 | 4     | Media & Press                                                                      |         |
 | 5     | SafeHer partner portal with mocked auth                                            |         |
 | 6     | Real backend integration — **gated on backend readiness**                          |         |

@@ -31,14 +31,16 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-cream-300 bg-cream-100/95 backdrop-blur supports-[backdrop-filter]:bg-cream-100/80">
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3 sm:px-8">
+      <div className="mx-auto flex max-w-7xl items-center gap-4 px-5 py-3 sm:px-8">
         <Link href={ROUTES.home} className="shrink-0 text-2xl">
           <Logo />
         </Link>
 
+        {/* Six nav items plus two calls to action do not fit at `lg`, so the
+            full bar appears at `xl` and everything below that uses the panel. */}
         <nav
           aria-label={tNav("home")}
-          className="ml-auto hidden items-center gap-1 lg:flex"
+          className="ml-auto hidden items-center gap-1 xl:flex"
         >
           {PRIMARY_NAV.map((item) => (
             <Link
@@ -56,14 +58,23 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-2 lg:ml-0">
+        <div className="ml-auto flex items-center gap-2 xl:ml-0">
           {/* Compact enough to stay in the bar at every width, so it no longer
               needs a duplicate inside the mobile panel. */}
           <LocaleToggle />
 
+          {/* orange-700, not orange-500: white on #F37022 is ~2.9:1 and fails
+              WCAG AA, while white on #B54A0F is ~5.3:1. */}
+          <Link
+            href={ROUTES.getInvolved}
+            className="hidden rounded-lg bg-orange-700 px-3 py-2 text-sm font-semibold text-white hover:bg-orange-800 md:inline-block"
+          >
+            {tNav("getInvolved")}
+          </Link>
+
           <Link
             href={ROUTES.portal}
-            className="hidden rounded-lg border border-teal-500 px-3 py-2 text-sm font-semibold text-teal-600 hover:bg-teal-50 md:inline-block"
+            className="hidden rounded-lg border border-teal-500 px-3 py-2 text-sm font-semibold text-teal-600 hover:bg-teal-50 lg:inline-block"
           >
             {t("partnerLogin")}
           </Link>
@@ -73,7 +84,7 @@ export function SiteHeader() {
             onClick={() => setIsOpen((open) => !open)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            className="rounded-lg border border-cream-300 p-2 text-teal-700 hover:bg-cream-200 lg:hidden"
+            className="rounded-lg border border-cream-300 p-2 text-teal-700 hover:bg-cream-200 xl:hidden"
           >
             <span className="sr-only">
               {isOpen ? t("closeMenu") : t("openMenu")}
@@ -100,11 +111,11 @@ export function SiteHeader() {
       {isOpen ? (
         <div
           id="mobile-menu"
-          className="border-t border-cream-300 bg-cream-100 lg:hidden"
+          className="border-t border-cream-300 bg-cream-100 xl:hidden"
         >
           <nav
             aria-label={tNav("home")}
-            className="mx-auto max-w-6xl px-5 py-3"
+            className="mx-auto max-w-7xl px-5 py-3"
           >
             <ul className="space-y-1">
               {PRIMARY_NAV.map((item) => (
@@ -122,6 +133,17 @@ export function SiteHeader() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href={ROUTES.getInvolved}
+                  aria-current={
+                    isActive(ROUTES.getInvolved) ? "page" : undefined
+                  }
+                  className="block rounded-lg px-3 py-2.5 font-medium text-teal-800 hover:bg-cream-200"
+                >
+                  {tNav("getInvolved")}
+                </Link>
+              </li>
               <li>
                 <Link
                   href={ROUTES.portal}

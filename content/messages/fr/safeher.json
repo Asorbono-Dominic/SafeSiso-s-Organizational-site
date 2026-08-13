@@ -1,0 +1,87 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "regions": {
+    "northern": "Région du Nord",
+    "upperEast": "Région du Haut-Orient",
+    "upperWest": "Région du Haut-Occident"
+  },
+  "safeher": {
+    "meta": {
+      "title": "Le réseau SafeHer",
+      "description": "SafeHer est le réseau d'espaces sûrs vérifiés de SafeSiso à travers le nord du Ghana — des organisations locales et des cliniques vers lesquelles une fille peut être orientée lorsqu'elle a besoin de plus que des informations."
+    },
+    "hero": {
+      "eyebrow": "Le réseau SafeHer",
+      "title": "Des espaces sûrs vérifiés, et une porte réellement ouverte",
+      "intro": "L'information seule ne suffit pas à une fille que l'on maltraite. SafeHer est le réseau d'organisations locales et de cliniques vers lesquelles SafeSiso peut l'orienter — et il est conçu pour qu'elle ne soit jamais envoyée là où on ne peut pas l'accueillir."
+    },
+    "whatIsIt": {
+      "heading": "Ce qu'est un espace sûr",
+      "intro": "Un partenaire SafeHer est une organisation locale, une clinique ou une ONG qui accepte d'accueillir et d'accompagner une adolescente qui se présente en ayant besoin d'aide.",
+      "points": [
+        {
+          "title": "Local, pas lointain",
+          "body": "Les partenaires interviennent dans les communautés que SafeSiso dessert, afin qu'une orientation soit un lieu réellement accessible pour une fille."
+        },
+        {
+          "title": "Préparés à cela",
+          "body": "Les partenaires sont des organisations qui travaillent déjà avec des adolescentes sur la santé sexuelle et reproductive, les violences ou la protection — et non des services généralistes à qui l'on demande d'improviser."
+        },
+        {
+          "title": "Sans jugement, par engagement",
+          "body": "Être inscrit signifie s'engager à accueillir une fille sans lui faire honte, sans lui faire la morale et sans la signaler à sa communauté."
+        },
+        {
+          "title": "Honnêtes sur leur capacité",
+          "body": "Les partenaires tiennent leur disponibilité à jour, afin que le réseau reflète qui peut réellement aider en ce moment."
+        }
+      ]
+    },
+    "verification": {
+      "heading": "Comment les partenaires sont vérifiés",
+      "intro": "Rien n'entre sur la liste SafeHer en remplissant un simple formulaire. La vérification existe parce qu'une mauvaise orientation est pire que pas d'orientation du tout.",
+      "steps": [
+        {
+          "title": "L'organisation se manifeste",
+          "body": "Une organisation prend contact et décrit les services qu'elle propose, les communautés qu'elle couvre et son expérience auprès des adolescentes."
+        },
+        {
+          "title": "Les références sont vérifiées",
+          "body": "L'enregistrement, les pratiques de protection de l'enfance et l'expérience auprès des adolescentes sont examinés avec la PPAG avant toute inscription."
+        },
+        {
+          "title": "Intégration et formation",
+          "body": "Les partenaires vérifiés sont formés au processus d'orientation et au portail partenaire, afin qu'une orientation arrivant à 23 h soit comprise et suivie d'effet."
+        },
+        {
+          "title": "Une disponibilité tenue à jour",
+          "body": "Une fois actif, un partenaire met lui-même à jour sa capacité dans le portail. C'est ce qui garantit la fiabilité du moteur de mise en relation."
+        }
+      ]
+    },
+    "howReferralWorks": {
+      "heading": "Comment une orientation parvient à un partenaire",
+      "body": "Lorsque SafeSiso détecte qu'une fille a peut-être besoin de plus que des informations, il le lui dit et lui propose une mise en relation. Si elle accepte, le moteur recherche un partenaire vérifié dans sa zone ayant confirmé sa disponibilité, et l'informe que quelqu'un a besoin de soutien.",
+      "privacy": "Le partenaire est informé qu'un soutien est nécessaire. Sa conversation ne lui est pas transmise, ni son identité — puisque SafeSiso n'en a jamais recueilli.",
+      "cta": "Voir comment fonctionne la détection, étape par étape"
+    },
+    "directory": {
+      "heading": "Où le réseau intervient",
+      "intro": "Le projet pilote couvre trois régions. L'intégration des partenaires commence avant le lancement, et cette section indiquera le nombre de partenaires vérifiés et actifs dans chaque région une fois qu'ils seront intégrés.",
+      "emptyLabel": "Intégration en cours",
+      "emptyBody": "Aucun partenaire n'est encore répertorié. Plutôt que d'afficher des organisations fictives, cette section reste vide jusqu'à ce que de vrais partenaires soient vérifiés et actifs.",
+      "targetNote": "Le projet pilote s'est engagé à réunir au minimum dix espaces sûrs partenaires vérifiés dans les trois régions du nord.",
+      "locationHeading": "Pourquoi nous indiquons des régions, pas des adresses",
+      "locationBody": "Les partenaires sont localisés par région uniquement. Publier l'adresse exacte d'un espace sûr pourrait exposer à la fois l'organisation et les filles que l'on verrait y entrer. Une fille à qui l'on propose une orientation reçoit ce qu'il lui faut pour s'y rendre, en privé, dans sa propre conversation — cela n'a pas besoin de figurer sur une page web publique."
+    },
+    "forPartners": {
+      "heading": "Pour les organisations",
+      "joinHeading": "Devenir partenaire SafeHer",
+      "joinBody": "Si votre organisation travaille avec des adolescentes dans les régions du Nord, du Haut-Orient ou du Haut-Occident, nous aimerions vous entendre.",
+      "joinCta": "Candidater pour rejoindre le réseau",
+      "loginHeading": "Déjà partenaire ?",
+      "loginBody": "Les partenaires vérifiés se connectent pour gérer leur disponibilité et consulter les orientations qui leur sont adressées.",
+      "loginCta": "Connexion partenaire"
+    }
+  }
+}

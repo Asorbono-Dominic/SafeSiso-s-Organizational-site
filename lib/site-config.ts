@@ -31,6 +31,8 @@ export const ROUTES = {
   howItWorks: "/how-it-works",
   about: "/about",
   safety: "/safety",
+  safeher: "/safeher",
+  getInvolved: "/get-involved",
   faq: "/faq",
   contact: "/contact",
   privacy: "/privacy",
@@ -38,19 +40,49 @@ export const ROUTES = {
   portal: "/portal",
 } as const;
 
-/** Main header navigation. `key` indexes into the `nav` message namespace. */
+/**
+ * Main header navigation. `key` indexes into the `nav` message namespace.
+ *
+ * Kept to six items so the bar still fits at the `xl` breakpoint. "Get
+ * Involved" is a button rather than a nav link, and everything else lives in
+ * the footer.
+ */
 export const PRIMARY_NAV = [
   { key: "howItWorks", href: ROUTES.howItWorks },
   { key: "about", href: ROUTES.about },
   { key: "safety", href: ROUTES.safety },
+  { key: "safeher", href: ROUTES.safeher },
   { key: "faq", href: ROUTES.faq },
   { key: "contact", href: ROUTES.contact },
+] as const;
+
+/**
+ * The footer carries everything, including entries the header has no room for.
+ * "Get Involved" is a header button rather than a nav link, so it would
+ * otherwise be missing from the site's only complete list of pages.
+ */
+export const FOOTER_NAV = [
+  ...PRIMARY_NAV,
+  { key: "getInvolved", href: ROUTES.getInvolved },
 ] as const;
 
 export const FOOTER_LEGAL_NAV = [
   { key: "privacy", href: ROUTES.privacy },
   { key: "terms", href: ROUTES.terms },
 ] as const;
+
+/**
+ * The three regions the pilot targets, per the concept note.
+ *
+ * DECISION PENDING CLIENT SIGN-OFF: the public directory shows partners by
+ * region only, never by address. Naming a safe space's exact location in
+ * public could expose both the organization and the girls walking into it.
+ * If partners consent to finer granularity, that is a per-partner decision —
+ * see the open questions in the README.
+ */
+export const TARGET_REGIONS = ["northern", "upperEast", "upperWest"] as const;
+
+export type TargetRegion = (typeof TARGET_REGIONS)[number];
 
 // ---------------------------------------------------------------------------
 // Pending values

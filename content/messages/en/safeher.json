@@ -1,0 +1,86 @@
+{
+  "regions": {
+    "northern": "Northern Region",
+    "upperEast": "Upper East Region",
+    "upperWest": "Upper West Region"
+  },
+  "safeher": {
+    "meta": {
+      "title": "The SafeHer Network",
+      "description": "SafeHer is SafeSiso's network of verified safe spaces across Northern Ghana — local organizations and clinics that a girl can be connected to when she needs more than information."
+    },
+    "hero": {
+      "eyebrow": "The SafeHer network",
+      "title": "Verified safe spaces, and a door that is actually open",
+      "intro": "Information alone is not enough for a girl who is being hurt. SafeHer is the network of local organizations and clinics that SafeSiso can connect her to — and it is built so that she is never sent somewhere that cannot receive her."
+    },
+    "whatIsIt": {
+      "heading": "What a safe space is",
+      "intro": "A SafeHer partner is a local organization, clinic or NGO that has agreed to receive and support an adolescent girl who arrives needing help.",
+      "points": [
+        {
+          "title": "Local, not distant",
+          "body": "Partners operate in the communities SafeSiso serves, so a referral is somewhere a girl can realistically reach."
+        },
+        {
+          "title": "Prepared for this",
+          "body": "Partners are organizations that already work with adolescent girls on sexual and reproductive health, abuse or protection — not general services asked to improvise."
+        },
+        {
+          "title": "Non-judgmental by agreement",
+          "body": "Being listed means committing to receive a girl without shaming, lecturing or reporting her to her community."
+        },
+        {
+          "title": "Honest about capacity",
+          "body": "Partners keep their availability current, so the network reflects who can actually help right now."
+        }
+      ]
+    },
+    "verification": {
+      "heading": "How partners are verified",
+      "intro": "Nothing gets onto the SafeHer List by filling in a form. Verification exists because a bad referral is worse than no referral.",
+      "steps": [
+        {
+          "title": "The organization applies",
+          "body": "An organization gets in touch and describes the services it provides, the communities it covers, and its experience working with adolescent girls."
+        },
+        {
+          "title": "Credentials are checked",
+          "body": "Registration, safeguarding practice and adolescent-services experience are reviewed with PPAG before anything is listed."
+        },
+        {
+          "title": "Onboarding and training",
+          "body": "Verified partners are onboarded onto the referral process and the partner portal, so that a referral arriving at 11pm is understood and acted on."
+        },
+        {
+          "title": "Availability stays live",
+          "body": "Once active, a partner maintains its own current capacity in the portal. That is what keeps the matching engine honest."
+        }
+      ]
+    },
+    "howReferralWorks": {
+      "heading": "How a referral reaches a partner",
+      "body": "When SafeSiso detects that a girl may need more than information, it tells her and offers a connection. If she accepts, the matching engine looks for a verified partner in her area that has confirmed availability, and notifies them that someone needs support.",
+      "privacy": "The partner is told that support is needed. They are not sent her conversation, and they are not sent her identity — because SafeSiso never collected one.",
+      "cta": "See how the detection works, step by step"
+    },
+    "directory": {
+      "heading": "Where the network operates",
+      "intro": "The pilot covers three regions. Partner onboarding begins ahead of launch, and this section will list the number of verified, active partners in each region once they are onboarded.",
+      "emptyLabel": "Onboarding in progress",
+      "emptyBody": "No partners are listed yet. Rather than show placeholder organizations, this stays empty until real partners are verified and active.",
+      "targetNote": "The pilot has committed to a minimum of ten verified safe space partners across the three northern regions.",
+      "locationHeading": "Why we show regions, not addresses",
+      "locationBody": "Partner locations are shown by region only. Publishing the exact address of a safe space could expose both the organization and the girls seen walking into it. A girl who is offered a referral is given what she needs to get there, privately, in her own conversation — it does not need to be on a public web page."
+    },
+    "forPartners": {
+      "heading": "For organizations",
+      "joinHeading": "Become a SafeHer partner",
+      "joinBody": "If your organization works with adolescent girls in the Northern, Upper East or Upper West regions, we would like to hear from you.",
+      "joinCta": "Apply to join the network",
+      "loginHeading": "Already a partner?",
+      "loginBody": "Verified partners sign in to manage their availability and see referrals sent to them.",
+      "loginCta": "Partner login"
+    }
+  }
+}

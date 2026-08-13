@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/logo";
 import { PendingValue } from "@/components/ui/pending-value";
-import { FOOTER_LEGAL_NAV, PRIMARY_NAV, ROUTES, SITE } from "@/lib/site-config";
+import { FOOTER_LEGAL_NAV, FOOTER_NAV, ROUTES, SITE } from "@/lib/site-config";
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
@@ -47,7 +47,7 @@ export async function SiteFooter() {
               {t("navHeading")}
             </h2>
             <ul className="mt-3 space-y-2">
-              {PRIMARY_NAV.map((item) => (
+              {FOOTER_NAV.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}

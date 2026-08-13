@@ -1,0 +1,77 @@
+{
+  "getInvolved": {
+    "meta": {
+      "title": "Get Involved",
+      "description": "For organizations wanting to join the SafeHer network, funders, volunteers and researchers. Get in touch with the SafeSiso team."
+    },
+    "hero": {
+      "eyebrow": "Get involved",
+      "title": "Work with SafeSiso",
+      "intro": "SafeSiso is a pilot, and it only works if the network around it does. Here is how organizations, funders and volunteers can be part of it."
+    },
+    "forGirls": {
+      "heading": "If you are a girl looking for help, this is not the page you need",
+      "body": "Please do not put your name, your age, where you live, or anything that happened to you into the form below. It is an ordinary enquiry form for organizations, and it is not private.",
+      "cta": "Message SafeSiso privately on WhatsApp instead"
+    },
+    "ways": {
+      "heading": "Ways to work with us",
+      "items": [
+        {
+          "title": "Join the SafeHer network",
+          "body": "For clinics, NGOs and community organizations in the Northern, Upper East and Upper West regions that already support adolescent girls, and can receive a girl referred to them."
+        },
+        {
+          "title": "Fund the work",
+          "body": "The pilot is funded through to launch. Co-funding extends reach beyond the pilot regions and supports the move from pilot to sustained service."
+        },
+        {
+          "title": "Volunteer or contribute expertise",
+          "body": "Particularly sexual and reproductive health expertise, adolescent safeguarding, local-language translation, and community outreach in the three northern regions."
+        },
+        {
+          "title": "Research and evaluation",
+          "body": "SafeSiso generates anonymized, aggregated data on adolescent SRH information needs in Northern Ghana. We are open to research partnerships built on that evidence base."
+        }
+      ]
+    },
+    "form": {
+      "heading": "Get in touch",
+      "intro": "Tell us who you are and what you have in mind. Someone from the SafeSiso team will come back to you.",
+      "organizationLabel": "Organization",
+      "nameLabel": "Your name",
+      "emailLabel": "Work email address",
+      "enquiryTypeLabel": "What is this about?",
+      "enquiryTypes": {
+        "partner": "Joining the SafeHer network",
+        "funder": "Funding or co-funding",
+        "volunteer": "Volunteering or expertise",
+        "press": "Press or media",
+        "other": "Something else"
+      },
+      "regionLabel": "Region you work in",
+      "regionUnspecified": "Select a region (optional)",
+      "regionOther": "Elsewhere / multiple regions",
+      "messageLabel": "Your message",
+      "messageHelp": "What your organization does, the communities you cover, and what you would like to explore with us.",
+      "honeypotLabel": "Leave this field empty",
+      "privacyNote": "We use what you send only to respond to your enquiry. Please do not include details about an individual girl — if you are supporting someone who needs help, encourage her to message SafeSiso directly.",
+      "submit": "Send enquiry",
+      "submitting": "Sending…",
+      "successHeading": "Thank you — your enquiry has been received",
+      "successBody": "Someone from the SafeSiso team will be in touch. If your enquiry is urgent, please reach out through the contact page as well.",
+      "invalidMessage": "Some details are missing or need checking. Please review the fields marked below.",
+      "failedMessage": "Something went wrong sending your enquiry and it has not reached us. Please try again, or use the contact page instead.",
+      "errors": {
+        "required": "This field is required.",
+        "invalidEmail": "Please enter a valid email address.",
+        "tooLong": "This is longer than we can accept. Please shorten it.",
+        "invalidOption": "Please choose one of the available options."
+      }
+    },
+    "backing": {
+      "heading": "Who you would be working with",
+      "body": "SafeSiso is delivered in partnership with the Planned Parenthood Association of Ghana (PPAG), and funded through the AI for Her Future Innovation Hackathon Seed Fund with support from UNFPA Ghana and the Government of Canada."
+    }
+  }
+}
