@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Callout } from "@/components/ui/callout";
 import { PageHero } from "@/components/ui/page-hero";
 import { PendingValue } from "@/components/ui/pending-value";
@@ -87,6 +88,17 @@ export default async function ContactPage({ params }: Props) {
             );
           })}
         </ul>
+      </Section>
+
+      <Section>
+        <p>
+          <Link
+            href={ROUTES.media}
+            className="font-semibold text-teal-600 underline underline-offset-4 hover:text-teal-500"
+          >
+            {t("mediaLink")}
+          </Link>
+        </p>
       </Section>
 
       <Section heading={t("backing.heading")}>

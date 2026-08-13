@@ -35,6 +35,7 @@ export const ROUTES = {
   safeher: "/safeher",
   getInvolved: "/get-involved",
   faq: "/faq",
+  media: "/media",
   contact: "/contact",
   privacy: "/privacy",
   terms: "/terms",
@@ -59,8 +60,9 @@ export const PRIMARY_NAV = [
 
 /** Header has no room for these; the footer is the complete index. */
 const SECONDARY_NAV = [
-  { key: "contact", href: ROUTES.contact },
   { key: "getInvolved", href: ROUTES.getInvolved },
+  { key: "media", href: ROUTES.media },
+  { key: "contact", href: ROUTES.contact },
 ] as const;
 
 /**

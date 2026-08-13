@@ -157,8 +157,8 @@ Phases ship one at a time; each is built, checked, committed, and pushed before 
 | 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | ✅ done |
 | 2     | SafeHer Network page + Get Involved form                                           | ✅ done |
 | 3     | Impact dashboard against a mocked data layer                                       | ✅ done |
-| 4     | Media & Press                                                                      | next    |
-| 5     | SafeHer partner portal with mocked auth                                            |         |
+| 4     | Media & Press                                                                      | ✅ done |
+| 5     | SafeHer partner portal with mocked auth                                            | next    |
 | 6     | Real backend integration — **gated on backend readiness**                          |         |
 | 7     | Sanity CMS wiring + French translation sign-off                                    |         |
 | 8     | Performance, accessibility, launch QA                                              |         |
@@ -171,18 +171,18 @@ Nothing here is invented. Where a real value doesn't exist yet, the code carries
 
 All of these are supplied through environment variables — no code change is needed to fill any of them in. They are declared in one place, `PENDING_VALUES` in [`lib/site-config.ts`](lib/site-config.ts), so the Phase 8 launch check is a single call to `getUnresolvedPendingValues()` rather than a manual sweep.
 
-| Value                                                                       | Env var                                      | Blocks                                                                                 |
-| --------------------------------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------- |
-| **Dedicated Twilio WhatsApp Business number**                               | `NEXT_PUBLIC_WHATSAPP_NUMBER`                | **Public launch** — see below                                                          |
-| Verified, **currently staffed** crisis/emergency contact                    | `NEXT_PUBLIC_CRISIS_CONTACT`                 | Safety & Your Privacy page                                                             |
-| Data Protection Commission registration number                              | `NEXT_PUBLIC_DPC_REGISTRATION_NUMBER`        | Footer + Privacy Policy                                                                |
-| General and press contact addresses                                         | `NEXT_PUBLIC_CONTACT_EMAIL` / `_PRESS_EMAIL` | Contact page                                                                           |
-| PPAG/UNFPA sign-off on the Privacy Policy and Terms                         | `NEXT_PUBLIC_LEGAL_SIGN_OFF`                 | Draft notice on both legal pages                                                       |
-| Official SafeSiso logo asset from the concept note                          | —                                            | Replaces the text wordmark in [`components/brand/logo.tsx`](components/brand/logo.tsx) |
-| Backend readiness + endpoint/auth details                                   | —                                            | **Gates Phase 6**                                                                      |
-| Target local languages + translation ownership                              | —                                            | Phase 7                                                                                |
-| Sign-off on French translations                                             | —                                            | Phase 7                                                                                |
-| Whether SafeHer partner locations show by district/region or more precisely | —                                            | Phase 2                                                                                |
+| Value                                                                       | Env var                                      | Blocks                                                                                                                                                                                                       |
+| --------------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Dedicated Twilio WhatsApp Business number**                               | `NEXT_PUBLIC_WHATSAPP_NUMBER`                | **Public launch** — see below                                                                                                                                                                                |
+| Verified, **currently staffed** crisis/emergency contact                    | `NEXT_PUBLIC_CRISIS_CONTACT`                 | Safety & Your Privacy page                                                                                                                                                                                   |
+| Data Protection Commission registration number                              | `NEXT_PUBLIC_DPC_REGISTRATION_NUMBER`        | Footer + Privacy Policy                                                                                                                                                                                      |
+| General and press contact addresses                                         | `NEXT_PUBLIC_CONTACT_EMAIL` / `_PRESS_EMAIL` | Contact page                                                                                                                                                                                                 |
+| PPAG/UNFPA sign-off on the Privacy Policy and Terms                         | `NEXT_PUBLIC_LEGAL_SIGN_OFF`                 | Draft notice on both legal pages                                                                                                                                                                             |
+| Official SafeSiso logo asset from the concept note                          | —                                            | Replaces the text wordmark in [`components/brand/logo.tsx`](components/brand/logo.tsx). The Media page states outright that the current wordmark is not the official mark and must not be reproduced as one. |
+| Backend readiness + endpoint/auth details                                   | —                                            | **Gates Phase 6**                                                                                                                                                                                            |
+| Target local languages + translation ownership                              | —                                            | Phase 7                                                                                                                                                                                                      |
+| Sign-off on French translations                                             | —                                            | Phase 7                                                                                                                                                                                                      |
+| Whether SafeHer partner locations show by district/region or more precisely | —                                            | Phase 2                                                                                                                                                                                                      |
 
 > **The crisis contact must not be published** until PPAG/UNFPA confirm the line is currently staffed. Publishing an unanswered emergency number to this audience is worse than publishing none.
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
@@ -13,10 +13,26 @@ import { MobileCtaBar } from "@/components/layout/mobile-cta-bar";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
+/**
+ * Inter, self-hosted from `public/fonts` rather than pulled via
+ * `next/font/google`.
+ *
+ * `next/font/google` downloads the font at BUILD time, which makes every build
+ * — local, CI and Vercel — depend on fonts.googleapis.com being reachable. That
+ * failed here once already ("Can't resolve .../font/google/font"), and a
+ * transient font outage blocking a deploy is not a trade worth making.
+ *
+ * This is the latin variable subset (48 KB), which covers English and French
+ * including accents and the œ ligature. If a locale needing latin-ext, Greek or
+ * Cyrillic is ever added, add that subset file here too.
+ */
+const inter = localFont({
+  src: "../../public/fonts/inter-latin-var.woff2",
+  weight: "400 700",
+  style: "normal",
   display: "swap",
   variable: "--font-inter",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 type LocaleParams = { locale: string };

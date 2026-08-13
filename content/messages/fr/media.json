@@ -1,0 +1,89 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: girl-facing copy uses informal \"tu\"; institutional copy uses formal \"vous\". Route for review in Phase 7 before removing this key.",
+  "media": {
+    "meta": {
+      "title": "Presse et médias",
+      "description": "Contact presse, informations clés et éléments de marque pour les journalistes couvrant SafeSiso — un service WhatsApp propulsé par l'IA destiné aux adolescentes du nord du Ghana."
+    },
+    "hero": {
+      "eyebrow": "Presse et médias",
+      "title": "Pour les journalistes",
+      "intro": "Tout ce qui figure ici est communicable et libre d'utilisation. Si vous avez besoin d'un élément absent de cette page, merci de nous écrire plutôt que de le déduire."
+    },
+    "contact": {
+      "heading": "Contact presse",
+      "body": "Pour les entretiens, les réactions, ou tout ce qui n'est pas traité ici.",
+      "responseNote": "SafeSiso est une petite équipe pilote : merci de prévoir un délai de réponse."
+    },
+    "facts": {
+      "heading": "Informations clés",
+      "intro": "Exactes à la date de la dernière mise à jour de cette page. Merci de les utiliser plutôt que de paraphraser d'autres sources.",
+      "items": [
+        {
+          "label": "De quoi s'agit-il",
+          "value": "Un chatbot WhatsApp propulsé par l'IA qui offre aux adolescentes un accès confidentiel et sans jugement à des informations en santé sexuelle et reproductive, avec détection automatique des risques et orientation vers des espaces sûrs vérifiés."
+        },
+        {
+          "label": "Public visé",
+          "value": "Les filles de 10 à 18 ans des communautés rurales et périurbaines des régions du Nord, du Haut-Orient et du Haut-Occident du Ghana."
+        },
+        {
+          "label": "Origine",
+          "value": "L'innovation lauréate du hackathon AI4HerFuture, organisé par l'UNFPA Ghana et l'Africa Health Innovation Centre (AHIC)."
+        },
+        {
+          "label": "Financement",
+          "value": "Le Fonds d'amorçage du hackathon AI for Her Future Innovation, avec le soutien de l'UNFPA Ghana et du gouvernement du Canada."
+        },
+        {
+          "label": "Partenaire de mise en œuvre",
+          "value": "La Planned Parenthood Association of Ghana (PPAG)."
+        },
+        {
+          "label": "Le réseau d'orientation",
+          "value": "SafeHer — un répertoire vérifié et actualisé d'espaces sûrs locaux qui reflète la disponibilité réelle, afin qu'une fille ne soit jamais orientée là où on ne peut pas l'accueillir."
+        },
+        {
+          "label": "État d'avancement",
+          "value": "Phase pilote, avant lancement. Aucun chiffre d'utilisation n'existe encore ; la page Impact publiera des chiffres anonymisés dès que le service sera en fonctionnement."
+        }
+      ]
+    },
+    "reporting": {
+      "heading": "Couvrir SafeSiso de façon responsable",
+      "intro": "Nous le demandons à chaque journaliste couvrant le programme, et ce n'est pas négociable pour nous.",
+      "points": [
+        {
+          "title": "Nous ne pouvons pas vous mettre en relation avec une utilisatrice de SafeSiso",
+          "body": "Non par réticence, mais parce que c'est impossible. Le service ne recueille jamais de nom, d'âge ni de localisation : aucune utilisatrice ne peut être identifiée. C'est tout le principe de la conception, et une demande de témoignage ne peut être satisfaite sans le rompre."
+        },
+        {
+          "title": "Merci de ne pas rechercher des utilisatrices",
+          "body": "Aborder des filles dans les communautés visées pour leur demander si elles ont utilisé SafeSiso les expose précisément au risque que le service existe pour prévenir."
+        },
+        {
+          "title": "Merci de ne pas publier l'adresse des espaces sûrs",
+          "body": "Les partenaires SafeHer sont localisés par région uniquement. Citer une adresse exacte dans un reportage pourrait exposer à la fois l'organisation et les filles que l'on verrait y entrer."
+        },
+        {
+          "title": "SafeSiso n'est pas un service d'urgence",
+          "body": "Si votre reportage est susceptible d'atteindre des filles en danger, merci de le préciser et d'orienter vos lecteurs vers les services d'urgence et les soutiens locaux de confiance, en plus de SafeSiso."
+        }
+      ]
+    },
+    "assets": {
+      "heading": "Éléments de marque",
+      "body": "Fichiers du logo, consignes d'utilisation et références de couleurs approuvées pour vos publications.",
+      "pendingLabel": "Kit logo non encore publié",
+      "pendingBody": "Les fichiers officiels du logo SafeSiso n'ont pas encore été publiés sur ce site. En attendant, le site utilise un simple logotype textuel, qui n'est pas la marque officielle et ne doit pas être reproduit comme telle. Merci de nous contacter pour obtenir les éléments corrects.",
+      "colourHeading": "Couleurs de la marque",
+      "colourNote": "Le vert WhatsApp n'est utilisé sur ce site que pour le bouton qui ouvre une conversation. Ce n'est pas une couleur de la marque SafeSiso."
+    },
+    "coverage": {
+      "heading": "Retombées presse",
+      "pendingHeading": "Aucune retombée pour l'instant",
+      "pendingBody": "SafeSiso n'a pas encore été lancé. Les retombées du lancement, les photographies et les vidéos seront rassemblées ici après l'événement de lancement.",
+      "note": "Si vous avez publié un article sur SafeSiso, nous aimerions le savoir — écrivez-nous."
+    }
+  }
+}

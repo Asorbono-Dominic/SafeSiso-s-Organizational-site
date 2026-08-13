@@ -1,0 +1,88 @@
+{
+  "media": {
+    "meta": {
+      "title": "Media & Press",
+      "description": "Press contact, key facts and brand assets for journalists covering SafeSiso — an AI-powered WhatsApp service for adolescent girls in Northern Ghana."
+    },
+    "hero": {
+      "eyebrow": "Media & press",
+      "title": "For journalists",
+      "intro": "Everything here is on the record and free to use. If you need something that isn't on this page, please get in touch rather than inferring it."
+    },
+    "contact": {
+      "heading": "Press contact",
+      "body": "For interviews, comment, or anything not covered here.",
+      "responseNote": "SafeSiso is a small pilot team, so please allow a little time for a reply."
+    },
+    "facts": {
+      "heading": "Key facts",
+      "intro": "Accurate as of this page's last update. Please use these rather than paraphrasing from elsewhere.",
+      "items": [
+        {
+          "label": "What it is",
+          "value": "An AI-powered WhatsApp chatbot giving adolescent girls confidential, shame-free access to sexual and reproductive health information, with automated risk detection and referral to verified safe spaces."
+        },
+        {
+          "label": "Who it serves",
+          "value": "Girls aged 10 to 18 in rural and peri-urban communities across the Northern, Upper East and Upper West regions of Ghana."
+        },
+        {
+          "label": "Origin",
+          "value": "The winning innovation at the AI4HerFuture Hackathon, organised by UNFPA Ghana and the Africa Health Innovation Centre (AHIC)."
+        },
+        {
+          "label": "Funding",
+          "value": "The AI for Her Future Innovation Hackathon Seed Fund, supported by UNFPA Ghana and the Government of Canada."
+        },
+        {
+          "label": "Delivery partner",
+          "value": "The Planned Parenthood Association of Ghana (PPAG)."
+        },
+        {
+          "label": "The referral network",
+          "value": "SafeHer — a verified, live directory of local safe spaces that reflects real availability, so a girl is never referred somewhere that cannot receive her."
+        },
+        {
+          "label": "Current status",
+          "value": "Pilot stage, pre-launch. No usage figures exist yet; the Impact page will carry live, anonymized figures once the service is running."
+        }
+      ]
+    },
+    "reporting": {
+      "heading": "Reporting on SafeSiso responsibly",
+      "intro": "We ask this of every journalist covering the programme, and it is not negotiable for us.",
+      "points": [
+        {
+          "title": "We cannot introduce you to a girl who has used SafeSiso",
+          "body": "Not because we would rather not — because we cannot. The service never collects a name, an age or a location, so there is no way to identify a single user. That is the whole design, and a request for case studies cannot be met without breaking it."
+        },
+        {
+          "title": "Please do not seek out individual users",
+          "body": "Approaching girls in target communities to ask whether they have used SafeSiso puts them at risk of exactly the exposure the service exists to prevent."
+        },
+        {
+          "title": "Please do not publish safe space addresses",
+          "body": "SafeHer partner locations are published by region only. Naming an exact address in coverage could expose both the organization and the girls seen entering it."
+        },
+        {
+          "title": "SafeSiso is not an emergency service",
+          "body": "If your coverage may reach girls at risk, please make that clear and point readers to emergency services and trusted local support alongside SafeSiso."
+        }
+      ]
+    },
+    "assets": {
+      "heading": "Brand assets",
+      "body": "Logo files, usage guidance and approved colour references for use in coverage.",
+      "pendingLabel": "Logo kit not yet published",
+      "pendingBody": "The official SafeSiso logo files have not been published to this site yet. In the meantime the site uses a plain text wordmark, which is not the official mark and should not be reproduced as one. Please contact us for the correct assets.",
+      "colourHeading": "Brand colours",
+      "colourNote": "WhatsApp green is used on this site only for the button that starts a chat. It is not a SafeSiso brand colour."
+    },
+    "coverage": {
+      "heading": "Coverage",
+      "pendingHeading": "No coverage yet",
+      "pendingBody": "SafeSiso has not launched. Launch coverage, photography and video will be collected here after the launch event.",
+      "note": "If you have published something about SafeSiso, we would like to hear about it — please get in touch."
+    }
+  }
+}

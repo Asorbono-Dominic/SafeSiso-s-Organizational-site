@@ -19,6 +19,7 @@ const MESSAGE_FILES = [
   "safeher",
   "get-involved",
   "faq",
+  "media",
   "contact",
   "legal",
 ] as const;
