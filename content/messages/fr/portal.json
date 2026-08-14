@@ -1,0 +1,66 @@
+{
+  "_translationReview": "<!-- TRANSLATION: needs native review --> Machine-assisted French, not yet reviewed by a native speaker. REGISTER: this is a staff work tool, so it uses formal \"vous\" throughout. Route for review in Phase 7 before removing this key.",
+  "portal": {
+    "meta": {
+      "title": "Portail partenaire SafeHer",
+      "description": "Connectez-vous pour gérer la disponibilité de votre organisation pour les orientations SafeHer."
+    },
+    "chrome": {
+      "name": "Portail partenaire SafeHer",
+      "backToSite": "Retour au site public",
+      "signedInAs": "Connecté en tant que",
+      "signOut": "Se déconnecter"
+    },
+    "login": {
+      "title": "Connexion partenaire",
+      "intro": "Réservé aux organisations partenaires SafeHer vérifiées. Si votre organisation ne fait pas encore partie du réseau, faites une demande via la page Participer.",
+      "emailLabel": "Adresse e-mail professionnelle",
+      "passwordLabel": "Mot de passe",
+      "submit": "Se connecter",
+      "submitting": "Connexion en cours…",
+      "invalid": "Cette adresse e-mail et ce mot de passe ne correspondent à aucun compte. Merci de vérifier les deux et de réessayer.",
+      "missing": "Merci de saisir votre adresse e-mail et votre mot de passe.",
+      "error": "Une erreur est survenue lors de la connexion. Merci de réessayer.",
+      "applyCta": "Candidater pour rejoindre le réseau SafeHer",
+      "mockHeading": "Ceci est un portail de test",
+      "mockBody": "Le portail n'est pas encore relié au système partenaire réel, et il s'agit de comptes de test. N'entrez pas de vrai mot de passe ici, et n'y consignez rien concernant une fille réelle ou une orientation réelle.",
+      "mockAccountsLabel": "Comptes de test",
+      "mockPasswordLabel": "Mot de passe pour les deux"
+    },
+    "availability": {
+      "title": "Votre disponibilité",
+      "intro": "Le moteur de mise en relation n'oriente une fille que vers un partenaire ayant confirmé pouvoir l'accueillir. Tenez cette information à jour — c'est elle qui la sépare d'une porte fermée.",
+      "currentHeading": "Statut actuel",
+      "neverSetLabel": "Pas encore défini",
+      "neverSetBody": "Votre organisation est considérée comme fermée tant que ce statut n'est pas défini. C'est délibéré : SafeSiso n'envoie personne vers un partenaire dont il n'a pas eu de nouvelles.",
+      "lastUpdatedLabel": "Dernière mise à jour",
+      "statusLabel": "Pouvez-vous recevoir une orientation en ce moment ?",
+      "statuses": {
+        "available": {
+          "label": "Oui — nous acceptons les orientations",
+          "help": "Vous pouvez accueillir une fille maintenant. Le moteur peut vous adresser des orientations."
+        },
+        "full": {
+          "label": "Capacité atteinte",
+          "help": "Vous êtes ouverts mais ne pouvez accueillir personne de plus actuellement. Aucune orientation ne sera envoyée."
+        },
+        "closed": {
+          "label": "Fermé",
+          "help": "Non joignable actuellement. Aucune orientation ne sera envoyée."
+        }
+      },
+      "slotsLabel": "Places disponibles aujourd'hui",
+      "slotsHelp": "Facultatif. Laissez vide si votre organisation ne suit pas cette information.",
+      "noteLabel": "Note pour l'équipe SafeSiso",
+      "noteHelp": "Facultatif, et jamais montré à une personne qui cherche de l'aide. Par exemple : horaires réduits cette semaine.",
+      "save": "Mettre à jour la disponibilité",
+      "saving": "Enregistrement…",
+      "saved": "Disponibilité mise à jour",
+      "savedAt": "Enregistré à",
+      "invalidSlots": "Merci de saisir un nombre entier de places, ou de laisser le champ vide.",
+      "invalidStatus": "Merci de choisir l'une des options proposées.",
+      "failed": "Votre modification n'a pas pu être enregistrée : votre disponibilité est inchangée. Merci de réessayer.",
+      "privacyNote": "Ce portail ne contient que des informations de disponibilité. Il n'affiche jamais de contenu de conversation et n'identifie jamais une fille — SafeSiso ne recueille pas ces informations."
+    }
+  }
+}

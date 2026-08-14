@@ -1,0 +1,65 @@
+{
+  "portal": {
+    "meta": {
+      "title": "SafeHer Partner Portal",
+      "description": "Sign in to manage your organization's availability for SafeHer referrals."
+    },
+    "chrome": {
+      "name": "SafeHer Partner Portal",
+      "backToSite": "Back to the public site",
+      "signedInAs": "Signed in as",
+      "signOut": "Sign out"
+    },
+    "login": {
+      "title": "Partner sign in",
+      "intro": "For verified SafeHer partner organizations. If your organization is not yet part of the network, apply through Get Involved.",
+      "emailLabel": "Work email address",
+      "passwordLabel": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "invalid": "That email address and password did not match an account. Please check both and try again.",
+      "missing": "Please enter both your email address and your password.",
+      "error": "Something went wrong signing you in. Please try again.",
+      "applyCta": "Apply to join the SafeHer network",
+      "mockHeading": "This is a test portal",
+      "mockBody": "The portal is not connected to the real partner system yet, and these are seeded test accounts. Do not enter a real password here, and do not record anything about a real girl or a real referral.",
+      "mockAccountsLabel": "Test accounts",
+      "mockPasswordLabel": "Password for both"
+    },
+    "availability": {
+      "title": "Your availability",
+      "intro": "The matching engine only refers a girl to a partner that has confirmed it can receive her. Keep this current — this is what stands between her and a closed door.",
+      "currentHeading": "Current status",
+      "neverSetLabel": "Not set yet",
+      "neverSetBody": "Your organization is treated as closed until you set this. That is deliberate: SafeSiso will not send anyone to a partner it has not heard from.",
+      "lastUpdatedLabel": "Last updated",
+      "statusLabel": "Can you receive a referral right now?",
+      "statuses": {
+        "available": {
+          "label": "Yes — accepting referrals",
+          "help": "You can receive a girl now. The matching engine may refer to you."
+        },
+        "full": {
+          "label": "At capacity",
+          "help": "You are open but cannot take anyone else right now. No referrals will be sent."
+        },
+        "closed": {
+          "label": "Closed",
+          "help": "Not reachable at all right now. No referrals will be sent."
+        }
+      },
+      "slotsLabel": "Places available today",
+      "slotsHelp": "Optional. Leave blank if your organization does not track this.",
+      "noteLabel": "Note for the SafeSiso team",
+      "noteHelp": "Optional, and not shown to anyone seeking help. For example, reduced hours this week.",
+      "save": "Update availability",
+      "saving": "Saving…",
+      "saved": "Availability updated",
+      "savedAt": "Saved at",
+      "invalidSlots": "Please enter a whole number of places, or leave it blank.",
+      "invalidStatus": "Please choose one of the available options.",
+      "failed": "Your change could not be saved, so your availability is unchanged. Please try again.",
+      "privacyNote": "This portal holds availability only. It never shows conversation content, and it never identifies a girl — SafeSiso does not collect that information in the first place."
+    }
+  }
+}

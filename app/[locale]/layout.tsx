@@ -7,9 +7,6 @@ import {
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
-import { SiteHeader } from "@/components/layout/site-header";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { MobileCtaBar } from "@/components/layout/mobile-cta-bar";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
@@ -110,7 +107,7 @@ export default async function LocaleLayout({
    * The only client components in the shared chrome are SiteHeader and
    * LocaleToggle, and between them they read `common` and `nav`. Anything else
    * that needs client-side messages wraps itself in its own provider — see the
-   * enquiry form on the Get Involved page.
+   * enquiry form on the Get Involved page and the portal forms.
    */
   const messages = await getMessages();
   const clientMessages = {
@@ -125,11 +122,12 @@ export default async function LocaleLayout({
           {t("skipToContent")}
         </a>
 
+        {/* Chrome lives in the route-group layouts, not here: the public site
+            and the partner portal deliberately look nothing alike. A clinic
+            worker updating availability has no use for a sticky "Start a
+            Private Chat on WhatsApp" bar. See Spec 6.7. */}
         <NextIntlClientProvider messages={clientMessages}>
-          <SiteHeader />
-          <div className="flex-1">{children}</div>
-          <SiteFooter />
-          <MobileCtaBar />
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

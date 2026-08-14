@@ -50,3 +50,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local mock data store (Phase 5 partner portal). Never committed.
+.data/

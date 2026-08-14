@@ -40,6 +40,7 @@ export const ROUTES = {
   privacy: "/privacy",
   terms: "/terms",
   portal: "/portal",
+  portalAvailability: "/portal/availability",
 } as const;
 
 /**

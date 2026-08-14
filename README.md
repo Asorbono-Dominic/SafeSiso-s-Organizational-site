@@ -106,6 +106,21 @@ Three states, and the distinction matters:
 
 Editing the fixture alone updates both the Impact page and the homepage teaser — no code change anywhere. That is the property Phase 6 depends on, and it is worth re-testing if you touch this area.
 
+### SafeHer partner portal
+
+Lives at `/[locale]/portal`, in its own route group so it carries plainer chrome than the marketing site — no navigation, no footer, no WhatsApp CTA. A clinic worker updating availability has no use for "Start a Private Chat" pinned to their screen (Spec 6.7).
+
+**The session token is never exposed to client-side JavaScript.** NextAuth's JWT strategy keeps it in an httpOnly, `Secure`, `SameSite=Lax` cookie with the `__Secure-` prefix, and the token itself is an encrypted JWE rather than merely signed. Verified from the raw `Set-Cookie` header, not assumed. This matters more here than on a typical site: the portal is tied to referrals involving minors, so an XSS bug that could lift a token out of `localStorage` would be a safeguarding incident, not an inconvenience.
+
+Two rules worth keeping when Phase 6 lands:
+
+1. **The partner is always taken from the session, never from the form.** A hidden `partnerId` field would let any signed-in user mark another organization available — which in this system means sending a girl to a door that is actually shut. Tested: injecting another partner's id has no effect.
+2. **Absence of information fails closed.** A partner with no availability record is treated as `closed`, not available. "We haven't heard from them" must never read as "they can take someone right now".
+
+Seeded test accounts are listed on the login screen itself, with a loud notice that this is a mock — otherwise someone eventually types a real password into a test system. Both accounts and that notice disappear in Phase 6.
+
+Availability persists to `.data/availability.json` (gitignored), falling back to memory when the filesystem is read-only.
+
 ---
 
 ## Brand assets
@@ -176,8 +191,8 @@ Phases ship one at a time; each is built, checked, committed, and pushed before 
 | 2     | SafeHer Network page + Get Involved form                                           | ✅ done |
 | 3     | Impact dashboard against a mocked data layer                                       | ✅ done |
 | 4     | Media & Press                                                                      | ✅ done |
-| 5     | SafeHer partner portal with mocked auth                                            | next    |
-| 6     | Real backend integration — **gated on backend readiness**                          |         |
+| 5     | SafeHer partner portal with mocked auth                                            | ✅ done |
+| 6     | Real backend integration — **gated on backend readiness**                          | next    |
 | 7     | Sanity CMS wiring + French translation sign-off                                    |         |
 | 8     | Performance, accessibility, launch QA                                              |         |
 

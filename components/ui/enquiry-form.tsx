@@ -3,7 +3,7 @@
 import { useActionState, useId } from "react";
 import { useFormStatus } from "react-dom";
 import { useTranslations } from "next-intl";
-import { submitEnquiryAction } from "@/app/[locale]/get-involved/actions";
+import { submitEnquiryAction } from "@/app/[locale]/(site)/get-involved/actions";
 import {
   ENQUIRY_TYPES,
   INITIAL_ENQUIRY_STATE,

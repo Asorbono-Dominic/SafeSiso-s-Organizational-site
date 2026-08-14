@@ -17,6 +17,26 @@ const eslintConfig = [
   },
   ...coreWebVitals,
   ...typescriptConfig,
+  {
+    rules: {
+      /**
+       * Allow the underscore convention for deliberately-unused bindings,
+       * including `const { secret: _secret, ...safe } = record` — the standard
+       * way to strip a field before returning an object. Without
+       * `ignoreRestSiblings` that pattern is flagged even though omitting the
+       * field is the entire point.
+       */
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
+        },
+      ],
+    },
+  },
 ];
 
 export default eslintConfig;

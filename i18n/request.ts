@@ -22,6 +22,7 @@ const MESSAGE_FILES = [
   "media",
   "contact",
   "legal",
+  "portal",
 ] as const;
 
 async function loadMessages(locale: string) {
