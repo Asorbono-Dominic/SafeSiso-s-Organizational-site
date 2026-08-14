@@ -27,6 +27,13 @@ const LABEL_KEY: Record<Locale, "english" | "french"> = {
  * Menu items are real <Link>s using next-intl's locale-aware `usePathname`,
  * which returns the path WITHOUT the locale prefix — so switching language
  * keeps the visitor on the page they were reading.
+ *
+ * `scroll={false}` matters here. next/link resets scroll to the top on every
+ * navigation, which is right for going to a different page and wrong for this:
+ * switching language is the same page in another language, and someone reading
+ * halfway down the Safety page should not be thrown back to the top for it.
+ * French runs longer than English, so the position is approximate rather than
+ * exact — but approximate beats losing your place entirely.
  */
 export function LocaleToggle() {
   const t = useTranslations("common");
@@ -92,6 +99,7 @@ export function LocaleToggle() {
                 <Link
                   href={pathname}
                   locale={locale}
+                  scroll={false}
                   aria-current={isActive ? "true" : undefined}
                   onClick={close}
                   className={
