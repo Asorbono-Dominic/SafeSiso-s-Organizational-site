@@ -10,6 +10,7 @@ import { redirect, Link } from "@/i18n/navigation";
 import { LoginForm } from "@/components/portal/login-form";
 import {
   SEEDED_ACCOUNTS_ENABLED,
+  SHOW_SETUP_HINT,
   TEST_CREDENTIALS,
 } from "@/lib/partner-accounts";
 import { ROUTES } from "@/lib/site-config";
@@ -86,9 +87,8 @@ export default async function PortalLoginPage({ params }: Props) {
         </aside>
       ) : null}
 
-      {/* Deployed with no PORTAL_DEV_PASSWORD: there are no accounts at all, so
-          say so rather than leaving staff to guess at a login that cannot
-          succeed. */}
+      {/* No PORTAL_DEV_PASSWORD: there are no accounts at all, so say so rather
+          than leaving anyone to guess at a login that cannot succeed. */}
       {!SEEDED_ACCOUNTS_ENABLED ? (
         <aside className="mt-8 rounded border-2 border-dashed border-orange-600 bg-orange-50 p-5">
           <h2 className="font-bold text-orange-800">
@@ -97,6 +97,19 @@ export default async function PortalLoginPage({ params }: Props) {
           <p className="mt-2 leading-relaxed text-teal-800">
             {t("unconfiguredBody")}
           </p>
+
+          {/* Local development only: the developer is the one who can fix this,
+              so tell them how. Shows the variable name, never a value. */}
+          {SHOW_SETUP_HINT ? (
+            <div className="mt-4 border-t border-orange-300 pt-4">
+              <p className="leading-relaxed text-teal-800">
+                {t("setupHintBody")}
+              </p>
+              <pre className="mt-2 overflow-x-auto rounded bg-white p-3 font-mono text-sm text-teal-700">
+                <code>PORTAL_DEV_PASSWORD=&quot;choose-anything&quot;</code>
+              </pre>
+            </div>
+          ) : null}
         </aside>
       ) : null}
 

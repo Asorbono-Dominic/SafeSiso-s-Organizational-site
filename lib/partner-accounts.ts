@@ -10,19 +10,16 @@ import { promisify } from "node:util";
  * Phase 6, when the FastAPI backend authenticates instead. The session shape
  * and everything above it stays put.
  *
- * These are TEST accounts for a pre-launch pilot, and they are DISABLED unless
- * explicitly enabled:
+ * These are TEST accounts for a pre-launch pilot, and they exist ONLY when
+ * PORTAL_DEV_PASSWORD is set — in every environment, local development
+ * included. Without it there are no accounts at all and every login fails.
  *
- *   - Local development: a fallback password is allowed, because the only
- *     person reaching it is the developer running the dev server.
- *   - Any production build: the seeded accounts exist ONLY if
- *     PORTAL_DEV_PASSWORD is set. Without it there are no accounts at all and
- *     every login attempt fails.
- *
- * That second rule is the important one. A hardcoded fallback would mean a
- * deployed portal was protected by a password published in a public Git
- * repository — which is not a lower standard than production, it is no
- * standard at all. Failing closed is the only safe default.
+ * THERE IS DELIBERATELY NO FALLBACK PASSWORD IN THIS FILE. An earlier version
+ * had one for local convenience, and GitGuardian was right to flag it: a
+ * password literal in a public repository is a password literal, however it is
+ * labelled, and "it only unlocks test accounts" is an argument that stops being
+ * true the moment someone reuses the constant. Requiring the variable
+ * everywhere costs one line in .env.local and removes the class of problem.
  *
  * Passwords are hashed with scrypt (Node built-in — no bcrypt dependency) and
  * compared in constant time, because writing a mock is not a reason to
@@ -31,19 +28,16 @@ import { promisify } from "node:util";
 
 const IS_DEV = process.env.NODE_ENV !== "production";
 
-/** Local-development fallback. Never used in a production build. */
-const DEV_FALLBACK_PASSWORD = "safeher-dev-only";
-
-const CONFIGURED_PASSWORD = process.env.PORTAL_DEV_PASSWORD?.trim() || null;
-
 /**
  * The password the seeded accounts use, or null when they are disabled.
- * Null in any production build with no PORTAL_DEV_PASSWORD configured.
+ * Never has a value that is not supplied from the environment.
  */
-const SEED_PASSWORD =
-  CONFIGURED_PASSWORD ?? (IS_DEV ? DEV_FALLBACK_PASSWORD : null);
+const SEED_PASSWORD = process.env.PORTAL_DEV_PASSWORD?.trim() || null;
 
 export const SEEDED_ACCOUNTS_ENABLED = SEED_PASSWORD !== null;
+
+/** True when a developer should be told how to switch the portal on. */
+export const SHOW_SETUP_HINT = IS_DEV && SEED_PASSWORD === null;
 
 const scryptAsync = promisify(scrypt);
 

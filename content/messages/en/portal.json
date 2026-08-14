@@ -26,7 +26,8 @@
       "mockAccountsLabel": "Test accounts",
       "mockPasswordLabel": "Password for both",
       "unconfiguredHeading": "Sign-in is not enabled in this environment",
-      "unconfiguredBody": "No partner accounts are configured here, so no sign-in will succeed. This is deliberate: the portal is still running on seeded test accounts, and those are never enabled on a deployed site unless someone turns them on explicitly."
+      "unconfiguredBody": "No partner accounts are configured here, so no sign-in will succeed. This is deliberate: the portal is still running on seeded test accounts, and those are only ever enabled when someone turns them on explicitly.",
+      "setupHintBody": "You are seeing this because you are running the site locally. To switch the test accounts on, add this line to your .env.local and restart the dev server — the value is yours to choose:"
     },
     "availability": {
       "title": "Your availability",

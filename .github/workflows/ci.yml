@@ -56,13 +56,17 @@ jobs:
       - name: Check message catalogues are in sync
         run: npm run check:messages
 
+      # Generated per run rather than written as a literal. The build does not
+      # need it today — the portal is force-dynamic, so nothing auth-related is
+      # prerendered and the build passes without it (verified) — but having one
+      # means a future change that evaluates auth() during prerendering fails on
+      # the real problem instead of a confusing missing-secret error.
+      #
+      # Generated, not hardcoded, because a secret-shaped literal in a public
+      # repository is exactly what secret scanners flag, and rightly: the next
+      # person to need one copies whatever is already there.
+      - name: Generate a throwaway build secret
+        run: echo "AUTH_SECRET=$(openssl rand -base64 32)" >> "$GITHUB_ENV"
+
       - name: Build
         run: npm run build
-        env:
-          # Not required today — the portal is force-dynamic, so nothing
-          # auth-related is prerendered and the build passes without this
-          # (verified). Set anyway so that if a future change causes `auth()` to
-          # be evaluated during prerendering, CI fails on the real problem
-          # rather than on a confusing missing-secret error. Throwaway value; it
-          # signs nothing that leaves the runner.
-          AUTH_SECRET: ci-build-only-not-a-real-secret

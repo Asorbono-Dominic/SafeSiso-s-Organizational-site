@@ -27,7 +27,8 @@
       "mockAccountsLabel": "Comptes de test",
       "mockPasswordLabel": "Mot de passe pour les deux",
       "unconfiguredHeading": "La connexion n'est pas activée dans cet environnement",
-      "unconfiguredBody": "Aucun compte partenaire n'est configuré ici : aucune connexion ne pourra aboutir. C'est délibéré — le portail fonctionne encore avec des comptes de test, et ceux-ci ne sont jamais activés sur un site déployé sans une action explicite."
+      "unconfiguredBody": "Aucun compte partenaire n'est configuré ici : aucune connexion ne pourra aboutir. C'est délibéré — le portail fonctionne encore avec des comptes de test, et ceux-ci ne sont activés que par une action explicite.",
+      "setupHintBody": "Ce message s'affiche parce que vous exécutez le site en local. Pour activer les comptes de test, ajoutez cette ligne à votre fichier .env.local puis redémarrez le serveur de développement — la valeur est libre :"
     },
     "availability": {
       "title": "Votre disponibilité",
