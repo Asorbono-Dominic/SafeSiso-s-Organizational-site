@@ -8,7 +8,10 @@ import {
 import { auth } from "@/auth";
 import { redirect, Link } from "@/i18n/navigation";
 import { LoginForm } from "@/components/portal/login-form";
-import { SEEDED_EMAILS } from "@/lib/partner-accounts";
+import {
+  SEEDED_ACCOUNTS_ENABLED,
+  TEST_CREDENTIALS,
+} from "@/lib/partner-accounts";
 import { ROUTES } from "@/lib/site-config";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -48,37 +51,54 @@ export default async function PortalLoginPage({ params }: Props) {
         </NextIntlClientProvider>
       </div>
 
-      {/* Removed in Phase 6, along with the seeded accounts themselves. While
-          this is a mock, being loud about it is the honest thing to do —
-          otherwise someone will type a real password into a test system. */}
-      <aside className="mt-8 rounded border-2 border-dashed border-orange-600 bg-orange-50 p-5">
-        <h2 className="font-bold text-orange-800">{t("mockHeading")}</h2>
-        <p className="mt-2 leading-relaxed text-teal-800">{t("mockBody")}</p>
-        <dl className="mt-4 space-y-2 text-sm">
-          <div>
-            <dt className="font-semibold text-teal-800">
-              {t("mockAccountsLabel")}
-            </dt>
-            <dd className="mt-1 space-y-0.5">
-              {SEEDED_EMAILS.map((email) => (
-                <code key={email} className="block font-mono text-teal-700">
-                  {email}
+      {/* Credentials are printed ONLY in local development. TEST_CREDENTIALS is
+          null in every production build, so a deployed portal cannot display
+          its own password — "test" plus "publicly reachable" is just a weak
+          login. The whole block, and the seeded accounts, go in Phase 6. */}
+      {TEST_CREDENTIALS ? (
+        <aside className="mt-8 rounded border-2 border-dashed border-orange-600 bg-orange-50 p-5">
+          <h2 className="font-bold text-orange-800">{t("mockHeading")}</h2>
+          <p className="mt-2 leading-relaxed text-teal-800">{t("mockBody")}</p>
+          <dl className="mt-4 space-y-2 text-sm">
+            <div>
+              <dt className="font-semibold text-teal-800">
+                {t("mockAccountsLabel")}
+              </dt>
+              <dd className="mt-1 space-y-0.5">
+                {TEST_CREDENTIALS.emails.map((email) => (
+                  <code key={email} className="block font-mono text-teal-700">
+                    {email}
+                  </code>
+                ))}
+              </dd>
+            </div>
+            <div>
+              <dt className="font-semibold text-teal-800">
+                {t("mockPasswordLabel")}
+              </dt>
+              <dd className="mt-1">
+                <code className="font-mono text-teal-700">
+                  {TEST_CREDENTIALS.password}
                 </code>
-              ))}
-            </dd>
-          </div>
-          <div>
-            <dt className="font-semibold text-teal-800">
-              {t("mockPasswordLabel")}
-            </dt>
-            <dd className="mt-1">
-              <code className="font-mono text-teal-700">
-                {process.env.PORTAL_DEV_PASSWORD ?? "safeher-dev-only"}
-              </code>
-            </dd>
-          </div>
-        </dl>
-      </aside>
+              </dd>
+            </div>
+          </dl>
+        </aside>
+      ) : null}
+
+      {/* Deployed with no PORTAL_DEV_PASSWORD: there are no accounts at all, so
+          say so rather than leaving staff to guess at a login that cannot
+          succeed. */}
+      {!SEEDED_ACCOUNTS_ENABLED ? (
+        <aside className="mt-8 rounded border-2 border-dashed border-orange-600 bg-orange-50 p-5">
+          <h2 className="font-bold text-orange-800">
+            {t("unconfiguredHeading")}
+          </h2>
+          <p className="mt-2 leading-relaxed text-teal-800">
+            {t("unconfiguredBody")}
+          </p>
+        </aside>
+      ) : null}
 
       <p className="mt-8">
         <Link

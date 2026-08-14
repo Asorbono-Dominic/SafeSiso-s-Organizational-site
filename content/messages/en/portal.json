@@ -24,7 +24,9 @@
       "mockHeading": "This is a test portal",
       "mockBody": "The portal is not connected to the real partner system yet, and these are seeded test accounts. Do not enter a real password here, and do not record anything about a real girl or a real referral.",
       "mockAccountsLabel": "Test accounts",
-      "mockPasswordLabel": "Password for both"
+      "mockPasswordLabel": "Password for both",
+      "unconfiguredHeading": "Sign-in is not enabled in this environment",
+      "unconfiguredBody": "No partner accounts are configured here, so no sign-in will succeed. This is deliberate: the portal is still running on seeded test accounts, and those are never enabled on a deployed site unless someone turns them on explicitly."
     },
     "availability": {
       "title": "Your availability",

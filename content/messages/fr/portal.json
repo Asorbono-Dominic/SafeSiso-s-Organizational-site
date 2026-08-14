@@ -25,7 +25,9 @@
       "mockHeading": "Ceci est un portail de test",
       "mockBody": "Le portail n'est pas encore relié au système partenaire réel, et il s'agit de comptes de test. N'entrez pas de vrai mot de passe ici, et n'y consignez rien concernant une fille réelle ou une orientation réelle.",
       "mockAccountsLabel": "Comptes de test",
-      "mockPasswordLabel": "Mot de passe pour les deux"
+      "mockPasswordLabel": "Mot de passe pour les deux",
+      "unconfiguredHeading": "La connexion n'est pas activée dans cet environnement",
+      "unconfiguredBody": "Aucun compte partenaire n'est configuré ici : aucune connexion ne pourra aboutir. C'est délibéré — le portail fonctionne encore avec des comptes de test, et ceux-ci ne sont jamais activés sur un site déployé sans une action explicite."
     },
     "availability": {
       "title": "Votre disponibilité",
