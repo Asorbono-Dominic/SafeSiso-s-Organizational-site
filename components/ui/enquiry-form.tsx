@@ -65,7 +65,11 @@ export function EnquiryForm() {
     `w-full rounded-lg border bg-white px-4 py-2.5 text-teal-900 ${
       state.fieldErrors[field]
         ? "border-orange-700"
-        : "border-cream-300 focus:border-teal-500"
+        : // teal-400, not cream-300: a form field's border is the visual
+          // affordance identifying the control, so WCAG 1.4.11 requires 3:1
+          // against the surface behind it. cream-300 measured 1.29:1 on white,
+          // which made the fields all but invisible on white cards.
+          "border-teal-400 focus:border-teal-500"
     }`;
 
   if (state.status === "success") {

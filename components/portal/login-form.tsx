@@ -79,7 +79,7 @@ export function LoginForm() {
           autoComplete="username"
           autoCapitalize="none"
           spellCheck={false}
-          className="mt-2 w-full rounded border border-cream-300 bg-white px-4 py-2.5 text-teal-900 focus:border-teal-500"
+          className="mt-2 w-full rounded border border-teal-400 bg-white px-4 py-2.5 text-teal-900 focus:border-teal-500"
         />
       </div>
 
@@ -96,7 +96,7 @@ export function LoginForm() {
           type="password"
           required
           autoComplete="current-password"
-          className="mt-2 w-full rounded border border-cream-300 bg-white px-4 py-2.5 text-teal-900 focus:border-teal-500"
+          className="mt-2 w-full rounded border border-teal-400 bg-white px-4 py-2.5 text-teal-900 focus:border-teal-500"
         />
       </div>
 

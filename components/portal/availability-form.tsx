@@ -141,7 +141,7 @@ export function AvailabilityForm({
             step={1}
             inputMode="numeric"
             defaultValue={initialSlots ?? ""}
-            className="mt-2 w-32 rounded border border-cream-300 bg-white px-4 py-2.5 text-teal-900 focus:border-teal-500"
+            className="mt-2 w-32 rounded border border-teal-400 bg-white px-4 py-2.5 text-teal-900 focus:border-teal-500"
           />
         </div>
       ) : null}
@@ -160,7 +160,7 @@ export function AvailabilityForm({
           rows={3}
           maxLength={500}
           defaultValue={initialNote ?? ""}
-          className="mt-2 w-full rounded border border-cream-300 bg-white px-4 py-2.5 text-teal-900 focus:border-teal-500"
+          className="mt-2 w-full rounded border border-teal-400 bg-white px-4 py-2.5 text-teal-900 focus:border-teal-500"
         />
       </div>
 

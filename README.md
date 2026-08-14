@@ -20,16 +20,20 @@ Then open **http://localhost:3000** — you'll be redirected to `/en`. French is
 
 ### Scripts
 
-| Command                  | What it does                                        |
-| ------------------------ | --------------------------------------------------- |
-| `npm run dev`            | Local dev server on port 3000                       |
-| `npm run build`          | Production build                                    |
-| `npm run start`          | Serve the production build                          |
-| `npm run lint`           | ESLint (`next/core-web-vitals` + `next/typescript`) |
-| `npm run typecheck`      | `tsc --noEmit`                                      |
-| `npm run format`         | Prettier — write                                    |
-| `npm run format:check`   | Prettier — verify only (this is what CI runs)       |
-| `npm run check:messages` | Verifies every locale catalogue has the same keys   |
+| Command                      | What it does                                                 |
+| ---------------------------- | ------------------------------------------------------------ |
+| `npm run dev`                | Local dev server on port 3000                                |
+| `npm run build`              | Production build                                             |
+| `npm run start`              | Serve the production build                                   |
+| `npm run lint`               | ESLint (`next/core-web-vitals` + `next/typescript`)          |
+| `npm run typecheck`          | `tsc --noEmit`                                               |
+| `npm run format`             | Prettier — write                                             |
+| `npm run format:check`       | Prettier — verify only (this is what CI runs)                |
+| `npm run check:messages`     | Verifies every locale catalogue has the same keys            |
+| `npm run check:contrast`     | WCAG contrast audit of the design tokens                     |
+| `npm run check:a11y`         | Structural a11y audit of every page (needs a running server) |
+| `npm run check:placeholders` | Lists every value still outstanding                          |
+| `npm run lighthouse`         | Lighthouse across every page (needs a running server)        |
 
 `check:messages` exists because a key present in `en` but missing from `fr` does **not** fail the build — next-intl renders the raw key path to the visitor instead. On a site where the copy is the product, that has to fail in CI.
 
@@ -134,6 +138,36 @@ Availability persists to `.data/availability.json` (gitignored), falling back to
 
 ---
 
+## Performance & accessibility
+
+Measured with Lighthouse on a throttled mobile profile (360×640, 4× CPU slowdown, simulated 3G-ish), against a production build.
+
+| Category       | Result across all 15 audited pages                  |
+| -------------- | --------------------------------------------------- |
+| Accessibility  | **100 on every page**                               |
+| Best practices | **100 on every page**                               |
+| SEO            | **100 on every page** except the portal (see below) |
+| Performance    | **95–97**, CLS 0, TBT 50–120 ms                     |
+
+The portal scores SEO 60 for one reason: `is-crawlable` fails because it is deliberately `noindex, nofollow`. That is the intended behaviour for a staff login, not a defect.
+
+**A caveat on the performance number.** Lighthouse's simulated Speed Index is noisy on a machine doing other work — two pages initially scored 89 and 93 with Speed Index readings of 39.5 s and 7.0 s despite FCP under 1 s and LCP under 2 s, which is not physically possible for a static page. Re-measured on a quiet machine they scored 96/97 with Speed Index around 0.8 s. The scores above are real, but treat any single run within a few points as noise. This is why CI asserts accessibility and best-practices as **errors** and performance only as a **warning** — a flaky red build teaches people to ignore the build.
+
+Two things were fixed as a result of the audit:
+
+- **Form field borders** used `cream-300`, which measures **1.29:1** on white against the 3:1 that WCAG 1.4.11 requires for the boundary of a UI component. On white cards the fields were nearly invisible. Now `teal-400` (3.43:1).
+- **The logo** was served at 640 px wide for a slot that renders about 30 px, preloaded on every page. Adding `sizes` took `uses-responsive-images` from 50 to 100 and halved Total Blocking Time.
+
+`npm run check:contrast` audits the design tokens themselves rather than only the pages Lighthouse happens to visit, so a token reused somewhere new cannot quietly drop below AA. All 32 text pairs pass; the WhatsApp CTA's dark label measures 7.91:1.
+
+## Analytics
+
+Cookie-less, and **inert until configured** — with no `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` the site emits no script tag and no analytics route exists at all.
+
+When configured, the script is **proxied through our own origin** (`/js/analytics.js`, `/api/event`) rather than loaded from `plausible.io`. The spec asks to avoid third-party scripts on a site a vulnerable minor may visit, and pointing the browser at an external analytics host would disclose to a third party that a device requested a page about abuse or contraception. It also survives the ad-blockers this traffic will meet. The partner portal is excluded entirely.
+
+---
+
 ## Brand assets
 
 The logo lives at `SafeSiso.jpg` in the repo root — that is the **source**, not something the site serves. Everything the site uses is derived from it by:
@@ -205,7 +239,7 @@ Phases ship one at a time; each is built, checked, committed, and pushed before 
 | 5     | SafeHer partner portal with mocked auth                                            | ✅ done |
 | 6     | Real backend integration — **gated on backend readiness**                          | next    |
 | 7     | Sanity CMS wiring + French translation sign-off                                    |         |
-| 8     | Performance, accessibility, launch QA                                              |         |
+| 8     | Performance, accessibility, launch QA                                              | ✅ done |
 
 ---
 

@@ -56,6 +56,11 @@ jobs:
       - name: Check message catalogues are in sync
         run: npm run check:messages
 
+      # Checks the design system itself, not just the pages Lighthouse happens
+      # to visit, so a token reused somewhere new cannot quietly drop below AA.
+      - name: Check colour contrast
+        run: npm run check:contrast
+
       # Generated per run rather than written as a literal. The build does not
       # need it today — the portal is force-dynamic, so nothing auth-related is
       # prerendered and the build passes without it (verified) — but having one
@@ -70,3 +75,62 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  # Separate job: this one needs a built app and a running server, and takes
+  # minutes rather than seconds. Keeping it apart means a typo still fails fast
+  # in the job above.
+  audit:
+    name: Performance & accessibility
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Pin npm
+        run: npm install -g npm@11
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate a throwaway build secret
+        run: echo "AUTH_SECRET=$(openssl rand -base64 32)" >> "$GITHUB_ENV"
+
+      - name: Build
+        run: npm run build
+
+      # nohup + disown so the server survives the end of this step's shell.
+      # lighthouserc.json deliberately has no startServerCommand: one server is
+      # started here and shared by every check below, rather than lhci racing
+      # this one for port 3000.
+      - name: Start server
+        run: |
+          nohup npm run start > /tmp/server.log 2>&1 &
+          for i in $(seq 1 60); do
+            curl -sf http://localhost:3000/en > /dev/null && echo "server ready" && exit 0
+            sleep 2
+          done
+          echo "server did not become ready"; cat /tmp/server.log; exit 1
+
+      # Structural checks across every page in both locales: one h1, no skipped
+      # heading levels, alt text, labelled form fields, landmarks, link names.
+      - name: Structural accessibility audit
+        run: npm run check:a11y
+
+      # Reports what is still outstanding rather than gating on it — these are
+      # expected to be unresolved before launch.
+      - name: Outstanding placeholders
+        run: npm run check:placeholders
+
+      # Accessibility and best-practices are asserted as errors because they
+      # measured a solid 100 on every page. Performance is a warning, not an
+      # error: Lighthouse's simulated Speed Index is noisy on shared CI runners
+      # and a flaky red build teaches people to ignore the build.
+      - name: Lighthouse
+        run: npx lhci autorun --config=lighthouserc.json
+        env:
+          LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ github.ref_name }}

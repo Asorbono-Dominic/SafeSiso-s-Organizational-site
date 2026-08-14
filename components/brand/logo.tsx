@@ -51,6 +51,17 @@ export function Logo({
           alt=""
           aria-hidden="true"
           priority
+          /**
+           * `sizes` matters more than it looks. Without it, next/image assumes
+           * the image may fill the viewport and picks a 640px-wide candidate —
+           * for a mark that renders about 30px across, preloaded on every page.
+           * Lighthouse scored "properly size images" at 50 because of it. On the
+           * data bundles this audience buys, that is real money for nothing.
+           *
+           * 64px covers the largest use (the Media page, at text-3xl) on a 2x
+           * screen; the browser picks the smallest candidate that fits.
+           */
+          sizes="64px"
           // Sized in `em` so the mark scales with whatever font-size the
           // surrounding context sets, instead of needing a size prop everywhere.
           className="h-[1.35em] w-[1.35em]"

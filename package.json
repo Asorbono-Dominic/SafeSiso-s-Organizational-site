@@ -9,6 +9,10 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "check:messages": "node scripts/check-messages.mjs",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "check:a11y": "node scripts/check-a11y-structure.mjs",
+    "check:placeholders": "node scripts/check-placeholders.mjs",
+    "lighthouse": "lhci autorun --config=lighthouserc.json",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -24,6 +28,7 @@
     "server-only": "^0.0.1"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
