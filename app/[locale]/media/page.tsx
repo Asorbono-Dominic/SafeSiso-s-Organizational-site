@@ -98,14 +98,23 @@ export default async function MediaPage({ params }: Props) {
           {t("assets.body")}
         </p>
 
+        <div className="mt-6 rounded-xl border border-cream-300 bg-white p-6 sm:p-8">
+          <h3 className="text-xl font-bold text-teal-500">
+            {t("assets.logoHeading")}
+          </h3>
+          <p className="mt-2 max-w-prose leading-relaxed text-teal-800">
+            {t("assets.logoBody")}
+          </p>
+          <p className="mt-5">
+            <span className="inline-block rounded-lg border border-cream-300 bg-cream-50 px-6 py-5 text-3xl">
+              <Logo />
+            </span>
+          </p>
+        </div>
+
         <div className="mt-6">
-          <Callout heading={t("assets.pendingLabel")} tone="urgent">
+          <Callout heading={t("assets.pendingLabel")}>
             <p className="leading-relaxed">{t("assets.pendingBody")}</p>
-            <p className="pt-2">
-              <span className="inline-block rounded-lg border border-cream-300 bg-white px-5 py-4 text-2xl">
-                <Logo />
-              </span>
-            </p>
           </Callout>
         </div>
 

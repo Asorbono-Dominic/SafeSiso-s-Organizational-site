@@ -108,6 +108,24 @@ Editing the fixture alone updates both the Impact page and the homepage teaser �
 
 ---
 
+## Brand assets
+
+The logo lives at `SafeSiso.jpg` in the repo root — that is the **source**, not something the site serves. Everything the site uses is derived from it by:
+
+```bash
+node scripts/build-logo-assets.mjs .
+```
+
+which writes `public/logo-mark.png`, `app/icon.png`, `app/apple-icon.png` and `app/favicon.ico`.
+
+The script exists because the supplied file is a **JPEG with the transparency checkerboard baked into its pixels** — JPEG cannot store alpha, so the grey-and-white squares are real image data. Dropping it straight into the header would have put a checkerboard tile in the top-left corner. The script keys that background back out (bright + unsaturated pixels become transparent, with a soft alpha ramp so edges stay anti-aliased), trims, squares, and emits every size.
+
+**If a lossless original ever turns up — SVG ideally, or a PNG with real transparency — replace `SafeSiso.jpg` and re-run the script.** The current assets are as good as a lossy JPEG allows, which is good enough at header size but not ideal for print or large-format use.
+
+The mark is dark teal, so on dark backgrounds (the footer) it sits on a light chip rather than disappearing. That is handled inside [`components/brand/logo.tsx`](components/brand/logo.tsx) via `tone="inverse"`.
+
+---
+
 ## Design system
 
 Tokens live in [`tailwind.config.ts`](tailwind.config.ts), from Spec Section 7.
@@ -171,18 +189,18 @@ Nothing here is invented. Where a real value doesn't exist yet, the code carries
 
 All of these are supplied through environment variables — no code change is needed to fill any of them in. They are declared in one place, `PENDING_VALUES` in [`lib/site-config.ts`](lib/site-config.ts), so the Phase 8 launch check is a single call to `getUnresolvedPendingValues()` rather than a manual sweep.
 
-| Value                                                                       | Env var                                      | Blocks                                                                                                                                                                                                       |
-| --------------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Dedicated Twilio WhatsApp Business number**                               | `NEXT_PUBLIC_WHATSAPP_NUMBER`                | **Public launch** — see below                                                                                                                                                                                |
-| Verified, **currently staffed** crisis/emergency contact                    | `NEXT_PUBLIC_CRISIS_CONTACT`                 | Safety & Your Privacy page                                                                                                                                                                                   |
-| Data Protection Commission registration number                              | `NEXT_PUBLIC_DPC_REGISTRATION_NUMBER`        | Footer + Privacy Policy                                                                                                                                                                                      |
-| General and press contact addresses                                         | `NEXT_PUBLIC_CONTACT_EMAIL` / `_PRESS_EMAIL` | Contact page                                                                                                                                                                                                 |
-| PPAG/UNFPA sign-off on the Privacy Policy and Terms                         | `NEXT_PUBLIC_LEGAL_SIGN_OFF`                 | Draft notice on both legal pages                                                                                                                                                                             |
-| Official SafeSiso logo asset from the concept note                          | —                                            | Replaces the text wordmark in [`components/brand/logo.tsx`](components/brand/logo.tsx). The Media page states outright that the current wordmark is not the official mark and must not be reproduced as one. |
-| Backend readiness + endpoint/auth details                                   | —                                            | **Gates Phase 6**                                                                                                                                                                                            |
-| Target local languages + translation ownership                              | —                                            | Phase 7                                                                                                                                                                                                      |
-| Sign-off on French translations                                             | —                                            | Phase 7                                                                                                                                                                                                      |
-| Whether SafeHer partner locations show by district/region or more precisely | —                                            | Phase 2                                                                                                                                                                                                      |
+| Value                                                                       | Env var                                      | Blocks                                                                                                                               |
+| --------------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Dedicated Twilio WhatsApp Business number**                               | `NEXT_PUBLIC_WHATSAPP_NUMBER`                | **Public launch** — see below                                                                                                        |
+| Verified, **currently staffed** crisis/emergency contact                    | `NEXT_PUBLIC_CRISIS_CONTACT`                 | Safety & Your Privacy page                                                                                                           |
+| Data Protection Commission registration number                              | `NEXT_PUBLIC_DPC_REGISTRATION_NUMBER`        | Footer + Privacy Policy                                                                                                              |
+| General and press contact addresses                                         | `NEXT_PUBLIC_CONTACT_EMAIL` / `_PRESS_EMAIL` | Contact page                                                                                                                         |
+| PPAG/UNFPA sign-off on the Privacy Policy and Terms                         | `NEXT_PUBLIC_LEGAL_SIGN_OFF`                 | Draft notice on both legal pages                                                                                                     |
+| Official SafeSiso logo asset from the concept note                          | —                                            | **Supplied.** See "Brand assets" below — a lossless original (SVG or PNG) would still be an improvement on the JPEG we derived from. |
+| Backend readiness + endpoint/auth details                                   | —                                            | **Gates Phase 6**                                                                                                                    |
+| Target local languages + translation ownership                              | —                                            | Phase 7                                                                                                                              |
+| Sign-off on French translations                                             | —                                            | Phase 7                                                                                                                              |
+| Whether SafeHer partner locations show by district/region or more precisely | —                                            | Phase 2                                                                                                                              |
 
 > **The crisis contact must not be published** until PPAG/UNFPA confirm the line is currently staffed. Publishing an unanswered emergency number to this audience is worse than publishing none.
 

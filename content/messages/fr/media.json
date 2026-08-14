@@ -74,8 +74,10 @@
     "assets": {
       "heading": "Éléments de marque",
       "body": "Fichiers du logo, consignes d'utilisation et références de couleurs approuvées pour vos publications.",
-      "pendingLabel": "Kit logo non encore publié",
-      "pendingBody": "Les fichiers officiels du logo SafeSiso n'ont pas encore été publiés sur ce site. En attendant, le site utilise un simple logotype textuel, qui n'est pas la marque officielle et ne doit pas être reproduit comme telle. Merci de nous contacter pour obtenir les éléments corrects.",
+      "logoHeading": "Le logo SafeSiso",
+      "logoBody": "L'emblème en forme de bouclier présenté ici est le logo officiel de SafeSiso, utilisé avec le logotype SafeSiso. Merci de les reproduire ensemble lorsque l'espace le permet.",
+      "pendingLabel": "Fichiers vectoriels et consignes d'utilisation non encore publiés",
+      "pendingBody": "Une version matricielle de l'emblème figure sur ce site, mais l'original vectoriel et les consignes d'utilisation écrites n'y ont pas encore été publiés. Si vous avez besoin du logo en grand format ou en monochrome, merci de nous le demander plutôt que d'agrandir ou de recolorer la version matricielle.",
       "colourHeading": "Couleurs de la marque",
       "colourNote": "Le vert WhatsApp n'est utilisé sur ce site que pour le bouton qui ouvre une conversation. Ce n'est pas une couleur de la marque SafeSiso."
     },

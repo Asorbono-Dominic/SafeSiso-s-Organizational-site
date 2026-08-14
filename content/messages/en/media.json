@@ -73,8 +73,10 @@
     "assets": {
       "heading": "Brand assets",
       "body": "Logo files, usage guidance and approved colour references for use in coverage.",
-      "pendingLabel": "Logo kit not yet published",
-      "pendingBody": "The official SafeSiso logo files have not been published to this site yet. In the meantime the site uses a plain text wordmark, which is not the official mark and should not be reproduced as one. Please contact us for the correct assets.",
+      "logoHeading": "The SafeSiso logo",
+      "logoBody": "The shield mark shown here is the official SafeSiso logo, used alongside the SafeSiso wordmark. Please reproduce them together where space allows.",
+      "pendingLabel": "Vector files and usage guidance not yet published",
+      "pendingBody": "A raster version of the mark is on this site, but the vector original and written usage guidance have not been published here yet. If you need the logo at large sizes, or in a single colour, please ask us rather than scaling or recolouring the raster version.",
       "colourHeading": "Brand colours",
       "colourNote": "WhatsApp green is used on this site only for the button that starts a chat. It is not a SafeSiso brand colour."
     },

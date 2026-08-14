@@ -1,18 +1,27 @@
+import Image from "next/image";
+import logoMark from "@/public/logo-mark.png";
+
 /**
- * Wordmark only, set in the brand palette.
+ * The SafeSiso logo: the official shield mark alongside the wordmark.
  *
- * This is deliberately NOT an invented logo mark. SafeSiso already has a logo
- * in the concept note that UNFPA has seen; drawing a new symbol here would
- * create a competing brand. Replace this with the official asset when the logo
- * kit is supplied (tracked as a pending item in the README).
+ * The mark is derived from the supplied SafeSiso.jpg by
+ * `scripts/build-logo-assets.mjs`, which keys out the transparency
+ * checkerboard the JPEG had baked into its pixels. If a lossless original
+ * (PNG or SVG) is ever supplied, drop it in and re-run that script.
+ *
+ * `priority` is set because this sits in the header on every page and is
+ * almost always within the initial viewport — letting it lazy-load would make
+ * it pop in after paint.
  */
 export function Logo({
   className = "",
   tone = "brand",
+  showWordmark = true,
 }: {
   className?: string;
   /** `inverse` is for dark backgrounds, where the teal would disappear. */
   tone?: "brand" | "inverse";
+  showWordmark?: boolean;
 }) {
   const [first, second] =
     tone === "inverse"
@@ -21,17 +30,38 @@ export function Logo({
 
   return (
     <span
-      className={`font-bold tracking-tight ${className}`}
-      // The wordmark is one word to a screen reader, not two.
+      className={`inline-flex items-center gap-2.5 font-bold tracking-tight ${className}`}
+      // The mark and wordmark are one logo to a screen reader, not three parts.
       aria-label="SafeSiso"
       role="img"
     >
-      <span aria-hidden="true" className={first}>
-        Safe
+      {/* The mark is dark teal, so on a dark background it would all but
+          disappear. Rather than ship a second recoloured asset, it sits on a
+          light chip there — which is also how most logos are handled on dark
+          chrome. */}
+      <span
+        className={
+          tone === "inverse"
+            ? "inline-flex shrink-0 rounded-md bg-cream-100 p-[0.15em]"
+            : "inline-flex shrink-0"
+        }
+      >
+        <Image
+          src={logoMark}
+          alt=""
+          aria-hidden="true"
+          priority
+          // Sized in `em` so the mark scales with whatever font-size the
+          // surrounding context sets, instead of needing a size prop everywhere.
+          className="h-[1.35em] w-[1.35em]"
+        />
       </span>
-      <span aria-hidden="true" className={second}>
-        Siso
-      </span>
+      {showWordmark ? (
+        <span aria-hidden="true">
+          <span className={first}>Safe</span>
+          <span className={second}>Siso</span>
+        </span>
+      ) : null}
     </span>
   );
 }
