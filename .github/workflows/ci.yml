@@ -11,12 +11,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      # v5 targets Node 24. v4 targeted Node 20, which GitHub has deprecated and
+      # was force-running on Node 24 anyway, producing a warning on every run.
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          # Matches local development. Node 24 ships npm 11.
+          node-version: 24
           cache: npm
+
+      # npm 10 and npm 11 disagree about how to resolve an OPTIONAL PEER
+      # dependency, and that disagreement silently breaks `npm ci`:
+      #
+      #   next        pins @swc/helpers to exactly 0.5.15
+      #   @swc/core   (via next-intl) wants @swc/helpers >=0.5.17, optional peer
+      #
+      # npm 11 treats the unsatisfiable optional peer as skippable and writes no
+      # nested entry. npm 10 resolves it, expects a nested @swc/helpers@0.5.23,
+      # does not find it in the lockfile, and fails with EUSAGE — which is what
+      # broke every run of this workflow up to and including CI #9.
+      #
+      # Pinning npm explicitly means CI resolves the lockfile exactly as a
+      # developer does, rather than depending on whichever npm the Node release
+      # happens to bundle. If you change this, make sure `npm ci` still passes
+      # on a clean checkout.
+      - name: Pin npm
+        run: npm install -g npm@11
 
       - name: Install dependencies
         run: npm ci
@@ -37,3 +58,11 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          # Not required today — the portal is force-dynamic, so nothing
+          # auth-related is prerendered and the build passes without this
+          # (verified). Set anyway so that if a future change causes `auth()` to
+          # be evaluated during prerendering, CI fails on the real problem
+          # rather than on a confusing missing-secret error. Throwaway value; it
+          # signs nothing that leaves the runner.
+          AUTH_SECRET: ci-build-only-not-a-real-secret

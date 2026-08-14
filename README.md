@@ -33,6 +33,17 @@ Then open **http://localhost:3000** — you'll be redirected to `/en`. French is
 
 `check:messages` exists because a key present in `en` but missing from `fr` does **not** fail the build — next-intl renders the raw key path to the visitor instead. On a site where the copy is the product, that has to fail in CI.
 
+### A note on npm versions
+
+**Use npm 11.** CI pins it explicitly, and the reason is worth knowing before you regenerate the lockfile:
+
+- `next` pins `@swc/helpers` to exactly `0.5.15`.
+- `@swc/core` (pulled in by `next-intl`) wants `@swc/helpers >=0.5.17` as an **optional peer**.
+
+npm 11 treats that unsatisfiable optional peer as skippable and writes no nested entry. npm 10 resolves it, expects a nested `@swc/helpers@0.5.23` in the lockfile, doesn't find one, and fails `npm ci` with `EUSAGE`. Nothing is wrong with the code — the two npm majors simply disagree, and `npm install` succeeds under both, so the breakage only ever shows up in CI.
+
+The committed lockfile currently contains the nested entry, so it satisfies **both** majors. Note that running `npm install` under npm 11 will quietly strip it again; that is harmless while CI is pinned to npm 11, but it is why CI pins rather than trusting whichever npm a Node release happens to bundle.
+
 ---
 
 ## Stack
