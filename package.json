@@ -12,6 +12,11 @@
     "check:contrast": "node scripts/check-contrast.mjs",
     "check:a11y": "node scripts/check-a11y-structure.mjs",
     "check:placeholders": "node scripts/check-placeholders.mjs",
+    "check:cms": "node --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-cms-roundtrip.mjs",
+    "review:build": "node scripts/build-translation-review.mjs",
+    "review:apply": "node scripts/apply-translation-review.mjs",
+    "cms:schema": "node scripts/build-sanity-schema.mjs",
+    "cms:seed": "node scripts/export-content-for-cms.mjs",
     "lighthouse": "lhci autorun --config=lighthouserc.json",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

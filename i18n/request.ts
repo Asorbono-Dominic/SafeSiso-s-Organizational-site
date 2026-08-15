@@ -1,40 +1,20 @@
 import { hasLocale } from "next-intl";
 import { getRequestConfig } from "next-intl/server";
+import { loadMessages } from "@/lib/cms";
 import { routing } from "./routing";
 
 /**
- * Copy lives in `content/messages/<locale>/<file>.json`, split one file per
- * page so no single file becomes unmanageable. Each file's top-level keys are
- * the message namespaces, and the files are shallow-merged into one catalogue.
+ * Message loading for every request.
  *
- * This is the single file Phase 7 rewrites to read from Sanity instead.
+ * The catalogue itself is assembled by `lib/cms.ts`: local JSON files under
+ * `content/messages/<locale>/`, with CMS content merged over the namespaces
+ * staff are allowed to edit. With no CMS configured — the state of a fresh
+ * clone, and of this project today — that is a plain read of the local files.
+ *
+ * This file used to hold the file list directly. It moved so that "where does
+ * copy come from" is one decision in one place, rather than something a future
+ * change has to reconstruct from two.
  */
-const MESSAGE_FILES = [
-  "common",
-  "home",
-  "how-it-works",
-  "about",
-  "safety",
-  "impact",
-  "safeher",
-  "get-involved",
-  "faq",
-  "media",
-  "contact",
-  "legal",
-  "portal",
-] as const;
-
-async function loadMessages(locale: string) {
-  const modules = await Promise.all(
-    MESSAGE_FILES.map(
-      (file) => import(`../content/messages/${locale}/${file}.json`),
-    ),
-  );
-
-  return Object.assign({}, ...modules.map((mod) => mod.default));
-}
-
 export default getRequestConfig(async ({ requestLocale }) => {
   const requested = await requestLocale;
   const locale = hasLocale(routing.locales, requested)

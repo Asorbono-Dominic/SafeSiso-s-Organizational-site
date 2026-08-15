@@ -61,6 +61,13 @@ jobs:
       - name: Check colour contrast
         run: npm run check:contrast
 
+      # The CMS is allowed to override page copy. This asserts that content
+      # seeded from the local files merges back to something byte-identical, so
+      # switching the CMS on cannot silently change what the site says. It also
+      # re-asserts that legal and safety copy stays out of the CMS entirely.
+      - name: Check CMS round-trip
+        run: npm run check:cms
+
       # Generated per run rather than written as a literal. The build does not
       # need it today — the portal is force-dynamic, so nothing auth-related is
       # prerendered and the build passes without it (verified) — but having one

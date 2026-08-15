@@ -56,3 +56,10 @@ next-env.d.ts
 
 # Lighthouse reports
 .lh/
+.lighthouseci/
+
+# Generated translation review document, and any corrections file a reviewer
+# sends back. Both are working artefacts: the document is regenerated from the
+# message catalogues at any time, and the corrections belong in the resulting
+# diff to fr/*.json, not in version control as a second source of truth.
+/review/

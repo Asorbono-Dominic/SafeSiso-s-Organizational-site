@@ -1,0 +1,41 @@
+{
+  "_comment": [
+    "Which message namespaces SafeSiso staff may edit in the CMS without a developer.",
+    "Single source of truth: read by lib/cms.ts (TypeScript) and by the export and",
+    "check scripts (plain Node), so the two can never drift apart.",
+    "",
+    "IN: content that legitimately changes with the programme — new questions, new",
+    "press coverage, new safe spaces, refreshed narrative copy.",
+    "",
+    "OUT, deliberately:",
+    "  legal   — Privacy and Terms need PPAG/UNFPA sign-off. A CMS would let someone",
+    "            change what SafeSiso promises about a minor's data with no review",
+    "            and no audit trail.",
+    "  safety  — the page that tells a girl what the service can and cannot do, and",
+    "            what happens if it thinks she is in danger. Same reasoning as legal:",
+    "            an edit here is a safety change, not a copy change.",
+    "  common  — navigation, buttons, footer. UI microcopy in a CMS breaks layouts,",
+    "            and it is the one namespace every page depends on.",
+    "  contact, get-involved — form labels and validation messages, which are wired",
+    "            to server-side code that expects them.",
+    "  portal  — partner-facing, behind auth, changes with the code that renders it.",
+    "",
+    "Moving a namespace into this list is a decision about who can change what",
+    "without review. Make it deliberately."
+  ],
+  "_note": [
+    "These are MESSAGE NAMESPACE keys, not filenames. Most files hold one",
+    "namespace of the same name, but not all: how-it-works.json holds",
+    "`howItWorks`, and safeher.json holds both `safeher` and `regions`."
+  ],
+  "cmsManaged": [
+    "home",
+    "howItWorks",
+    "about",
+    "impact",
+    "safeher",
+    "regions",
+    "faq",
+    "media"
+  ]
+}

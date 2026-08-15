@@ -86,20 +86,26 @@ components/
   ui/                # design-system pieces (CTA, grids, callouts, FAQ, ...)
 content/
   messages/
-    en/ fr/          # one JSON file per page — UI copy until Sanity (Phase 7)
+    en/ fr/          # one JSON file per page — the source of copy, and the
+                     # permanent fallback when the CMS is off or unreachable
+  cms-namespaces.json # which namespaces staff may edit in the CMS, and why
 i18n/
   routing.ts         # locale list + default
   navigation.ts      # locale-aware Link / redirect / usePathname
-  request.ts         # message loading — the one file Phase 7 rewrites
+  request.ts         # per-request config; delegates loading to lib/cms.ts
 lib/
   site-config.ts     # routes, nav, and the PENDING_VALUES registry
   whatsapp.ts        # the only place the WhatsApp number is resolved
+  cms.ts             # content source: local files + optional CMS (server-only)
+  cms-merge.ts       # the pure merge logic, so CI can test the real thing
   metrics.ts         # impact figures — the Phase 6 swap point (server-only)
   metrics-types.ts   # the agreed public metrics contract
   partner-enquiry.ts # enquiry delivery — the other Phase 6 swap point
   page-metadata.ts   # per-page title/description/canonical
+sanity/              # generated Studio schema — NOT part of this build
 scripts/
   check-messages.mjs # locale catalogue drift check (runs in CI)
+  check-cms-roundtrip.mjs # asserts CMS content == local content (runs in CI)
 proxy.ts             # locale negotiation and redirects (Next 16's middleware)
 ```
 
@@ -221,7 +227,71 @@ Find outstanding ones with:
 grep -rn "TRANSLATION: needs native review" content/
 ```
 
-These are routed for native-speaker review in Phase 7 and must all be cleared before launch.
+These must all be cleared before launch.
+
+#### Getting the French reviewed
+
+There are **606 segments, roughly 10,000 words**. A reviewer is not going to edit
+JSON, and should not be asked to — a stray comma in `legal.json` takes the site
+down. So the review happens in a document that cannot break anything:
+
+```bash
+npm run review:build      # → review/french-review.html
+```
+
+That is one self-contained file: no server, no install, works offline, saves
+progress to the browser as the reviewer types. Email it to the reviewer. It puts
+English and French side by side, states the register rule (informal **tu** for
+girls, formal **vous** for institutions), and flags the safety-critical pages so
+a reviewer short on time knows where to start.
+
+They send back a JSON block, which is applied with:
+
+```bash
+npm run review:apply corrections.json -- --dry-run   # see what would change
+npm run review:apply corrections.json                # apply it
+```
+
+The apply step refuses to drop an ICU placeholder, refuses to blank existing
+copy, refuses corrections made against text that has since changed, and does not
+apply anything the reviewer flagged as a question. The
+`_translationReview` marker is removed from a file only when every segment in it
+has been reviewed and nothing is still flagged.
+
+---
+
+## Content and the CMS
+
+Copy lives in `content/messages/`. That is the source of truth, and it stays the
+fallback forever: with no CMS configured — the state today — the site reads
+those files directly.
+
+When `NEXT_PUBLIC_SANITY_PROJECT_ID` is set, [`lib/cms.ts`](lib/cms.ts) merges
+CMS content **over** the local files, per key. An empty CMS field falls back to
+local copy; an unreachable CMS falls back to local copy; a CMS document for a
+namespace nobody authorised is logged and ignored.
+
+**What staff can edit:** Home, How it works, About, Impact, SafeHer, Regions,
+FAQ, Media/Press.
+
+**What they deliberately cannot:** Privacy, Terms, Safety, navigation, forms, and
+the portal. The legal pages need PPAG/UNFPA sign-off, and the Safety page tells a
+girl what the service can and cannot do and what happens if it thinks she is in
+danger. Editing either is a safety change, not a copy change. The reasoning and
+the list live in [`content/cms-namespaces.json`](content/cms-namespaces.json),
+and `npm run check:cms` fails the build if legal or safety ever appears in it.
+
+Setup instructions are in [`sanity/README.md`](sanity/README.md). In short:
+
+```bash
+npm run cms:schema   # generate Studio schema from the English catalogue
+npm run cms:seed     # export current content as importable NDJSON
+npm run check:cms    # assert seeded content renders identically to local
+```
+
+The seed matters: the CMS starts as an exact copy of what is already published,
+so editors open the Studio and see the real site instead of retyping 16
+documents and introducing drift on day one.
 
 ---
 
@@ -229,17 +299,33 @@ These are routed for native-speaker review in Phase 7 and must all be cleared be
 
 Phases ship one at a time; each is built, checked, committed, and pushed before the next begins.
 
-| Phase | Scope                                                                              | Status  |
-| ----- | ---------------------------------------------------------------------------------- | ------- |
-| 0     | Repo, scaffolding, i18n routing, tooling                                           | ✅ done |
-| 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | ✅ done |
-| 2     | SafeHer Network page + Get Involved form                                           | ✅ done |
-| 3     | Impact dashboard against a mocked data layer                                       | ✅ done |
-| 4     | Media & Press                                                                      | ✅ done |
-| 5     | SafeHer partner portal with mocked auth                                            | ✅ done |
-| 6     | Real backend integration — **gated on backend readiness**                          | next    |
-| 7     | Sanity CMS wiring + French translation sign-off                                    |         |
-| 8     | Performance, accessibility, launch QA                                              | ✅ done |
+| Phase | Scope                                                                              | Status      |
+| ----- | ---------------------------------------------------------------------------------- | ----------- |
+| 0     | Repo, scaffolding, i18n routing, tooling                                           | ✅ done     |
+| 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | ✅ done     |
+| 2     | SafeHer Network page + Get Involved form                                           | ✅ done     |
+| 3     | Impact dashboard against a mocked data layer                                       | ✅ done     |
+| 4     | Media & Press                                                                      | ✅ done     |
+| 5     | SafeHer partner portal with mocked auth                                            | ✅ done     |
+| 6     | Real backend integration — **gated on backend readiness**                          | blocked     |
+| 7     | Sanity CMS wiring + French translation sign-off                                    | ⏳ prepared |
+| 8     | Performance, accessibility, launch QA                                              | ✅ done     |
+
+Phase 7 is built as far as it can go without two things only the client can
+supply. Everything that does not depend on them is done and verified:
+
+- the content source, with the CMS off by default and local files as a permanent
+  fallback — **proven to change nothing**: the prerendered HTML of all 26 pages
+  is byte-identical before and after
+- generated Studio schema and a seed export of the live content
+- the French review document and the validated apply-corrections path
+
+Still outstanding, and neither is a coding task:
+
+| Needed                                        | From     | Blocks                     |
+| --------------------------------------------- | -------- | -------------------------- |
+| A Sanity project ID (free tier is sufficient) | SafeSiso | switching the CMS on       |
+| A native French reviewer                      | SafeSiso | clearing 13 review markers |
 
 ---
 
