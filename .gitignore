@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules
+# The Studio is a separate app with its own install; same rule applies.
+/studio/node_modules
+/studio/dist
+/studio/.sanity
 /.pnp
 .pnp.*
 .yarn/*

@@ -21,7 +21,7 @@
  *
  * Usage:
  *   node scripts/build-sanity-schema.mjs
- *   → sanity/schema/*.ts
+ *   → studio/schema/*.ts
  */
 
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
@@ -30,7 +30,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const EN_DIR = join(ROOT, "content", "messages", "en");
-const OUT_DIR = join(ROOT, "sanity", "schema");
+const OUT_DIR = join(ROOT, "studio", "schema");
 const REVIEW_MARKER_KEY = "_translationReview";
 
 const readJson = (p) => JSON.parse(readFileSync(p, "utf8"));
@@ -272,7 +272,7 @@ ${generated.map((g) => `  ${g.typeName},`).join("\n")}
 writeFileSync(join(OUT_DIR, "index.ts"), index, "utf8");
 
 console.log(
-  `Generated ${generated.length} Sanity document types in sanity/schema/`,
+  `Generated ${generated.length} Sanity document types in studio/schema/`,
 );
 for (const g of generated) {
   console.log(`  ${g.typeName.padEnd(24)} ${g.fields} top-level fields`);

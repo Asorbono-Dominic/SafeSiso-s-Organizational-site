@@ -102,7 +102,8 @@ lib/
   metrics-types.ts   # the agreed public metrics contract
   partner-enquiry.ts # enquiry delivery — the other Phase 6 swap point
   page-metadata.ts   # per-page title/description/canonical
-sanity/              # generated Studio schema — NOT part of this build
+studio/              # the Sanity Studio — a SEPARATE app, own package.json,
+                     # not installed by a root `npm install`
 scripts/
   check-messages.mjs # locale catalogue drift check (runs in CI)
   check-cms-roundtrip.mjs # asserts CMS content == local content (runs in CI)
@@ -263,8 +264,14 @@ has been reviewed and nothing is still flagged.
 ## Content and the CMS
 
 Copy lives in `content/messages/`. That is the source of truth, and it stays the
-fallback forever: with no CMS configured — the state today — the site reads
+fallback forever: with no CMS configured, or an unreachable one, the site reads
 those files directly.
+
+A Sanity project exists — `819tcmi7`, dataset `production` — but **no content has
+been imported into it yet**, so every page is currently served from the local
+files. That is the designed behaviour, not a failure, and it has been verified
+against the live project: a full build with the CMS configured and the dataset
+empty produces all 34 pages with their content intact.
 
 When `NEXT_PUBLIC_SANITY_PROJECT_ID` is set, [`lib/cms.ts`](lib/cms.ts) merges
 CMS content **over** the local files, per key. An empty CMS field falls back to
@@ -281,10 +288,15 @@ danger. Editing either is a safety change, not a copy change. The reasoning and
 the list live in [`content/cms-namespaces.json`](content/cms-namespaces.json),
 and `npm run check:cms` fails the build if legal or safety ever appears in it.
 
-Setup instructions are in [`sanity/README.md`](sanity/README.md). In short:
+The Studio lives in [`studio/`](studio/) and is a **separate application** with
+its own `package.json` — a root `npm install` does not install it, so the site's
+dependency tree stays small. Setup is three commands, documented in
+[`studio/README.md`](studio/README.md).
+
+From the repository root:
 
 ```bash
-npm run cms:schema   # generate Studio schema from the English catalogue
+npm run cms:schema   # regenerate Studio schema from the English catalogue
 npm run cms:seed     # export current content as importable NDJSON
 npm run check:cms    # assert seeded content renders identically to local
 ```

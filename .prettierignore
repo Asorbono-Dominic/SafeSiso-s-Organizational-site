@@ -8,5 +8,5 @@ package-lock.json
 
 # Generated output. Style-gating a generated file means CI fails the next time
 # anyone regenerates it, which teaches people to stop regenerating it.
-sanity/schema/
+studio/schema/
 review/

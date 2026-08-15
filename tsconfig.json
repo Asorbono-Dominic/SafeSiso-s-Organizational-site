@@ -29,10 +29,10 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  // `sanity/` holds generated Studio schema files. They are an artefact for a
-  // SEPARATE Sanity Studio project — this app never imports them, and they
-  // import the `sanity` package, which is deliberately not a dependency here.
-  // Typechecking them against this project would fail on an import that is
-  // correct in the place they actually run.
-  "exclude": ["node_modules", "sanity"]
+  // `studio/` is a SEPARATE application — the Sanity Studio content editors
+  // use. It has its own package.json and its own dependencies, and this site
+  // never imports it. Its files import the `sanity` package, which is
+  // deliberately not a dependency here, so typechecking them against this
+  // project would fail on an import that is correct where it actually runs.
+  "exclude": ["node_modules", "studio"]
 }
