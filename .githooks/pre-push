@@ -1,0 +1,49 @@
+#!/usr/bin/env sh
+#
+# Runs the fast half of CI before a push, so a red build is caught here rather
+# than in an email ten minutes later.
+#
+# It exists because of a real incident: a `sed` that corrected a name widened a
+# Markdown table by two characters, Prettier warned, the warning was treated as
+# advisory, and CI failed on `format:check`. The fix is not "remember to run
+# Prettier" — it is to make the pipeline's opinion unavoidable before pushing.
+#
+# What it does NOT run: `next build` and Lighthouse. Both are slow, and a hook
+# people resent is a hook people bypass. CI still runs everything.
+#
+# To skip deliberately (a WIP branch, a docs typo mid-rebase):
+#     git push --no-verify
+#
+# Installed via the `prepare` script in package.json, which points
+# core.hooksPath at this directory. No dependency, and it survives a fresh
+# clone as soon as someone runs `npm install`.
+
+set -e
+
+# Nothing to check if there are no commits being pushed (e.g. deleting a branch).
+if [ -z "$(git rev-list --count @{u}..HEAD 2>/dev/null || echo 1)" ]; then
+  exit 0
+fi
+
+printf '\n  Pre-push checks (git push --no-verify to skip)\n\n'
+
+run () {
+  printf '  %-28s' "$1"
+  if OUTPUT=$(npm run "$2" --silent 2>&1); then
+    printf 'ok\n'
+  else
+    printf 'FAILED\n\n'
+    echo "$OUTPUT" | tail -25
+    printf '\n  Push aborted. Fix the above, or: git push --no-verify\n\n'
+    exit 1
+  fi
+}
+
+run "formatting"        format:check
+run "lint"              lint
+run "types"             typecheck
+run "message catalogues" check:messages
+run "colour contrast"   check:contrast
+run "CMS round-trip"    check:cms
+
+printf '\n  All good.\n\n'

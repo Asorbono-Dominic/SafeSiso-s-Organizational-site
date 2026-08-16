@@ -19,7 +19,8 @@
     "cms:seed": "node scripts/export-content-for-cms.mjs",
     "lighthouse": "lhci autorun --config=lighthouserc.json",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "git config core.hooksPath .githooks || true"
   },
   "engines": {
     "node": ">=20.9.0"

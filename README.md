@@ -42,6 +42,18 @@ Then open **http://localhost:3000** — you'll be redirected to `/en`. French is
 
 `check:messages` exists because a key present in `en` but missing from `fr` does **not** fail the build — next-intl renders the raw key path to the visitor instead. On a site where the copy is the product, that has to fail in CI.
 
+### The pre-push hook
+
+`npm install` points git at [`.githooks/`](.githooks/) via the `prepare` script — no husky, no extra dependency. Before every push it runs formatting, lint, types, message catalogues, contrast, and the CMS round-trip: about a minute, and everything CI checks except `next build` and Lighthouse, which are too slow to put in a hook people have to live with.
+
+It exists because of a specific mistake worth not repeating. A `sed` correcting a reviewer's name widened a Markdown table by two characters, Prettier warned, the warning was treated as advisory, and CI failed on `format:check`. The lesson is not "remember to run Prettier" — it is that a warning the pipeline treats as fatal should be unavoidable before pushing.
+
+```bash
+git push --no-verify   # deliberate escape hatch
+```
+
+That escape hatch is on purpose. A hook with no way out gets deleted the first time someone needs to push a work-in-progress branch.
+
 ### A note on npm versions
 
 **Use npm 11.** CI pins it explicitly, and the reason is worth knowing before you regenerate the lockfile:
