@@ -114,6 +114,30 @@ or a terminal — they get a URL and a login.
 
 ---
 
+## Do not re-seed a live dataset
+
+`npm run seed` runs `sanity dataset import ... --replace`. That is exactly what
+you want on the **first** import and exactly what you do not want afterwards:
+it overwrites every document with the repository's copy, silently discarding
+whatever editors have changed since.
+
+The dataset went live on 16 August 2026 and now holds content the repository
+does not. Treat `npm run seed` as a one-time command.
+
+If you genuinely need to re-seed — a new dataset, or a deliberate reset —
+export what is there first:
+
+```bash
+npx sanity dataset export production backup.tar.gz
+```
+
+`npm run check:cms` will not save you here. It compares the generated seed
+against the local files, not against what is currently in Sanity, so it stays
+green while the CMS and the repository say different things. That divergence is
+the normal, intended state once editors start working.
+
+---
+
 ## Things that will come up
 
 - **An edit has not appeared on the site.** Content is cached for five minutes
@@ -125,9 +149,12 @@ or a terminal — they get a URL and a login.
 - **A developer added a field to a page.** Re-run `npm run cms:schema` from the
   repository root and commit the result, or the Studio will not offer editors
   the new field.
-- **English and French are separate documents.** Editing one does not touch the
-  other. That is intentional: a French page silently reverting to English would
-  be worse than it being briefly out of date.
+- **English and French are separate documents. Every edit must be made twice.**
+  Editing one does not touch the other, which is intentional — a French page
+  silently reverting to English would be worse than being briefly out of date.
+  But it does mean the languages drift apart unless whoever edits remembers.
+  The Studio lists both under each content type; the subtitle says which is
+  which.
 - **Edits stopped appearing entirely.** Check `SANITY_API_READ_TOKEN` first. If
   it is missing, wrong, or revoked, the site silently reverts to local content:
   visibly fine, quietly stale. `lib/cms.ts` logs a warning when the CMS returns
