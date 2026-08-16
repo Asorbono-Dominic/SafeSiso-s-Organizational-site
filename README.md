@@ -390,7 +390,9 @@ All of these are supplied through environment variables — no code change is ne
 
 > **The crisis contact must not be published** until PPAG/UNFPA confirm the line is currently staffed. Publishing an unanswered emergency number to this audience is worse than publishing none.
 
-> **The WhatsApp number is currently an interim personal line**, standing in until the dedicated Twilio WhatsApp Business number exists. While it is in place, anyone tapping "Start a Private Chat" reaches a person directly — they see that person's name and profile, and that person sees their phone number. That contradicts the anonymity the site promises, so **the site must not go public until the dedicated number replaces it.** Swapping it is an env change plus a redeploy; the parser accepts `0257514846`, `+233 25 751 4846` or `233257514846` interchangeably.
+> **The WhatsApp number is now the dedicated chatbot line: `0559883060`** (confirmed by the SafeSiso team, 16 August 2026). This clears what was a hard launch blocker. The interim number was a personal line, which meant anyone tapping "Start a Private Chat" reached a human directly — they saw that person's name and profile, and that person saw their phone number, contradicting the anonymity the site promises. That is no longer the case.
+>
+> Changing it is an env change plus a redeploy — `NEXT_PUBLIC_*` values are inlined at build time, so editing the variable without rebuilding changes nothing. The parser accepts `0559883060`, `+233 55 988 3060` or `233559883060` interchangeably; all resolve to `wa.me/233559883060`.
 
 ---
 

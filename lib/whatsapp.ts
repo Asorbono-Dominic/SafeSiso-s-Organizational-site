@@ -2,8 +2,8 @@
  * The one place the SafeSiso WhatsApp number is resolved.
  *
  * The number is NEVER hardcoded. It comes from the environment variable
- * `NEXT_PUBLIC_WHATSAPP_NUMBER`, so swapping the interim number for the
- * dedicated Twilio WhatsApp Business number is an env change plus a redeploy —
+ * `NEXT_PUBLIC_WHATSAPP_NUMBER`, so swapping the number for a different line is
+ * an env change plus a redeploy —
  * no code edit, no rebuild of any component.
  *
  * The parser accepts whatever format the number arrives in, so nobody has to

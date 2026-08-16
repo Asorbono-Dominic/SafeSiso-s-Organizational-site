@@ -12,11 +12,50 @@
  * Usage: node scripts/check-placeholders.mjs [--strict]
  */
 
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 
 const STRICT = process.argv.includes("--strict");
 const ROOT = process.cwd();
+
+/**
+ * Load .env.local into process.env.
+ *
+ * Next loads this automatically; a plain `node` script does not. Without it
+ * this report read an empty process.env and listed EVERY value as outstanding
+ * no matter what was configured — which is worse than no report, because it
+ * looks authoritative. It told us the WhatsApp number was still missing on a
+ * machine where it had been set for days.
+ *
+ * Real environment variables win, so CI (which sets them properly and has no
+ * .env.local) is unaffected.
+ */
+function loadEnvLocal() {
+  const file = path.join(ROOT, ".env.local");
+  if (!existsSync(file)) return;
+
+  for (const line of readFileSync(file, "utf8").split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+
+    const eq = trimmed.indexOf("=");
+    if (eq === -1) continue;
+
+    const key = trimmed.slice(0, eq).trim();
+    if (process.env[key] !== undefined) continue;
+
+    let value = trimmed.slice(eq + 1).trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+    process.env[key] = value;
+  }
+}
+
+loadEnvLocal();
 
 /** Environment-supplied values the UI renders a PENDING marker for. */
 const PENDING_ENV = [
@@ -107,7 +146,25 @@ function unreviewedTranslations() {
   );
 }
 
-const missing = PENDING_ENV.filter((item) => !process.env[item.env]?.trim());
+/**
+ * A `productionOnly` value counts as missing when it is unset OR still points
+ * at a development host.
+ *
+ * Without this, NEXT_PUBLIC_SITE_URL vanishes from the report the moment it is
+ * set to http://localhost:3000 — which is the exact state that breaks the
+ * social share card in production while looking perfectly configured locally.
+ * "Has a value" and "has the right value" are different questions, and only
+ * the second one matters at deploy time.
+ */
+const looksLocal = (value) =>
+  /localhost|127\.0\.0\.1|0\.0\.0\.0|\.local(?::|\/|$)/i.test(value);
+
+const missing = PENDING_ENV.filter((item) => {
+  const value = process.env[item.env]?.trim();
+  if (!value) return true;
+  return Boolean(item.productionOnly) && looksLocal(value);
+});
+
 const unreviewed = unreviewedTranslations();
 
 console.log("SafeSiso — launch readiness\n");
