@@ -10,10 +10,13 @@
     "deploy": "sanity deploy",
     "seed": "sanity dataset import ../review/cms-seed.ndjson production --replace"
   },
+  "engines": {
+    "node": ">=22.12"
+  },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "sanity": "^3.68.0",
-    "styled-components": "^6.1.13"
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "sanity": "^6.9.2",
+    "styled-components": "^6.1.15"
   }
 }
