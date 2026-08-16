@@ -349,11 +349,11 @@ the visible HTML of all 26 pages verified to match a CMS-off build.
 
 What is left is not a coding task:
 
-| Needed                                      | From        | Blocks                                          |
-| ------------------------------------------- | ----------- | ----------------------------------------------- |
+| Needed                                       | From        | Blocks                                          |
+| -------------------------------------------- | ----------- | ----------------------------------------------- |
 | French review — **Mr Alfred Kpirika Lambon** | in progress | 13 review markers, and launch                   |
-| `SANITY_API_READ_TOKEN` in Vercel           | SafeSiso    | the CMS affecting **production** (local is set) |
-| `sanity deploy`                             | SafeSiso    | giving editors a URL instead of a local Studio  |
+| `SANITY_API_READ_TOKEN` in Vercel            | SafeSiso    | the CMS affecting **production** (local is set) |
+| `sanity deploy`                              | SafeSiso    | giving editors a URL instead of a local Studio  |
 
 ---
 
