@@ -7,7 +7,7 @@ The site reads content over HTTP and never imports the Sanity SDK.
 Running `npm install` at the repository root does **not** install this. That is
 deliberate — the site's dependency tree stays small.
 
-**Project:** `819tcmi7` · **Dataset:** `production` (public read)
+**Project:** `819tcmi7` · **Dataset:** `production` · **read token required** (see step 4)
 
 ---
 
@@ -29,35 +29,76 @@ the build if `legal` or `safety` is ever added to the managed list.
 
 ---
 
-## Setup — three commands
+## Setup
 
-From this folder:
+**1. Generate the seed**, from the repository root. It is a build artefact and
+is not committed, so a fresh clone will not have one:
+
+```bash
+npm run cms:seed
+```
+
+**2. Install and log in**, from this folder:
 
 ```bash
 npm install
 npx sanity login      # opens a browser; use the account that owns the project
-npm run seed          # imports the content that is already on the live site
 ```
 
-`npm run seed` reads `../review/cms-seed.ndjson`. Generate it first from the
-repository root if it is not there — it is a build artefact and is not committed:
+**3. Import the content that is already live:**
 
 ```bash
-npm run cms:seed
+npm run seed          # reads ../review/cms-seed.ndjson
 ```
 
 Seeding matters. Without it an editor opens an empty Studio and retypes 16
 documents by hand, and the CMS disagrees with the site from day one. With it,
 the first thing they see is the real website.
 
-Then check nothing moved:
+**4. Give the site a read token. This is required, and the reason is not
+obvious.**
+
+The dataset's `aclMode` is `public`. On older Sanity projects that alone made it
+readable by anyone and no token was needed. That is no longer true: projects
+created under Sanity's current defaults grant no anonymous read at all, so an
+untokened request is refused whatever the ACL says.
+
+The refusal is easy to misdiagnose, because it is **not** a 401. It comes back
+as `HTTP 200` with an empty result — indistinguishable from a dataset that
+simply has nothing in it. This project hit exactly that: all sixteen documents
+imported correctly and the site ignored every one of them, silently, while
+looking perfectly healthy. The giveaway is a single-document fetch:
 
 ```bash
-cd .. && npm run build     # the site should look exactly as it did before
+curl "https://819tcmi7.api.sanity.io/v2025-08-15/data/doc/production/messages_home.en"
+# {"documents":[],"omitted":[{"id":"messages_home.en","reason":"permission"}]}
 ```
 
-That is not a hope — `npm run check:cms` asserts the seeded content merges back
-byte-identically, and it runs in CI.
+`lib/cms.ts` now warns whenever the CMS is configured and returns nothing, so
+this cannot happen quietly again.
+
+Create a **Viewer** (read-only) token — the site only ever reads — at
+sanity.io/manage → API → Tokens, and set it in `.env.local` and in Vercel:
+
+```
+NEXT_PUBLIC_SANITY_PROJECT_ID="819tcmi7"
+NEXT_PUBLIC_SANITY_DATASET="production"
+SANITY_API_READ_TOKEN="<viewer token>"
+```
+
+**5. Check nothing moved:**
+
+```bash
+cd .. && npm run check:cms && npm run build
+```
+
+Note `check:cms` is a **root** script, not a Studio one — running it inside
+`studio/` gives "Missing script".
+
+That the site is unchanged is not a hope. `check:cms` asserts the seeded content
+merges back byte-identically and runs in CI, and this was additionally verified
+end to end: the site was built once reading from Sanity and once with the CMS
+switched off, and the visible HTML of all 26 pages matched.
 
 ---
 
@@ -87,10 +128,12 @@ or a terminal — they get a URL and a login.
 - **English and French are separate documents.** Editing one does not touch the
   other. That is intentional: a French page silently reverting to English would
   be worse than it being briefly out of date.
-- **The dataset is public.** Anyone can read it. That is fine for copy that is
-  published on a public website anyway — but do not put anything in here that is
-  not meant to be public. If that ever changes, make the dataset private and set
-  `SANITY_API_READ_TOKEN` on the site.
+- **Edits stopped appearing entirely.** Check `SANITY_API_READ_TOKEN` first. If
+  it is missing, wrong, or revoked, the site silently reverts to local content:
+  visibly fine, quietly stale. `lib/cms.ts` logs a warning when the CMS returns
+  nothing, so the build log is where to look.
+- **Do not put anything non-public in here.** The token protects the API, not
+  the content. This is website copy that is published anyway.
 
 ---
 

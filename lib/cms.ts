@@ -148,6 +148,28 @@ async function loadCmsOverrides(locale: string): Promise<MessageTree> {
       result?: { namespace?: string; content?: unknown }[];
     };
 
+    // A PRIVATE dataset does not return 401 to an unauthenticated reader. It
+    // returns 200 with an empty result — indistinguishable, to the code above,
+    // from a dataset that simply has nothing in it. Both then fall back to
+    // local content, which is the right behaviour but a silent one: the site
+    // looks perfect and the CMS quietly does nothing, forever.
+    //
+    // That happened on this project. The documents imported fine and the site
+    // ignored all sixteen of them for want of read access. So: configuring a
+    // CMS and receiving nothing from it is treated as a misconfiguration and
+    // said out loud, because it almost always is one.
+    if ((body.result ?? []).length === 0) {
+      console.warn(
+        `[cms] Sanity returned no documents for locale "${locale}". Serving ` +
+          `local content.\n` +
+          `      If content HAS been imported, the dataset is probably private. ` +
+          `Either make it\n` +
+          `      public (sanity dataset visibility set ${dataset} public) or set ` +
+          `SANITY_API_READ_TOKEN.`,
+      );
+      return {};
+    }
+
     const overrides: MessageTree = {};
     for (const doc of body.result ?? []) {
       const { namespace, content } = doc;

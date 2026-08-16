@@ -267,16 +267,25 @@ Copy lives in `content/messages/`. That is the source of truth, and it stays the
 fallback forever: with no CMS configured, or an unreachable one, the site reads
 those files directly.
 
-A Sanity project exists — `819tcmi7`, dataset `production` — but **no content has
-been imported into it yet**, so every page is currently served from the local
-files. That is the designed behaviour, not a failure, and it has been verified
-against the live project: a full build with the CMS configured and the dataset
-empty produces all 34 pages with their content intact.
+The CMS is live: project `819tcmi7`, dataset `production`, seeded with the
+current site copy — 16 documents, 8 namespaces in each language.
 
 When `NEXT_PUBLIC_SANITY_PROJECT_ID` is set, [`lib/cms.ts`](lib/cms.ts) merges
 CMS content **over** the local files, per key. An empty CMS field falls back to
 local copy; an unreachable CMS falls back to local copy; a CMS document for a
 namespace nobody authorised is logged and ignored.
+
+Verified end to end rather than assumed: the site was built once reading from
+Sanity and once with the CMS switched off, and the visible HTML of all 26 pages
+matched. (One page differed only in where Next emits a `<meta>` tag — same tags,
+same text, same length.)
+
+**`SANITY_API_READ_TOKEN` is required whenever the project ID is set.** The
+dataset's ACL says `public`, but Sanity grants no anonymous read on projects
+created under its current defaults, and the refusal arrives as `HTTP 200` with
+an empty result rather than a `401` — which reads exactly like an empty dataset.
+That cost us a debugging session here; `lib/cms.ts` now warns loudly whenever
+the CMS is configured and returns nothing. See [`studio/README.md`](studio/README.md).
 
 **What staff can edit:** Home, How it works, About, Impact, SafeHer, Regions,
 FAQ, Media/Press.
@@ -311,33 +320,30 @@ documents and introducing drift on day one.
 
 Phases ship one at a time; each is built, checked, committed, and pushed before the next begins.
 
-| Phase | Scope                                                                              | Status      |
-| ----- | ---------------------------------------------------------------------------------- | ----------- |
-| 0     | Repo, scaffolding, i18n routing, tooling                                           | ✅ done     |
-| 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | ✅ done     |
-| 2     | SafeHer Network page + Get Involved form                                           | ✅ done     |
-| 3     | Impact dashboard against a mocked data layer                                       | ✅ done     |
-| 4     | Media & Press                                                                      | ✅ done     |
-| 5     | SafeHer partner portal with mocked auth                                            | ✅ done     |
-| 6     | Real backend integration — **gated on backend readiness**                          | blocked     |
-| 7     | Sanity CMS wiring + French translation sign-off                                    | ⏳ prepared |
-| 8     | Performance, accessibility, launch QA                                              | ✅ done     |
+| Phase | Scope                                                                              | Status                            |
+| ----- | ---------------------------------------------------------------------------------- | --------------------------------- |
+| 0     | Repo, scaffolding, i18n routing, tooling                                           | ✅ done                           |
+| 1     | Marketing pages (Home, How It Works, About, Safety & Privacy, FAQ, Contact, Legal) | ✅ done                           |
+| 2     | SafeHer Network page + Get Involved form                                           | ✅ done                           |
+| 3     | Impact dashboard against a mocked data layer                                       | ✅ done                           |
+| 4     | Media & Press                                                                      | ✅ done                           |
+| 5     | SafeHer partner portal with mocked auth                                            | ✅ done                           |
+| 6     | Real backend integration — **gated on backend readiness**                          | blocked                           |
+| 7     | Sanity CMS wiring + French translation sign-off                                    | ⏳ CMS live, translations pending |
+| 8     | Performance, accessibility, launch QA                                              | ✅ done                           |
 
-Phase 7 is built as far as it can go without two things only the client can
-supply. Everything that does not depend on them is done and verified:
+**The CMS half of Phase 7 is done.** Project `819tcmi7` is created, the Studio
+runs, the generated schema compiles against it, the dataset is seeded with the
+16 documents that make up the current site, and the site reads from it — with
+the visible HTML of all 26 pages verified to match a CMS-off build.
 
-- the content source, with the CMS off by default and local files as a permanent
-  fallback — **proven to change nothing**: the prerendered HTML of all 26 pages
-  is byte-identical before and after
-- generated Studio schema and a seed export of the live content
-- the French review document and the validated apply-corrections path
+What is left is not a coding task:
 
-Still outstanding, and neither is a coding task:
-
-| Needed                                        | From     | Blocks                     |
-| --------------------------------------------- | -------- | -------------------------- |
-| A Sanity project ID (free tier is sufficient) | SafeSiso | switching the CMS on       |
-| A native French reviewer                      | SafeSiso | clearing 13 review markers |
+| Needed                            | From     | Blocks                                          |
+| --------------------------------- | -------- | ----------------------------------------------- |
+| A native French reviewer          | SafeSiso | 13 review markers, and launch                   |
+| `SANITY_API_READ_TOKEN` in Vercel | SafeSiso | the CMS affecting **production** (local is set) |
+| `sanity deploy`                   | SafeSiso | giving editors a URL instead of a local Studio  |
 
 ---
 

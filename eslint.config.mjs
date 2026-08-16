@@ -13,6 +13,18 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "next-env.d.ts",
+      /**
+       * The Studio is a separate application with its own dependencies and its
+       * own toolchain, and everything in studio/schema is generated. Linting it
+       * with the website's config is meaningless, and once its node_modules
+       * exists there is a great deal of it.
+       *
+       * tsconfig.json and .prettierignore already exclude it; this closes the
+       * remaining gap.
+       */
+      "studio/**",
+      /** Generated review document and CMS seed. Not source. */
+      "review/**",
     ],
   },
   ...coreWebVitals,
