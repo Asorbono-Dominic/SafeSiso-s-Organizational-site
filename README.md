@@ -242,7 +242,7 @@ JSON, and should not be asked to — a stray comma in `legal.json` takes the sit
 down. So the review happens in a document that cannot break anything:
 
 ```bash
-npm run review:build -- --reviewer "Mr Afred Kpirika Lambon"
+npm run review:build -- --reviewer "Mr Alfred Kpirika Lambon"
 # → review/french-review.html
 ```
 
@@ -351,7 +351,7 @@ What is left is not a coding task:
 
 | Needed                                      | From        | Blocks                                          |
 | ------------------------------------------- | ----------- | ----------------------------------------------- |
-| French review — **Mr Afred Kpirika Lambon** | in progress | 13 review markers, and launch                   |
+| French review — **Mr Alfred Kpirika Lambon** | in progress | 13 review markers, and launch                   |
 | `SANITY_API_READ_TOKEN` in Vercel           | SafeSiso    | the CMS affecting **production** (local is set) |
 | `sanity deploy`                             | SafeSiso    | giving editors a URL instead of a local Studio  |
 
