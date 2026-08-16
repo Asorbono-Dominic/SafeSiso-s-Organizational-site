@@ -11,6 +11,8 @@
       "mission": "Nous existons pour que chaque fille du nord du Ghana puisse obtenir une réponse honnête aux questions qu'elle n'ose pas poser à voix haute — et, si elle a besoin de plus qu'une réponse, pour lui indiquer un endroit sûr, près de chez elle, prêt à l'aider.",
       "conversationLabel": "Un exemple de ce à quoi ressemble une conversation avec SafeSiso",
       "conversationDisclaimer": "Une illustration, pas une vraie conversation. Les échanges réels ne sont jamais montrés à personne.",
+      "conversationSpeakerGirl": "Elle a écrit :",
+      "conversationSpeakerBot": "SafeSiso a répondu :",
       "conversation": [
         {
           "from": "girl",

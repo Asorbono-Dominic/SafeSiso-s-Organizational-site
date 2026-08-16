@@ -10,6 +10,8 @@
       "mission": "We are here so that every girl in Northern Ghana can get an honest answer to the questions she is afraid to ask out loud — and, if she needs more than an answer, a safe place nearby that is ready to help.",
       "conversationLabel": "An example of what a SafeSiso conversation looks like",
       "conversationDisclaimer": "An illustration, not a real conversation. Real chats are never shown to anyone.",
+      "conversationSpeakerGirl": "She said:",
+      "conversationSpeakerBot": "SafeSiso replied:",
       "conversation": [
         {
           "from": "girl",

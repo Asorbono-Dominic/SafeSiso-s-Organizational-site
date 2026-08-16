@@ -73,6 +73,10 @@ export default async function HomePage({ params }: Props) {
             turns={conversation}
             label={t("hero.conversationLabel")}
             disclaimer={t("hero.conversationDisclaimer")}
+            speakerLabels={{
+              girl: t("hero.conversationSpeakerGirl"),
+              safesiso: t("hero.conversationSpeakerBot"),
+            }}
           />
         </div>
       </section>
