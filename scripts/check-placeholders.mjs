@@ -67,6 +67,19 @@ const PENDING_ENV = [
     optional: true,
   },
   {
+    // Not "outstanding" in the usual sense — it has a value locally. But that
+    // value is http://localhost:3000, and it is the metadataBase every
+    // absolute URL is built from. Deployed unchanged, og:image resolves to
+    // http://localhost:3000/... and every social platform silently fails to
+    // fetch it: the share card goes blank with nothing in any log.
+    env: "NEXT_PUBLIC_SITE_URL",
+    what: "Canonical public origin",
+    blocks:
+      "Must be the real domain in production. Left at localhost, canonical URLs and the social share image both point at a host nobody else can reach.",
+    owner: "Whoever owns the Vercel project",
+    productionOnly: true,
+  },
+  {
     env: "SAFESISO_API_BASE_URL",
     what: "FastAPI backend base URL",
     blocks:

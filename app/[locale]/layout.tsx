@@ -60,14 +60,36 @@ export async function generateMetadata({
     // so a canonical defined at the layout level would be inherited by every
     // page and declare them all duplicates of the homepage. Each page sets its
     // own via buildPageMetadata().
-    // The audience includes minors discussing sensitive health topics. There is
-    // no reason for this site to be indexed as a rich social preview card.
+    // A rich preview card WAS deliberately withheld here for a long time, and
+    // the reason still stands, so it is written down rather than deleted:
+    //
+    //   When a SafeSiso link is shared inside WhatsApp, the preview renders in
+    //   the chat list and in the conversation. The card carries a legible
+    //   phone mockup of a girl saying her period is late. Anyone who glances
+    //   at her screen — a parent, a partner, a sibling — can read it. A chat
+    //   can be deleted; a link preview sitting in her message history cannot
+    //   be un-seen. The Safety page is explicit that this is the one thing
+    //   SafeSiso cannot protect her from.
+    //
+    // The client was shown that reasoning and chose the card anyway, weighing
+    // it against how the link looks when partners, funders and journalists
+    // share it. That is their call to make. It is recorded here so the next
+    // person understands it was a decision and not an oversight.
+    //
+    // If it is ever revisited, the middle option was a neutral card: same
+    // branding, no chat content. scripts/build-social-image.mjs composes it.
     openGraph: {
       type: "website",
       siteName: t("siteName"),
       title: t("defaultTitle"),
       description: t("defaultDescription"),
       locale,
+    },
+    twitter: {
+      // Without this the card renders as a small thumbnail and the mockup is
+      // unreadable — which would be the worst of both worlds: exposed subject
+      // matter and no marketing benefit.
+      card: "summary_large_image",
     },
   };
 }
