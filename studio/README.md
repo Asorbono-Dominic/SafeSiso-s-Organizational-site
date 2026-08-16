@@ -7,7 +7,13 @@ The site reads content over HTTP and never imports the Sanity SDK.
 Running `npm install` at the repository root does **not** install this. That is
 deliberate — the site's dependency tree stays small.
 
+**Live at [safesiso.sanity.studio](https://safesiso.sanity.studio/)** — editors need
+that URL and a Sanity login, nothing else. Not this repository, not a terminal.
+
 **Project:** `819tcmi7` · **Dataset:** `production` · **read token required** (see step 4)
+
+Deploy changes to the hosted Studio with `npm run deploy` from this folder. Do
+that after any `npm run cms:schema`, or editors will not see new fields.
 
 ---
 
