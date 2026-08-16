@@ -33,7 +33,12 @@ Then open **http://localhost:3000** — you'll be redirected to `/en`. French is
 | `npm run check:contrast`     | WCAG contrast audit of the design tokens                     |
 | `npm run check:a11y`         | Structural a11y audit of every page (needs a running server) |
 | `npm run check:placeholders` | Lists every value still outstanding                          |
+| `npm run check:cms`          | Asserts CMS content renders identically to the local files   |
 | `npm run lighthouse`         | Lighthouse across every page (needs a running server)        |
+| `npm run review:build`       | Builds the French review document for a native speaker       |
+| `npm run review:apply`       | Applies a reviewer's corrections, with validation            |
+| `npm run cms:schema`         | Regenerates the Studio schema from the English catalogue     |
+| `npm run cms:seed`           | Exports current content as Sanity-importable NDJSON          |
 
 `check:messages` exists because a key present in `en` but missing from `fr` does **not** fail the build — next-intl renders the raw key path to the visitor instead. On a site where the copy is the product, that has to fail in CI.
 
@@ -57,7 +62,7 @@ The committed lockfile currently contains the nested entry, so it satisfies **bo
 | Framework           | Next.js 16 (App Router) + TypeScript                                                                 |
 | Styling             | Tailwind CSS v3                                                                                      |
 | i18n                | `next-intl` — `en` (default) and `fr` only, for now                                                  |
-| CMS                 | Sanity.io — **wired in Phase 7**; until then content is local files                                  |
+| CMS                 | Sanity.io — live (project `819tcmi7`); local files remain the permanent fallback                     |
 | Public data         | Next.js Route Handlers as a server-side proxy — the browser never calls the FastAPI backend directly |
 | Partner portal auth | NextAuth.js with an httpOnly, secure cookie session — **never** a client-stored JWT                  |
 | Analytics           | Plausible (cookie-less) — **added in Phase 8**                                                       |
@@ -237,14 +242,19 @@ JSON, and should not be asked to — a stray comma in `legal.json` takes the sit
 down. So the review happens in a document that cannot break anything:
 
 ```bash
-npm run review:build      # → review/french-review.html
+npm run review:build -- --reviewer "Mr Afred Kpirika Lambon"
+# → review/french-review.html
 ```
 
+The reviewer name is optional. When given it appears on the document and travels
+back inside the corrections file, so a returned JSON is attributable months
+later without depending on whose email it arrived in.
+
 That is one self-contained file: no server, no install, works offline, saves
-progress to the browser as the reviewer types. Email it to the reviewer. It puts
-English and French side by side, states the register rule (informal **tu** for
-girls, formal **vous** for institutions), and flags the safety-critical pages so
-a reviewer short on time knows where to start.
+progress to the browser as the reviewer types. Email it as an attachment. It
+puts English and French side by side, states the register rule (informal **tu**
+for girls, formal **vous** for institutions), and flags the 213 safety-critical
+segments first so a reviewer short on time knows where to start.
 
 They send back a JSON block, which is applied with:
 
@@ -339,11 +349,11 @@ the visible HTML of all 26 pages verified to match a CMS-off build.
 
 What is left is not a coding task:
 
-| Needed                            | From     | Blocks                                          |
-| --------------------------------- | -------- | ----------------------------------------------- |
-| A native French reviewer          | SafeSiso | 13 review markers, and launch                   |
-| `SANITY_API_READ_TOKEN` in Vercel | SafeSiso | the CMS affecting **production** (local is set) |
-| `sanity deploy`                   | SafeSiso | giving editors a URL instead of a local Studio  |
+| Needed                                      | From        | Blocks                                          |
+| ------------------------------------------- | ----------- | ----------------------------------------------- |
+| French review — **Mr Afred Kpirika Lambon** | in progress | 13 review markers, and launch                   |
+| `SANITY_API_READ_TOKEN` in Vercel           | SafeSiso    | the CMS affecting **production** (local is set) |
+| `sanity deploy`                             | SafeSiso    | giving editors a URL instead of a local Studio  |
 
 ---
 

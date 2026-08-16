@@ -35,6 +35,19 @@ const FR_DIR = join(ROOT, "content", "messages", "fr");
 const OUT_DIR = join(ROOT, "review");
 const OUT_FILE = join(OUT_DIR, "french-review.html");
 
+/**
+ * Optional reviewer name: `npm run review:build -- --reviewer "Name"`.
+ *
+ * It is shown in the document and travels back inside the corrections file, so
+ * a returned JSON is attributable months later without relying on whose email
+ * it arrived in.
+ */
+const reviewerArg = process.argv.indexOf("--reviewer");
+const REVIEWER =
+  reviewerArg !== -1 && process.argv[reviewerArg + 1]
+    ? process.argv[reviewerArg + 1]
+    : "";
+
 /** The key carrying reviewer guidance. Not a message — never rendered. */
 const REVIEW_MARKER_KEY = "_translationReview";
 
@@ -268,6 +281,7 @@ function render({ files, total }, hash) {
     version: 1,
     fingerprint: hash,
     total,
+    reviewer: REVIEWER,
     ids: files.flatMap((f) => f.entries.map((e) => e.id)),
   };
 
@@ -372,7 +386,9 @@ function render({ files, total }, hash) {
 <div class="wrap">
 
 <h1>SafeSiso — relecture de la traduction française</h1>
-<p class="filename">Document généré le ${new Date().toISOString().slice(0, 10)} · empreinte <code>${hash}</code> · ${total} segments</p>
+<p class="filename">${
+    REVIEWER ? `Préparé pour ${escapeHtml(REVIEWER)} · ` : ""
+  }Document généré le ${new Date().toISOString().slice(0, 10)} · empreinte <code>${hash}</code> · ${total} segments</p>
 
 <div class="intro">
   <p><strong>Merci.</strong> Ce site s’adresse à des adolescentes du nord du Ghana. Il parle de leur corps, du consentement, de la contraception et des abus. La version française a été produite avec l’aide d’une machine et <strong>n’a jamais été relue par une personne de langue maternelle française</strong>. C’est ce que nous vous demandons de faire.</p>
@@ -514,6 +530,7 @@ ${files.map(renderFile).join("\n")}
 
   function payload() {
     var out = { version: 1, fingerprint: META.fingerprint,
+      reviewer: META.reviewer || "",
       exportedAt: new Date().toISOString(), entries: {} };
     entries.forEach(function (el) {
       var id = el.dataset.id;
